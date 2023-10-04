@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-right: 50px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.content h1{
+    text-transform: uppercase;
+}
+.content input {
+    margin-top: 20px;
+    background-color: #D9D9D9;
+    width: 50%;
+    padding: 15px 0;
+}
+.content button{
+    margin-top: 15px;
+    width: 50%;
+    background-color: #006EFF;
+}
+.content button a{
+    color: #fff;
+}
+.content a{
+    margin-top: 15px;
+}

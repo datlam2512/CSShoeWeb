@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Footer h1{
+    font-size: 100%;
+    color: #fff;
+}
+.Footer li{
+    list-style-type: none; 
+}
+.Footer li a{
+    color: #fff;
+}
+.container{
+    width: 100%;
+}
+.First-Color{
+    background-color: black;
+    padding:  0;
+}
+.Second-color{
+    background-color: #262626;
+    padding: 15px 0;
+}
+.Second-color h1{
+   color: #262626 ;
+}
+.First-Color p{
+    color: #fff;
+}
+.Contact a{
+    margin: 0 15px;
+    color: #fff;
+}
+.Contact p{
+    margin-left: 15px;
+}
+.Footer{
+    margin-top: 150px;
+}
