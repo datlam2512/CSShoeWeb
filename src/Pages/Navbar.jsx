@@ -1,8 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { AudioOutlined } from '@ant-design/icons';
 import "./HomePages/Header.css";
-import { Button, Dropdown } from "antd";
+import { Button, Dropdown , Input, Space } from "antd";
 export default function Navbar() {
+    const { Search } = Input;
+    const suffix = (
+        <AudioOutlined
+          style={{
+            fontSize: 16,
+            color: '#1677ff',
+          }}
+        />
+      );
+      const onSearch = (value, _e, info) => console.log(info?.source, value);
   const items = [
     {
       key: "1",
@@ -29,6 +40,7 @@ export default function Navbar() {
         ),
       },
   ];
+  
   return (
     <div className="Navbar">
       <div className="Container">
@@ -71,14 +83,17 @@ export default function Navbar() {
             </nav>
           </div>
           <div className="col-3 OtherHead">
-            <form className="Search">
-              <input type="text" placeholder="" />
-              <button type="submit">
-                <a>
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
-              </button>
-            </form>
+          <Space direction="vertical">
+    <Search
+      placeholder="Search"
+      onSearch={onSearch}
+      style={{
+        width: 200,
+        marginTop:'25px',
+        marginRight:'15px',
+      }}
+    />
+  </Space>
             <button className="shopping-cart" type="submit">
               <Link to="/shopping-cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
