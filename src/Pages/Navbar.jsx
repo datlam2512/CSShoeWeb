@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Link} from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import './HomePages/Header.css'
 export default function Navbar() {
     return (
@@ -13,7 +13,7 @@ export default function Navbar() {
                         <nav>
                             <ul className='menu'>
                                 <div className='navmenu'>
-                                    <li><Link to='/home'>Home</Link></li>
+                                    <li><Link to='/Home'>Home</Link></li>
                                     <li><Link to='/shop'>Shop</Link></li>
                                     <li><Link to='/createyourown'>Create Your Own</Link></li>
                                     <li><Link to='/about'>About Us</Link></li>

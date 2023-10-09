@@ -1,0 +1,32 @@
+ul li {
+    list-style: none;
+}
+
+.marketplace-container {
+    width: 100%;
+
+}
+
+.main-content {
+    display: flex;
+    width: 1180px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.subdue {
+    flex: 1;
+
+}
+
+.product {
+    flex: 3;
+
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* You can adjust the margin as needed */
+  }
