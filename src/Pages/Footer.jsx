@@ -4,6 +4,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'
 import './Footer.css'
+import { Link } from 'react-router-dom'
 export default function () {
     
   return (
@@ -14,7 +15,7 @@ export default function () {
                <div className='column col-2'>
                 <nav>
                     <ul>
-                        <li><a href=''>Home</a></li>
+                        <li><Link to={'/'}>Home</Link></li>
                         <li><a href=''>Account</a></li>
                         <li><a href=''>Search</a></li>
                     </ul>

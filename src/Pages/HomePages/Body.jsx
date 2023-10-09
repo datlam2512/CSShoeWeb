@@ -10,7 +10,7 @@ export default function Body({ Shoes5k }) {
   return (
     <div className="Body">
       <div className="View-items">
-       <Link  style={{ textDecoration: 'none' }} to={'/productpage'} className="view-product">View All...</Link>
+       <Link  style={{ textDecoration: 'none' }} to={'/shop'} className="view-product">View All...</Link>
       </div>
       <div className="container">
         <div className="row content-shoes">

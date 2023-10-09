@@ -11,10 +11,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route index element={<HomePage />} />
-      </Routes>
-      <Routes>
-        <Route path='/Home' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/Shop' element={<Shop />} />
 
