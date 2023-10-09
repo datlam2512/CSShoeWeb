@@ -101,7 +101,7 @@ width: 20%;
     transition: bottom 0.3s ease, opacity 0.3s ease;
 }
 .card:hover .view-product .view-btn {
-    bottom: 40%;
+    bottom: 50%;
     opacity: 1;
     transition: bottom 0.3s ease, opacity 0.3s ease;
 }
