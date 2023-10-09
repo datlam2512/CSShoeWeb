@@ -31,7 +31,9 @@ export default function Body({ Shoes5k }) {
                 <Meta
                   title={shoes.price}
                 />
-               <Link style={{ textDecoration: 'none' }} to={`detail/${shoes.id}}`} className="detail-product"><button>More Detail</button></Link>
+              <div className='view-product'>
+                        <button className='view-btn'>VIEW</button>
+                    </div>
               </Card>
             </div>
           ))}
