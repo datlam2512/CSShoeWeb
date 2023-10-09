@@ -29,7 +29,8 @@ export default function Body({ Shoes5k }) {
                 }
               >
                 <Meta
-                  title={shoes.price}
+                  title={shoes.tittle}
+                  description={shoes.price}
                 />
               <div className='view-product'>
                         <button className='view-btn'>VIEW</button>
