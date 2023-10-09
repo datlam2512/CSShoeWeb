@@ -64,3 +64,24 @@ justify-content: center;
 .star{
 width: 20%;
 }
+.card{
+    margin-top: 20px;
+    text-align: center;
+}
+.detail-product{
+    text-align: center;
+    margin-top: 15px;
+    width: 100%;
+}
+.detail-product button{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+}
+.view-product{
+   text-decoration: none; 
+}
+.View-items Link{
+    text-decoration: none;
+}

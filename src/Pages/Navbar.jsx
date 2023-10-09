@@ -1,6 +1,7 @@
 import React from 'react'
 import {  Link } from 'react-router-dom';
 import './HomePages/Header.css'
+
 export default function Navbar() {
     return (
         <div className='Navbar'>

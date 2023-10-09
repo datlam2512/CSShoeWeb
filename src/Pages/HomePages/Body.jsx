@@ -3,33 +3,36 @@ import React from "react";
 import "./Body.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { Button, Card } from 'antd';
+import { Link } from "react-router-dom";
 export default function Body({ Shoes5k }) {
+  const { Meta } = Card;
   return (
     <div className="Body">
       <div className="View-items">
-        <a href="">View All</a>
+       <Link  style={{ textDecoration: 'none' }} to={'/productpage'} className="view-product">View All...</Link>
       </div>
       <div className="container">
         <div className="row content-shoes">
           {Shoes5k.map((shoes) => (
             <div className="col-lg-4 col-md-5 col-sm-6 card">
-              <div className="img-content">
-                <img className="shoescontent" src={shoes.img} />
-                <button>
-                  <a href="">Shop</a>
-                </button>
-              </div>
-              <div className=" detail-product">
-                <div className="star">
-                  <span>4.9</span>
-                  <i>
-                    <FontAwesomeIcon icon={faStar} />
-                  </i>
-                </div>
-                <div className="price">
-                  <p>{shoes.price}</p>
-                </div>
-              </div>
+              <Card
+                hoverable
+                style={{
+                  width: 240,
+                }}
+                cover={
+                  <img
+                    alt="example"
+                    src={shoes.img}
+                  />
+                }
+              >
+                <Meta
+                  title={shoes.price}
+                />
+               <Link style={{ textDecoration: 'none' }} to={`detail/${shoes.id}}`} className="detail-product"><button>More Detail</button></Link>
+              </Card>
             </div>
           ))}
         </div>

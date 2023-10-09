@@ -21,7 +21,7 @@
     color: #fff;
     background-color: #000;
     padding-top: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     border-radius: 5px;
 }
 .Search{
@@ -190,3 +190,4 @@ margin-left: 20px;
 #radio4:checked ~ .first{
     margin-left: -60%;
 }
+                                                                                                
