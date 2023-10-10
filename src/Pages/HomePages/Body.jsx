@@ -2,7 +2,7 @@
 import React from "react";
 import "./Body.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons"
 import { Button, Card } from 'antd';
 import { Link } from "react-router-dom";
 export default function Body({ Shoes5k }) {
@@ -33,7 +33,7 @@ export default function Body({ Shoes5k }) {
                   description={shoes.price}
                 />
               <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                        <button className='view-btn'><FontAwesomeIcon icon={faEye} /></button>
                     </div>
               </Card>
             </div>

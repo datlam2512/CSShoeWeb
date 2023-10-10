@@ -86,7 +86,7 @@ width: 20%;
     text-decoration: none;
 }
 .view-product .view-btn {
-    background-color: #007bff;
+    background-color: #fff;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -107,6 +107,6 @@ width: 20%;
 }
 
 .view-product .view-btn:hover {
-    background-color: #006de1;
+    background-color: #000;
 
 }

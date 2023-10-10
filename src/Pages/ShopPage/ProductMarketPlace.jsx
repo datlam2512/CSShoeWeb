@@ -1,5 +1,7 @@
 import React from 'react'
 import './ProductMarketPlace.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons"
 export default function ProductMarketPlace() {
     return (
         <div className='row'>
@@ -17,7 +19,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                        <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -36,7 +38,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -55,7 +57,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -74,7 +76,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -93,7 +95,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -112,7 +114,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
@@ -131,7 +133,7 @@ export default function ProductMarketPlace() {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>VIEW</button>
+                    <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
                     </div>
                 </div>
             </div>
