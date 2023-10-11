@@ -1,0 +1,19 @@
+.text {
+    width: 100%;
+    text-align: center;
+    padding: 165px;
+}
+
+.text button {
+    margin-top: 20px;
+    background-color: rgba(128, 128, 128, 0.384);
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.text a{
+    color: blue;
+    font-weight: bold;
+}
