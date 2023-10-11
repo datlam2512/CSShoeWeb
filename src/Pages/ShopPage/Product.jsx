@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { ShopContext } from '../../context/shop-context'
 
 const Product = ({ id, imgUrl, name, price }) => {
+    const { addToCart, cartItems } = useContext(ShopContext)
+    const CartItemAmount = cartItems[id]
     return (
         <div className='product-item col-md-3' key={id}>
             <div className='product-card'>
@@ -19,6 +22,10 @@ const Product = ({ id, imgUrl, name, price }) => {
                 </div>
                 <div className='view-product'>
                     <button className='view-btn'> <FontAwesomeIcon icon={faEye} /></button>
+                </div>
+                <div className='add-to-cart'>
+                    <button className='add-to-cart-btn' onClick={() => addToCart(id)} >
+                    Add to Cart {CartItemAmount > 0 && <>({CartItemAmount})</>}</button>
                 </div>
             </div>
         </div>

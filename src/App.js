@@ -7,9 +7,11 @@ import Cart from './Pages/Cart';
 import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
+import { ShopContextProvider } from './context/shop-context';
 function App() {
   return (
     <div className="App">
+    <ShopContextProvider>
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
@@ -18,6 +20,7 @@ function App() {
         <Route path='/Cart' element={<Cart/>} />
       </Routes>
       <Footer />
+    </ShopContextProvider>
     </div>
   );
 }
