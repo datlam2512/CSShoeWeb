@@ -3,6 +3,7 @@ import './App.css';
 import HomePage from './Pages/Home'
 import LoginPage from './Pages/Login'
 import Shop from './Pages/Shop';
+import Cart from './Pages/Cart';
 import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
@@ -14,7 +15,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/nike' element={<Shop />} />
-
+        <Route path='/Cart' element={<Cart/>} />
       </Routes>
       <Footer />
     </div>

@@ -95,7 +95,7 @@ export default function Navbar() {
     />
   </Space>
             <button className="shopping-cart" type="submit">
-              <Link to="/shopping-cart">
+              <Link to="/Cart">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
               </Link>
             </button>
