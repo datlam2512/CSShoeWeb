@@ -1,112 +1,155 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
-.card{
-    display: flex;
-    justify-content: center;
-    border: 0;
-    align-items: center;
+.card {
+  display: flex;
+  justify-content: center;
+  border: 0;
+  align-items: center;
 }
-.img-content{
-    position: relative;
-    width: 100%;
+.body h1 {
+  font-family: Karla, sans-serif;
 }
-.img-content img{
-    width: 100%;
+.img-content {
+  position: relative;
+  width: 100%;
 }
-.img-content button{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    padding: 0 30px;
-    border-radius: 15px;
-    margin-bottom: 5px;
+.img-content img {
+  width: 100%;
 }
-.img-content a{
-    color: #fff;
+.img-content button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  padding: 0 30px;
+  border-radius: 15px;
+  margin-bottom: 5px;
 }
-.price p{
-    background-color: aqua;
-    width: 50%;
-    padding-left: 15px;
-    border-radius: 15px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin-right: 70px;
+.img-content a {
+  color: #fff;
+}
+.price p {
+  background-color: aqua;
+  width: 50%;
+  padding-left: 15px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-right: 70px;
 }
 
-.View-items{
-    margin-top: 15px;
+.View-items a {
+  margin-left: 70%;
+  color: #000;
+  text-transform: uppercase;
 }
-.View-items a{
-   margin-left: 70%;
-    color: #000;
-    text-transform: uppercase;
+.detail-product {
+  width: 100%;
+  display: flex;
 }
-.detail-product{
-    width: 100%;
-    display: flex;
+.star i {
+  color: "rgb(255, 226, 59)";
+  font-size: 10px;
+  margin-right: 15px;
 }
-.star i{
-    color: "rgb(255, 226, 59)";
-    font-size: 10px;
-    margin-right: 15px;
+.price {
+  width: 80%;
+  display: flex;
+  justify-content: center;
 }
-.price{
-width: 80%;
-display: flex;
-justify-content: center;
+.star {
+  width: 20%;
 }
-.star{
-width: 20%;
+.card {
+  text-align: center;
 }
-.card{
-    margin-top: 20px;
-    text-align: center;
+.View-items {
+  display: flex;
+  justify-content: center;
 }
-.detail-product{
-    text-align: center;
-    margin-top: 15px;
-    width: 100%;
+.card-home {
+  align-items: center;
+  background-color: #fbf3f3;
 }
-.detail-product button{
-    width: 100%;
-    border-radius: 5px;
-    background-color: #000;
-    color: #fff;
+.card-home img{
+   border-radius: 5px;
 }
-.view-product{
-   text-decoration: none; 
+.card-home h1 {
+  font-family: Unica One, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 2rem;
 }
-.View-items Link{
-    text-decoration: none;
+.card-home:hover {
+  background-color: rgba(156, 152, 152, 0.1);
+  cursor: pointer;
+  opacity: 1;
 }
-.view-product .view-btn {
-    background-color: #fff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+.home-content {
+  display: flex;
+  justify-content: center;
+}
+.card-content:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card-content {
+  display: flex;
+  flex-direction: row;
+}
+.content-shoe {
+  display: flex;
+  align-items: center;
+  width: 100%s;
+}
+.content-shoe img {
+  width: 540px;
+  height: 675px;
+}
+.Body {
+  background-color: #fcf7f7;
+ 
+}
+.information-home {
+  width: 540px;
+  font-size: 80%;
+  margin-left: 30px;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-family: Karla,sans-serif;
+}
+.information-home h1 {
+  width: 100%;
+}
+.list-info {
+  list-style-type: disc;
+}
+.card-product-bottom img {
+  width: 100%;
+  border-radius: 5px;
+}
+.card-product-bottom {
+  border: 0;
+  background-color: #fcf7f7;
+  margin-top: 50px;
+}
+.list-card {
+  width: 1110px;
+  margin-top: 60px;
+  text-align: center;
+}
+.card-product-bottom:hover{
+    background-color: rgba(156, 152, 152, 0.1);
     cursor: pointer;
-    border-radius: 5px;
-    position: absolute;
-    bottom: -40px;
-    /* Ẩn nút View dưới product-card */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: bottom 0.3s ease, opacity 0.3s ease;
-}
-.card:hover .view-product .view-btn {
-    bottom: 50%;
     opacity: 1;
-    transition: bottom 0.3s ease, opacity 0.3s ease;
 }
-
-.view-product .view-btn:hover {
-    background-color: #000;
-
+.product-bottom {
+  display: flex;
+  justify-content: center;
 }

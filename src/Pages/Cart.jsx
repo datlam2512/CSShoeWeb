@@ -3,7 +3,7 @@ import CartContent from './Cart/CartContent'
 
 export default function cart() {
   return (
-    <div>SHOPPING CART
+    <div>
     <CartContent />
     </div>
   )

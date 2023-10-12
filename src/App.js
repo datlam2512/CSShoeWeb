@@ -7,6 +7,7 @@ import Cart from './Pages/Cart';
 import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
+import ForgotPassword from './Pages/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/nike' element={<Shop />} />
         <Route path='/Cart' element={<Cart/>} />
+        <Route path='forgot' element={<ForgotPassword/>}/>
       </Routes>
       <Footer />
     </ShopContextProvider>

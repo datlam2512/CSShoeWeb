@@ -1,3 +1,6 @@
 html::-webkit-scrollbar {
     display: none; /* cho Chrome, Safari, and Opera */
 }
+.App{
+    background-color: #fcf7f7;
+}

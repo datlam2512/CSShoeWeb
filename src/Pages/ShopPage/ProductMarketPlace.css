@@ -57,7 +57,7 @@
 
 /* CSS cho nút View (ẩn ban đầu) */
 .view-product .view-btn {
-    background-color: #007bff;
+    background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -80,6 +80,6 @@
 }
 
 .view-product .view-btn:hover {
-    background-color: #006de1;
+    background-color: rgba(0, 0, 0, 0.3);
 
 }
