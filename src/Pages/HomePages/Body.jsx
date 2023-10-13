@@ -52,10 +52,10 @@ export default function Body({ Shoes5k }) {
           className="card-home"
           style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
         >
-          <Link style={{ textDecoration: "none" }}>
+          <Link className="converse" style={{ textDecoration: "none" }}>
             <h1>Converse</h1>
             <p></p>
-            <img src="/Img/content3.png" />
+            <img src="/Img/contentconverse.jpg" />
           </Link>
         </Card>
       </div>
