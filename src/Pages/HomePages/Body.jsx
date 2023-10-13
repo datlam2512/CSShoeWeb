@@ -45,7 +45,7 @@ export default function Body({ Shoes5k }) {
           <Link style={{ textDecoration: "none" }}>
             <h1>Adidas</h1>
             <p></p>
-            <img src="/Img/content2.png" />
+            <img src="/Img/content3.png" />
           </Link>
         </Card>
         <Card
