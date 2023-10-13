@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import HomePage from './Pages/Home'
 import LoginPage from './Pages/Login'
@@ -14,6 +13,8 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/nike' element={<Shop />} />
+        <Route path='/CartContent' element={<CartContent/>} />
+        <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
 
       </Routes>
       <Footer />
