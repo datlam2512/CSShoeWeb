@@ -3,10 +3,14 @@ import './ShopPage.css';
 import ProductMarketPlace from './ShopPage/ProductMarketPlace';
 import FilterProduct from './ShopPage/FilterProduct';
 import { Pagination } from 'antd';
+import ShopTitle from './ShopPage/ShopTitle';
 
 export default function Shop() {
   return (
     <div className='marketplace-container'>
+      <div className='shop-title'>
+        <ShopTitle />
+      </div>
       <div className='main-content'>
         <div className='subdue'>
           <FilterProduct />
@@ -16,7 +20,7 @@ export default function Shop() {
         </div>
       </div>
       <div className='pagination'>
-      <Pagination simple defaultCurrent={2} total={50} />
+        <Pagination simple defaultCurrent={2} total={50} />
       </div>
     </div>
   );

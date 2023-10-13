@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './CartContent.css'
+import { ShopContext } from '../../context/shop-context'
+import { useNavigate } from 'react-router'
 export default function CartContent() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext)
   const totalAmount = getTotalCartAmount()
