@@ -20,12 +20,19 @@ export default function CartContent() {
          }
     })}
     </div>
-
+    {totalAmount > 0 ? (
     <div className='checkout'>
       <p>Subtotal: {totalAmount}</p>
       <button onClick={() => navigate("/")}> Continue Shopping </button>
       <button> Checkout </button>
     </div>
+     ) : (
+       <div>
+       <h2> Your Cart Is Empty!</h2>
+       <button onClick={() => navigate("/")}> Continue Shopping </button>
+       </div>
+     )}
 </div>  
+
 )
 }
