@@ -1,14 +1,13 @@
 import React from 'react'
 import './CartContent.css'
-import { Link } from 'react-router-dom';
 export default function CartContent() {
-  function goBack(){
-    window.location.href = 'Home.jsx';
-  }
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext)
+  const totalAmount = getTotalCartAmount()
+  const navigate = useNavigate()
   return (
     <div className='text'>
         <h1>Your Cart is Nothing!</h1>
-        <Link to={'/'} ><button >Continute Shopping</button></Link>
+        <button ><a href='./home'>Continue Browsing</a></button>
     </div>
   )
 }
