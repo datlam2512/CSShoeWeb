@@ -4,7 +4,19 @@ ul li {
 
 .marketplace-container {
     width: 100%;
+    margin-top: 60px;
+}
 
+.shop-title {
+    width: 1180px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.shop-title p {
+    font-family: Unica One, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
 }
 
 .main-content {
@@ -28,5 +40,6 @@ ul li {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px; /* You can adjust the margin as needed */
-  }
+    margin-top: 20px;
+    /* You can adjust the margin as needed */
+}

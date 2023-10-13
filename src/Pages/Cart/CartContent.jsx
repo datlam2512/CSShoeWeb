@@ -3,6 +3,7 @@ import products from '../ShopPage/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import {CartItem} from './CartItem'
 import { useNavigate } from 'react-router-dom'
+
 export default function CartContent() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext)
   const totalAmount = getTotalCartAmount()

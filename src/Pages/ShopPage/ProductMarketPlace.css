@@ -83,3 +83,45 @@
     background-color: rgba(0, 0, 0, 0.3);
 
 }
+
+/* sort-by */
+
+.sort {
+    width: 100%;
+    font-style: normal;
+    line-height: 1.375;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.sort-limit {
+    display: flex;
+    padding-bottom: 5px;
+    align-items: center;
+}
+
+.sort-by {
+    padding: 0 ;
+}
+
+.sort-by label {
+    font-family: Karla, sans-serif;
+    font-weight: 500;
+    font-size: 10.5px;
+    margin-left: 10px;
+}
+
+.sort-by select {
+    border: 0;
+    margin: 0 10px;
+    font-family: Karla, sans-serif;
+    font-size: 16px;
+    padding: 3px;
+
+
+}
+
+.sort-by select:last-child {
+    margin-right: 0;
+}
