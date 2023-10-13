@@ -158,6 +158,7 @@ overflow: hidden;
 .slide img{
     width: 100%;
     height: 500px;
+    
 }
 .navigation-manual{
 position: absolute;
@@ -191,4 +192,6 @@ margin-left: 20px;
 #radio4:checked ~ .first{
     margin-left: -60%;
 }
-                                                                                                
+.banner img{
+    object-fit: cover;
+}
