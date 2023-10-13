@@ -3,7 +3,7 @@ import './App.css';
 import HomePage from './Pages/Home'
 import LoginPage from './Pages/Login'
 import Shop from './Pages/Shop';
-import CartContent from './Pages/Cart/CartContent';
+import Cart from './Pages/Cart';
 import ProductDetail from './Pages/ProductDetail';
 import { Routes, Route, Link } from 'react-router-dom';
 import Navbar from './Pages/Navbar';
@@ -19,7 +19,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
         <Route path='/nike' element={<Shop />} />
-        <Route path='/CartContent' element={<CartContent/>} />
+        <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
 
       </Routes>

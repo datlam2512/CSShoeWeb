@@ -5,7 +5,7 @@ import products from './ProductList';
 import { ShopContext } from '../../context/shop-context';
 import './ProductMarketPlace.css'
 export default function ProductMarketPlace() {
-    const [sortOption, setSortOption] = useState('choice'); 
+    const [sortOption, setSortOption] = useState('choice');
     const { addToCart, cartItems } = useContext(ShopContext);
 
     function sortProducts(products, option) {
@@ -23,23 +23,39 @@ export default function ProductMarketPlace() {
     }
     return (
         <>
-            {/* ... Rest of your JSX ... */}
-            <div className='sort-by'>
-                <label className="sort-by-toggle" role="button" tabIndex="0" aria-expanded="false">
-                    Sort By
-                </label>
-                <select
-                    id="changeSortBy"
-                    className="sortby-select"
-                    onChange={(e) => setSortOption(e.target.value)}
-                >
-                    <option value="choice">Your Choice</option>
-                    <option value="title-ascending">Alphabetically, A-Z</option>
-                    <option value="title-descending">Alphabetically, Z-A</option>
-                    <option value="price-ascending">Price, low to high</option>
-                    <option value="price-descending">Price, high to low</option>
-                </select>
+            <div className='sort'>
+                <div className='sort-limit'>
+                    <div class="sort-by limit-by">
+                        <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">Show</label>
+                        <select id="setLimit" class="sortby-select" onchange="setLimit(this.value); return false;">
+                            <option value="12">12</option>
+                            <option selected="" value="24">24</option>
+                            <option value="48">48</option>
+                        </select>
+                    </div>
+
+
+
+                    <div className='sort-by'>
+                        <label className="sort-by-toggle" role="button" tabIndex="0" aria-expanded="false">
+                            Sort By
+                        </label>
+                        <select
+                            id="changeSortBy"
+                            className="sortby-select"
+                            onChange={(e) => setSortOption(e.target.value)}
+                        >
+                            <option value="choice">Your Choice</option>
+                            <option value="title-ascending">Alphabetically, A-Z</option>
+                            <option value="title-descending">Alphabetically, Z-A</option>
+                            <option value="price-ascending">Price, low to high</option>
+                            <option value="price-descending">Price, high to low</option>
+                        </select>
+                    </div>
+                </div>
             </div>
+
+
             <div className='row'>
                 {sortProducts(products, sortOption).map((product) => (
                     <Product

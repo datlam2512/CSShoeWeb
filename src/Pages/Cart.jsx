@@ -1,10 +1,11 @@
 import React from 'react'
 import CartContent from './Cart/CartContent'
+import './Cart.css'
 
-export default function cart() {
+export default function Cart() {
   return (
-    <div>
-    <CartContent />
+    <div className='cart-page'>
+    < CartContent/>
     </div>
   )
 }
