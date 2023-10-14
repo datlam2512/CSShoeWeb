@@ -49,9 +49,11 @@ export default function Content() {
         span: 16,
       }}
     >
+     <div  className='submit-forgotpw'>
       <Button type="primary" htmlType="submit">
         Submit
       </Button>
+      </div>
     </Form.Item>
   </Form>
 

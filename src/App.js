@@ -21,7 +21,7 @@ function App() {
         <Route path='/nike' element={<Shop />} />
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
-
+        <Route path='/forgot' element={<ForgotPassword/>}></Route>
       </Routes>
       <Footer />
     </ShopContextProvider>

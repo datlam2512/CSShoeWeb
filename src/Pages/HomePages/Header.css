@@ -115,13 +115,4 @@
 .navmenu li{
     margin: 0 15px;
 }
-.Navbar{
-    position: fixed;
-    background-color: #fcf7f7;
-    z-index: 1;
-    width: 100%;
-    top: 0;
-}
-.Header{
-    margin-top: 50px;
-}
+
