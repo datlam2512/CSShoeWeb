@@ -6,22 +6,31 @@ import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { Button, Card } from "antd";
 import { Link } from "react-router-dom";
 import { Avatar, List, Radio, Space } from "antd";
-export default function Body({ Shoes5k }) {
+export default function Body( { id, imgUrl, name, price } ) {
   const data = [
     {
-      title: <img src="/Img/content1.png" />,
+      title: <img className="img-bottom" src="/Img/banner3.jpeg"/>,
+      name: <p>VIew All</p>
     },
     {
-      title: <img src="/Img/content2.png" />,
+      title: <img className="img-bottom-product"  src="/Img/Bottom-product1.png" />,
+      name:<p>Nike Air Force 1 Purple Sketch</p>,
+      price:<p>2.500.000</p>
+    },
+    { 
+      title: <img   className="img-bottom-product" src="/Img/Bottom-product2.png" />,
+      name:<p>Nike Air Force 1 Low Diamonds - Black</p>,
+      price:<p>3.500.000</p>
     },
     {
-      title: <img src="/Img/content3.png" />,
+      title: <img   className="img-bottom-product" src="/Img/Bottom-product3.png" />,
+      name:<p>Nike Air Force 1 Low Diamonds - White</p>,
+      price:<p>4.500.000</p>
     },
     {
-      title: <img src="/Img/content3.png" />,
-    },
-    {
-      title: <img src="/Img/content3.png" />,
+      title: <img  className="img-bottom-product" src="/Img/bottom-product4.png" />,
+      name:<p>Nike Air Force 1 Joker </p>,
+      price:<p>3.700.000</p>
     },
   ];
   const { Meta } = Card;
@@ -71,22 +80,23 @@ export default function Body({ Shoes5k }) {
               the sneakers, but suddenly Everyone else has the same sneakers.
             </p>
             <p>
-              By CustomSneaker.nl walk around on sneakers that nobody else has.
+              By CsShoe walk around on sneakers that nobody else has.
               That's exactly what you want, right?
             </p>
             <p>
-              CustomSneaker.nl sells a wide range of custom sneakers. There's
+            CsShoe sells a wide range of custom sneakers. There's
               something for everyone, even if you want your own design.
             </p>
             <h4>Possibilities:</h4>
             <p className="list-info">Pick from existing designs</p>
-            <p className="list-info">Pick from existing designs</p>
-            <p className="list-info">Pick from existing designs</p>
-            <p className="list-info">Pick from existing designs</p>
+            <p className="list-info">Pick from existing designs on a different sneaker</p>
+            <p className="list-info">Send your own design</p>
+            <p className="list-info">To work together towards a design</p>
           </div>
         </div>
       </div>
       <div className="product-bottom">
+      
         <List
           className="list-card"
           grid={{
@@ -95,12 +105,15 @@ export default function Body({ Shoes5k }) {
           }}
           dataSource={data}
           renderItem={(item) => (
-            <List.Item>
+           
+          <List.Item>
+            
               <Card className="card-product-bottom" title={item.title}>
-                <p>Adidas</p>
-                <p>5.000.000VND</p>
+                <p className="name-bottom-product">{item.name}</p>
+                <p>{item.price}</p>
               </Card>
             </List.Item>
+       
           )}
         />
       </div>

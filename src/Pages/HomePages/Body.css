@@ -157,3 +157,29 @@
   width: 15rem;
   height: 10rem;
 }
+.img-bottom-product{
+ height: 15rem;
+}
+.view-bottom-product{
+  text-transform: uppercase;
+  height: 19rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  opacity: .4;
+}
+.view-bottom-product p{
+  color:#fcf7f7 ;
+}
+.img-bottom{
+  height: 18.7rem;
+  opacity: .4;
+  z-index: 1;
+  transition: opacity .2s ease;
+}
+.name-bottom-product{
+  font-weight: 700;
+  color: #030303;
+  white-space: normal;
+}

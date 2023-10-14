@@ -3,7 +3,6 @@ import './ProductDetailComponent.css'
 import { ConfigProvider, Image, InputNumber } from 'antd'
 import { Link, useParams } from 'react-router-dom'
 import products from '../ShopPage/ProductList'
-
 export default function ProductDetailComponent() {
     const shoesName = useParams();
     const shoes = products.find(obj => {

@@ -101,6 +101,13 @@ const products = [
         price: 2800000,
         brand: "nike",
     },
+    {
+       id:15,
+       imgUrl:'https://www.customsneaker.nl/cdn/shop/products/CustomerSneaker.nl_21_1024x1024.jpg?v=1577665748',
+       name:"NIKE AIR FORCE 1 PURPLE SKETCH",
+       price:2500000,
+       brand:"nike",
+    },
 ]
 
 export default products

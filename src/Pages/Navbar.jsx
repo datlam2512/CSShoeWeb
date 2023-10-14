@@ -18,27 +18,21 @@ export default function Navbar() {
     {
       key: "1",
       label: (
-        <Link to={'/nike'}>Nike</Link>
+        <Link to={'/nike'}  style={{ textDecoration: "none" }}>Nike</Link>
       ),
     },
     {
       key: "2",
       label: (
-        <Link to={'/adidas'}>Adidas</Link>
+        <Link to={'/adidas'}  style={{ textDecoration: "none" }}>Adidas</Link>
       ),
     },
     {
       key: "3",
       label: (
-        <Link to={'/vans'}>Vans</Link>
+        <Link to={'/vans'}  style={{ textDecoration: "none" }}>Vans</Link>
       ),
     },
-    {
-        key: "4",
-        label: (
-            <Link to={'/accesories'}>Accesories</Link>
-        ),
-      },
   ];
   
   return (
