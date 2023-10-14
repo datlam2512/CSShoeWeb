@@ -27,7 +27,7 @@ export default function Product({ id, imgUrl, name, price }) {
                     <div className='view-product'>
                         <button className='view-btn'>
                             <Link to={`/product-detail/${id}`}>
-                                <FontAwesomeIcon icon={faEye} />
+                                <FontAwesomeIcon icon={faEye} className='eye-view'/>
                             </Link>
                         </button>
                     </div>

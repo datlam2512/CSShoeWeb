@@ -4,10 +4,14 @@ import Product from './Product';
 import products from './ProductList';
 import { ShopContext } from '../../context/shop-context';
 import './ProductMarketPlace.css'
+import { Pagination } from 'antd';
+import { useEffect } from 'react';
 export default function ProductMarketPlace() {
     const [sortOption, setSortOption] = useState('choice');
     const [limit, setLimit] = useState(12);
     const { addToCart, cartItems } = useContext(ShopContext);
+    const [currentPage, setCurrentPage] = useState(1);
+
 
     function sortProducts(products, option) {
         if (option === 'title-ascending') {
@@ -22,6 +26,15 @@ export default function ProductMarketPlace() {
             return products;
         }
     }
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top
+    }, [currentPage]);
+
     return (
         <>
             <div className='sort'>
@@ -30,6 +43,7 @@ export default function ProductMarketPlace() {
                         <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">
                             Show
                         </label>
+
                         <select id="setLimit"
                             class="sortby-select"
                             onChange={(e) => setLimit(parseInt(e.target.value))}
@@ -64,7 +78,7 @@ export default function ProductMarketPlace() {
 
             <div className='row'>
                 {sortProducts(products, sortOption)
-                    .slice(0, limit)
+                    .slice((currentPage - 1) * limit, currentPage * limit)
                     .map((product) => (
                         <Product
                             key={product.id}
@@ -75,6 +89,20 @@ export default function ProductMarketPlace() {
                         />
                     ))}
             </div>
+
+            <div className='pagination'>
+                <Pagination
+                    simple
+                    defaultCurrent={1}
+                    total={products.length}
+                    pageSize={limit}
+                    current={currentPage}
+                    onChange={handlePageChange}
+                />
+            </div>
+
+
+
         </>
     );
 }

@@ -156,7 +156,11 @@
     padding: 20px;
     display: flex;
     align-items: center;
+ 
+}
 
+.cart-item-price p{
+    margin: 0;
 }
 
 .cart-item-description {

@@ -19,9 +19,7 @@ export default function Shop() {
           <ProductMarketPlace />
         </div>
       </div>
-      <div className='pagination'>
-        <Pagination simple defaultCurrent={2} total={50} />
-      </div>
+     
     </div>
   );
 }

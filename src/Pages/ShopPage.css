@@ -40,6 +40,6 @@ ul li {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 40px;
     /* You can adjust the margin as needed */
 }

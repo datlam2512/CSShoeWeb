@@ -56,11 +56,17 @@
 
 
 /* CSS cho nút View (ẩn ban đầu) */
+.eye-view {
+    background-color: none;
+    font-size: 20px;
+    color: black;
+}
+
 .view-product .view-btn {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 20px 40px;
     cursor: pointer;
     border-radius: 5px;
     position: absolute;
@@ -72,7 +78,6 @@
     transition: bottom 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hiệu ứng khi hover vào product-card */
 .product-card:hover .view-product .view-btn {
     bottom: 50%;
     opacity: 1;
@@ -84,6 +89,10 @@
 
 }
 
+
+.view-product .view-btn:hover .eye-view {
+    color: #fff;
+}
 /* sort-by */
 
 .sort {
