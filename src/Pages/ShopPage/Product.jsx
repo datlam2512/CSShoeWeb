@@ -25,11 +25,13 @@ export default function Product({ id, imgUrl, name, price }) {
                         </div>
                     </div>
                     <div className='view-product'>
-                        <button className='view-btn'>
-                            <Link to={`/product-detail/${id}`}>
+
+                        <Link to={`/product-detail/${id}`}>
+                            <button className='view-btn'>
                                 <FontAwesomeIcon icon={faEye} className='eye-view' />
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
+
                     </div>
                     <div className='add-to-cart'>
                         <button className='add-to-cart-btn' onClick={() => addToCart(id)}>
