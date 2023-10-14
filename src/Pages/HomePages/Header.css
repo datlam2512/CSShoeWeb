@@ -58,9 +58,7 @@
 .Search button:hover{
     color: rgb(162, 163, 163);
 }
-.cart{
-    position: absolute;
-}
+
 .OtherHead{
     display: flex;
 }

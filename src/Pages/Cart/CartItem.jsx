@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { ShopContext } from "../../context/shop-context";
+import { Link } from 'react-router-dom';
 
 export const CartItem = (props) => {
   const { id, imgUrl, name, price } = props.data;
@@ -14,7 +15,9 @@ export const CartItem = (props) => {
       </div>
       <div className='cart-item-description'>
         <div className='cart-item-name'>
-          <p>{name}</p>
+          <h1 className='item-name'>
+            <Link to={`/product-detail/${id}`}>{name}</Link>
+          </h1>
         </div>
       </div>
 
