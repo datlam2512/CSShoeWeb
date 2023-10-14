@@ -11,6 +11,7 @@ import Footer from './Pages/Footer';
 import ForgotPassword from './Pages/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
 import AboutUs from './Pages/AboutUs';
+import Contact from './Pages/Contact';
 function App() {
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
+        <Route path='/contact' element={<Contact/>}></Route>
       </Routes>
       <Footer />
     </ShopContextProvider>
