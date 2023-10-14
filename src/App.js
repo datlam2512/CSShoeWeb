@@ -10,6 +10,7 @@ import Navbar from './Pages/Navbar';
 import Footer from './Pages/Footer';
 import ForgotPassword from './Pages/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
+import AboutUs from './Pages/AboutUs';
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
+        <Route path='/about' element={<AboutUs/>}></Route>
       </Routes>
       <Footer />
     </ShopContextProvider>
