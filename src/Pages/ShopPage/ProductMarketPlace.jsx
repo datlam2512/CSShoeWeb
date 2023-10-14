@@ -6,6 +6,7 @@ import { ShopContext } from '../../context/shop-context';
 import './ProductMarketPlace.css'
 export default function ProductMarketPlace() {
     const [sortOption, setSortOption] = useState('choice');
+    const [limit, setLimit] = useState(12);
     const { addToCart, cartItems } = useContext(ShopContext);
 
     function sortProducts(products, option) {
@@ -26,11 +27,16 @@ export default function ProductMarketPlace() {
             <div className='sort'>
                 <div className='sort-limit'>
                     <div class="sort-by limit-by">
-                        <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">Show</label>
-                        <select id="setLimit" class="sortby-select" onchange="setLimit(this.value); return false;">
+                        <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">
+                            Show
+                        </label>
+                        <select id="setLimit"
+                            class="sortby-select"
+                            onChange={(e) => setLimit(parseInt(e.target.value))}
+                            value={limit}
+                        >
                             <option value="12">12</option>
                             <option selected="" value="24">24</option>
-                            <option value="48">48</option>
                         </select>
                     </div>
 
@@ -57,15 +63,17 @@ export default function ProductMarketPlace() {
 
 
             <div className='row'>
-                {sortProducts(products, sortOption).map((product) => (
-                    <Product
-                        key={product.id}
-                        id={product.id}
-                        imgUrl={product.imgUrl}
-                        name={product.name}
-                        price={product.price.toLocaleString() + " VNĐ"}
-                    />
-                ))}
+                {sortProducts(products, sortOption)
+                    .slice(0, limit)
+                    .map((product) => (
+                        <Product
+                            key={product.id}
+                            id={product.id}
+                            imgUrl={product.imgUrl}
+                            name={product.name}
+                            price={product.price.toLocaleString() + " VNĐ"}
+                        />
+                    ))}
             </div>
         </>
     );
