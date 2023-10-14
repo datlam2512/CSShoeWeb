@@ -24,7 +24,7 @@
 .product-img img {
     width: 100%;
     height: 100%;
-    
+
 }
 
 .product-name,
@@ -53,9 +53,45 @@
     color: #141414;
 }
 
+.add-to-cart-btn {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.484);
+    color: #000000;
+    border: none;
+    padding: 8px 8px;
+    padding-left: 12px;
+    cursor: pointer;
+    border-bottom-left-radius: 20% ;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: top 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
 
+.product-card:hover .add-to-cart-btn {
+    top: 0;
+    opacity: 1;
+    transform: translateX(0);
+    transition: top 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
 
-/* CSS cho nút View (ẩn ban đầu) */
+.add-to-cart-btn:hover {
+    background-color: rgba(0, 0, 0, 0.79);
+    color: rgb(241, 241, 241);
+
+}
+
+.item-number {
+    font-size: 10px;
+    background-color: #000000;
+    color: #fff;
+    padding: 0 5px;
+    margin-left: 1px;
+    border-radius: 50%;
+}
+
 .eye-view {
     background-color: none;
     font-size: 20px;
@@ -71,7 +107,6 @@
     border-radius: 5px;
     position: absolute;
     bottom: -40px;
-    /* Ẩn nút View dưới product-card */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -85,14 +120,13 @@
 }
 
 .view-product .view-btn:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-
+    background-color: rgba(0, 0, 0, 0.79);
 }
-
 
 .view-product .view-btn:hover .eye-view {
     color: #fff;
 }
+
 /* sort-by */
 
 .sort {
@@ -111,13 +145,13 @@
 }
 
 .sort-by {
-    padding: 0 ;
+    padding: 0;
 }
 
 .sort-by label {
     font-family: Karla, sans-serif;
     font-weight: 500;
-    font-size: 10.5px;
+    font-size: 11.5px;
     margin-left: 10px;
 }
 
@@ -125,10 +159,8 @@
     border: 0;
     margin: 0 10px;
     font-family: Karla, sans-serif;
-    font-size: 16px;
-    padding: 3px;
-
-
+    font-size: 14px;
+    padding: 5px;
 }
 
 .sort-by select:last-child {

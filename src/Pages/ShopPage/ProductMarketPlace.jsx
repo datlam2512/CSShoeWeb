@@ -34,7 +34,7 @@ export default function ProductMarketPlace() {
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top
     }, [currentPage]);
-
+    
     return (
         <>
             <div className='sort'>
