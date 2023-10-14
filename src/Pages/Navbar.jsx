@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { AudioOutlined } from '@ant-design/icons';
 import "./HomePages/Header.css";
 import { Button, Dropdown , Input, Space } from "antd";
-import {products} from './ShopPage/ProductList'
 export default function Navbar() {
-  console.log(products)
     const { Search } = Input;
     const suffix = (
         <AudioOutlined
