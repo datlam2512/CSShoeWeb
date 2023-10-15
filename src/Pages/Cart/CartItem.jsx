@@ -7,7 +7,7 @@ export const CartItem = (props) => {
   const { id, imgUrl, name, price } = props.data;
   const { cartItems, addToCart, removeFromCart, updateCartItemcount } = useContext(ShopContext)
 
-  let priceOfItem = price.toLocaleString();
+  const priceOfItem = (cartItems[id] * price).toLocaleString();
   return (
     <div className='cart-item'>
       <div className='cart-item-img'>
