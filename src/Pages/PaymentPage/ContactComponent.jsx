@@ -42,8 +42,8 @@ export default function ContactComponent() {
                         <select id="city" value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                             <option value="">Select a City</option>
                             {vietnamCities.map((city, index) => (
-                                <option key={index} value={city}>
-                                    {city}
+                                <option key={index} value={city.city}>
+                                    {city.city}
                                 </option>
                             ))}
                         </select>

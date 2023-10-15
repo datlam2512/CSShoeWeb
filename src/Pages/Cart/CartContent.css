@@ -145,6 +145,7 @@
 .countHandler button,
 .countHandler input {
     width: 30px;
+    height: 100%;
     border: 0;
     text-align: center;
 

@@ -1,56 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ProductPaymentComponent.css'
+import products from '../ShopPage/ProductList'
+import { ShopContext } from '../../context/shop-context'
+import PaymentItem from './PaymentItem'
+
 export default function ProductPaymentComponent() {
+    const { cartItems, getTotalCartAmount } = useContext(ShopContext)
+    const totalAmount = getTotalCartAmount()
+
+    let subtotalPrice = totalAmount.toLocaleString();
+    const deli_cost = 20000;
+    let shipping = deli_cost.toLocaleString();
+    let totalPrice = subtotalPrice + shipping;
+
     return (
         <div className='product-infor'>
-            <div className='payment-item'>
-                <div className='payment-item-img'>
-                    <div className='item-img'>
-                        <img src='https://cdn.shopify.com/s/files/1/0279/2072/8204/products/IMG_20200405_130836_467_500x500.jpg?v=1586085085' />
-                    </div>
-                    <div className='item-amount'>
-                        <p>1</p>
-                    </div>
-                </div>
+            {products.map((product) => {
+                if (cartItems[product.id] !== 0) {
+                    return <PaymentItem data={product} />
+                }
+            })}
 
-                <div className='payment-item-infor'>
-                    <div className='item-infor'>
-                        <div className='item-name'>
-                            <p>Nike Air Force 1</p>
-                        </div>
-
-                    </div>
-                    <div className='item-price'>
-                        <p>
-                            2,700,000 VNĐ
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className='payment-item'>
-                <div className='payment-item-img'>
-                    <div className='item-img'>
-                        <img src='https://cdn.shopify.com/s/files/1/0279/2072/8204/products/IMG_20200405_130836_467_500x500.jpg?v=1586085085' />
-                    </div>
-                    <div className='item-amount'>
-                        <p>1</p>
-                    </div>
-                </div>
-
-                <div className='payment-item-infor'>
-                    <div className='item-infor' scope="row">
-                        <div className='item-name'>
-                            <p>Nike Air Force 1</p>
-                        </div>
-
-                    </div>
-                    <div className='item-price'>
-                        <p>
-                            2,700,000 VNĐ
-                        </p>
-                    </div>
-                </div>
-            </div>
 
             <div className='payment-cost'>
                 <div className='sub-cost'>
@@ -62,7 +32,7 @@ export default function ProductPaymentComponent() {
                         </div>
                         <div className='subtotal-cost'>
                             <p>
-                                2,700,000 VNĐ
+                            {subtotalPrice + " VNĐ"}
                             </p>
                         </div>
                     </div>
@@ -74,7 +44,7 @@ export default function ProductPaymentComponent() {
                         </div>
                         <div className='shipping-cost'>
                             <p>
-                                20,000 VNĐ
+                                {shipping + " VNĐ"}
                             </p>
                         </div>
                     </div>
@@ -82,12 +52,12 @@ export default function ProductPaymentComponent() {
                 <div className='total'>
                     <div className='total-title payment-title'>
                         <p>
-                            Total
+                            {}
                         </p>
                     </div>
                     <div className='total-cost'>
                         <p>
-                            2,720,000 VNĐ
+                        {totalPrice + " VNĐ"}
                         </p>
                     </div>
                 </div>
