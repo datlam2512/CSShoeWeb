@@ -29,7 +29,7 @@ export default function CartContent() {
         <div className='back-to-shopping'>
 
           <button onClick={() => navigate("/")}>
-            {"<<  "}
+            {"<  "}
             Continue Shopping </button>
         </div>
 
