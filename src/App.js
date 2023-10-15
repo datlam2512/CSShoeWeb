@@ -13,6 +13,8 @@ import { ShopContextProvider } from './context/shop-context';
 import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import PaymentPage from './Pages/PaymentPage';
+import SizeContent from './Pages/SizeGuidePage/SizeContent';
+
 function App() {
   return (
     <div className="App">
@@ -28,6 +30,7 @@ function App() {
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/payment' element={<PaymentPage/>}></Route>
+        <Route path='/sizeguide' element={<SizeContent/>}></Route>
       </Routes>
       <Footer />
     </ShopContextProvider>

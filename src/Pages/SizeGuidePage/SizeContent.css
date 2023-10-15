@@ -1,0 +1,16 @@
+.table-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content h1{
+    text-transform: uppercase;
+    font-family: Unica One,sans-serif;
+    font-size: 50px;
+}
+
+.table-container p{
+    font-family: Unica One,sans-serif;
+    font-size: 40px;
+}
