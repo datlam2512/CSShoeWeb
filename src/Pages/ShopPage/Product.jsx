@@ -16,7 +16,7 @@ export default function Product({ id, imgUrl, name, price }) {
                     <div className='product-img'>
                         <img src={imgUrl} alt='ShoesImg' />
                     </div>
-                    <div className='product-infor'>
+                    <div className='product-marketplace-infor'>
                         <div className='product-name'>
                             <p className='name'>{name}</p>
                         </div>

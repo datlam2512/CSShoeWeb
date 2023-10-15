@@ -11,7 +11,8 @@ export default function ProductPaymentComponent() {
     let subtotalPrice = totalAmount.toLocaleString();
     const deli_cost = 20000;
     let shipping = deli_cost.toLocaleString();
-    let totalPrice = subtotalPrice + shipping;
+    const totalPrice = totalAmount + deli_cost;
+    let total =totalPrice.toLocaleString();
 
     return (
         <div className='product-infor'>
@@ -52,12 +53,12 @@ export default function ProductPaymentComponent() {
                 <div className='total'>
                     <div className='total-title payment-title'>
                         <p>
-                            {}
+                            Total
                         </p>
                     </div>
                     <div className='total-cost'>
                         <p>
-                        {totalPrice + " VNĐ"}
+                        {total + " VNĐ"}
                         </p>
                     </div>
                 </div>

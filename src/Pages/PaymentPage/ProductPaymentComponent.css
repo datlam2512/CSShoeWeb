@@ -1,5 +1,7 @@
 .product-infor {
     flex: 40%;
+    padding-top: 56px;
+    padding-left: 44px;
 }
 
 .consignee-name {
@@ -12,10 +14,6 @@
     width: 48%;
 }
 
-.product-infor {
-    padding-top: 56px;
-    padding-left: 44px;
-}
 
 .payment-item {
     display: flex;
