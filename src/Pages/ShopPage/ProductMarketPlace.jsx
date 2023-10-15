@@ -32,7 +32,7 @@ export default function ProductMarketPlace() {
     };
 
     useEffect(() => {
-        window.scrollTo(0, 0); 
+        window.scrollTo(0, 0);
     }, [currentPage]);
 
     return (
@@ -86,21 +86,21 @@ export default function ProductMarketPlace() {
                             imgUrl={product.imgUrl}
                             name={product.name}
                             price={product.price.toLocaleString() + " VNĐ"}
-                            addToCart={addToCart} 
-                            cartQuantity={cartItems[product.id]} 
+                            addToCart={addToCart}
+                            cartQuantity={cartItems[product.id]}
                         />
                     ))}
             </div>
 
             <div className='pagination'>
+                
                 <Pagination
-                    simple
+                    size="default"
                     defaultCurrent={1}
                     total={products.length}
                     pageSize={limit}
                     current={currentPage}
-                    onChange={handlePageChange}
-                />
+                    onChange={handlePageChange} />
             </div>
 
 

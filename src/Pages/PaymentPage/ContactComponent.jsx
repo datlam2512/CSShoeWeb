@@ -30,15 +30,14 @@ export default function ContactComponent() {
     const handlePhoneChange = (e) => {
         const value = e.target.value;
         setPhone(value);
-        setPhoneValid(/^\d{11,12}$/.test(value));
+        setPhoneValid(/^\+\d{11,12}$/.test(value));
     };
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const hasError = validateFields();
         if (!hasError) {
-            // Submit the form or perform any further action
-            // Here, you can navigate to the next step or submit data.
+
         }
     };
 
@@ -50,7 +49,7 @@ export default function ContactComponent() {
             hasError = true;
         }
 
-        if (phone === "" || !/^\d{11,12}$/.test(phone)) {
+        if (phone === "" || !/^\+\d{11,12}$/.test(phone)) {
             setPhoneValid(false);
             hasError = true;
         }
@@ -60,22 +59,18 @@ export default function ContactComponent() {
             hasError = true;
         }
 
-        if (firstName === "") {
+        if (firstName === "" || !/^[a-zA-Z]+$/i.test(firstName)) {
             setFirstNameEmpty(true);
             hasError = true;
         }
 
-        if (lastName === "") {
+        if (lastName === "" || !/^[a-zA-Z]+$/i.test(lastName)) {
             setLastNameEmpty(true);
             hasError = true;
         }
 
-        if (district === "") {
+        if (district === "" || apartment === "") {
             setDistrictEmpty(true);
-            hasError = true;
-        }
-
-        if (apartment === "") {
             setApartmentEmpty(true);
             hasError = true;
         }
