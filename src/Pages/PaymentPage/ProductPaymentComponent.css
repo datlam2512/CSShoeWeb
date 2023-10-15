@@ -52,19 +52,20 @@
 .item-amount {
     position: absolute;
     top: -7px;
-    left: 57px;
+    left: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15px;
-    height: 15px;
-    background-color: #333;
+    width: 20px;
+    height: 20px;
+    background-color: #3e3e3ed0;
     border-radius: 50%;
 
 }
 
 .item-amount p {
     font-size: 10px;
+    font-weight: 600;
     color: #fff;
     margin: 0;
 
