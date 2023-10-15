@@ -3,10 +3,8 @@ import './CartContent.css'
 import products from '../ShopPage/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import { CartItem } from './CartItem'
-import ProductPaymentComponent from '../PaymentPage/ProductPaymentComponent'
 
 import { Link, useNavigate } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function CartContent() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext)

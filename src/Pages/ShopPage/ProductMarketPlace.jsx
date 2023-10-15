@@ -34,7 +34,7 @@ export default function ProductMarketPlace() {
     useEffect(() => {
         window.scrollTo(0, 0); // Scroll to the top
     }, [currentPage]);
-    
+
     return (
         <>
             <div className='sort'>
@@ -86,6 +86,8 @@ export default function ProductMarketPlace() {
                             imgUrl={product.imgUrl}
                             name={product.name}
                             price={product.price.toLocaleString() + " VNĐ"}
+                            addToCart={addToCart} // Pass addToCart as a prop
+                            cartQuantity={cartItems[product.id]} // Pass the cart quantity as a prop
                         />
                     ))}
             </div>

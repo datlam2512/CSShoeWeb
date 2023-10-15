@@ -4,7 +4,7 @@ import { faEye, faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Im
 import { ShopContext } from '../../context/shop-context';
 import { Link } from 'react-router-dom';
 
-export default function Product({ id, imgUrl, name, price }) {
+export default function Product({ id, imgUrl, name, price, addCart, cartQuantity }) {
 
     const { addToCart, cartItems } = useContext(ShopContext);
     const CartItemAmount = cartItems[id];
@@ -34,7 +34,10 @@ export default function Product({ id, imgUrl, name, price }) {
 
                     </div>
                     <div className='add-to-cart'>
-                        <button className='add-to-cart-btn' onClick={() => addToCart(id)}>
+                        <button
+                            className='add-to-cart-btn'
+                            onClick={() => addToCart(id, 1)} // Pass 1 as the quantity to addToCart
+                        >
                             <div className='item-icon'>
                                 <FontAwesomeIcon icon={faShoppingCart} />
                             </div>

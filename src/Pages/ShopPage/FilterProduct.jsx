@@ -41,6 +41,7 @@ export default function FilterProduct() {
                             type='text'
                             value={priceMin}
                             onChange={handlePriceMinChange}
+                            placeholder='min'
                         />
                         <span className='split'> - </span>
                         <input
@@ -48,6 +49,8 @@ export default function FilterProduct() {
                             type='text'
                             value={priceMax}
                             onChange={handlePriceMaxChange}
+                            placeholder='max'
+
                         />
                     </div>
                 )}
