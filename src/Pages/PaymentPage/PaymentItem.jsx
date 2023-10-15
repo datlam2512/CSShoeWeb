@@ -6,7 +6,7 @@ export default function PaymentItem(props) {
     const { id, imgUrl, name, price } = props.data;
     const { cartItems, addToCart, removeFromCart, updateCartItemcount } = useContext(ShopContext)
 
-    let priceOfItem = price.toLocaleString();
+    const priceOfItem = (cartItems[id] * price).toLocaleString();
 
     return (
         <div className='payment-item'>
