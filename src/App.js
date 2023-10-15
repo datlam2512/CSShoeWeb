@@ -12,6 +12,7 @@ import ForgotPassword from './Pages/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
 import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
+import PaymentPage from './Pages/PaymentPage';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/payment' element={<PaymentPage/>}></Route>
       </Routes>
       <Footer />
     </ShopContextProvider>

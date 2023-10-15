@@ -80,7 +80,9 @@ export default function ProductDetailComponent() {
                                 <button class="add-to-cart-button" type="submit">ADD TO CART</button>
                             </div>
                             <div className='buyNowBtn'>
-                                <button class="buy-button" type="submit">BUY NOW</button>
+                                <Link to='/payment'>
+                                    <button class="buy-button" type="submit">BUY NOW</button>
+                                </Link>
                             </div>
                         </div>
 

@@ -3,7 +3,7 @@ import './CartContent.css'
 import products from '../ShopPage/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import { CartItem } from './CartItem'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function CartContent() {
@@ -41,7 +41,9 @@ export default function CartContent() {
 
           <div className='nav-btn'>
             <div className='check-out-btn'>
-              <button> CHECK OUT </button>
+              <Link to="/payment">
+                <button> CHECK OUT </button>
+              </Link>
             </div>
           </div>
         </div>

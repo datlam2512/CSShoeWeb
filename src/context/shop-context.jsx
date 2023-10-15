@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useState } from 'react'
-import ProductMarketPlace from '../Pages/ShopPage/ProductMarketPlace';
 import products from '../Pages/ShopPage/ProductList';
 
 
