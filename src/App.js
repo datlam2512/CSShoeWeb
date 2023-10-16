@@ -31,7 +31,7 @@ function App() {
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/payment' element={<PaymentPage/>}></Route>
         <Route path='/sizeguide' element={<SizeContent/>}></Route>
-        <Route path="/search/:query" element={SearchResult} />
+        <Route path="/search/:query" element={<SearchResult/>} />   
       </Routes>
       <Footer />
     </ShopContextProvider>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input, Space } from 'antd';
+import SearchResult from './SearchResult';
 
 
 const { Search } = Input;
@@ -24,6 +25,7 @@ export const SearchBar = () => {
         }}
       />
     </Space>
+    
   );
 }
 

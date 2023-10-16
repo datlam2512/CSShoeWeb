@@ -5,7 +5,7 @@ import products from './ShopPage/ProductList';
 function SearchResult() {
   const { query } = useParams();
   const results = products.filter(product =>
-    product.title.toLowerCase().includes(query.toLowerCase())
+    product.name.toLowerCase().includes(query.toLowerCase())
   );
   
   // const [results, setResults] = useState([]);
@@ -32,6 +32,7 @@ function SearchResult() {
         <div key={product.id}>
           <h2>{product.name}</h2>
           <p>{product.brand}</p>
+          <img src={product.imgUrl} />
         </div>
       ))}
     </div>
