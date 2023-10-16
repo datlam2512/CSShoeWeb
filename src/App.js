@@ -21,7 +21,10 @@ function App() {
   return (
     <div className="App">
     <ShopContextProvider>
+      <div className='header'>
      <Navshoes/>
+     </div>
+     <div>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
@@ -36,7 +39,10 @@ function App() {
         <Route path="/search/:query" element={<SearchResult/>} />  
         <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
       </Routes>
+      </div>
+      <div>
       <Footer />
+      </div>
     </ShopContextProvider>
     </div>
   );
