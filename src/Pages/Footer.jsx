@@ -13,37 +13,31 @@ export default function () {
           <div className='container'>
             <div className='row'>
                <div className='column col-2'>
-                <nav>
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
                         <li><a href=''>Account</a></li>
                         <li><a href=''>Search</a></li>
                     </ul>
-                </nav>
                </div>
                <div className='column col-4 service'>
                 <h1>Our Service</h1>
-                <nav>
                     <ul>
                         <li><a href=''>Q&A</a></li>
                         <li><a href=''>Shipment</a></li>
                         <li><a href=''>Return Policy</a></li>
                         <li><a href=''>Payment detail</a></li>
                     </ul>
-                </nav>
                </div>
                <div className='column col-4'>
                <h1>CS Shoes</h1>
-                <nav>
                     <ul>
                         <li><a href='/about'>About Us</a></li>
                         <li><a href='/privacy-policy'>Privacy Policy</a></li>
                         <li><a href=''>Terms and Conditions</a></li>
                         <li><a href=''>Contact</a></li>
                     </ul>
-                </nav>
                </div>
-               <div className='column col-2 Contact'>
+               <div className='column col-2 Contact-Footer'>
                 <p>Folllow us</p>
                 <a href=''><FontAwesomeIcon icon={faInstagram} /></a>
                 <a href=''><FontAwesomeIcon icon={faTiktok} /></a>      

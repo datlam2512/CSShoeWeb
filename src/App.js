@@ -14,13 +14,17 @@ import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import PaymentPage from './Pages/PaymentPage';
 import SizeContent from './Pages/SizeGuidePage/SizeContent';
+import Navshoes from './Pages/Navshoes';
 import SearchResult from './Pages/SearchResult';
 import PrivacyPolicy from './FooterNav/PrivacyPolicy';
 function App() {
   return (
     <div className="App">
     <ShopContextProvider>
-      <Navbar />
+      <div className='header'>
+     <Navshoes/>
+     </div>
+     <div>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
@@ -35,7 +39,10 @@ function App() {
         <Route path="/search/:query" element={<SearchResult/>} />  
         <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
       </Routes>
+      </div>
+      <div>
       <Footer />
+      </div>
     </ShopContextProvider>
     </div>
   );
