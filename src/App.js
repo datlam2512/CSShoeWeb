@@ -15,6 +15,7 @@ import Contact from './Pages/Contact';
 import PaymentPage from './Pages/PaymentPage';
 import SizeContent from './Pages/SizeGuidePage/SizeContent';
 import SearchResult from './Pages/SearchResult';
+import PrivacyPolicy from './FooterNav/PrivacyPolicy';
 function App() {
   return (
     <div className="App">
@@ -31,7 +32,8 @@ function App() {
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/payment' element={<PaymentPage/>}></Route>
         <Route path='/sizeguide' element={<SizeContent/>}></Route>
-        <Route path="/search/:query" element={<SearchResult/>} />   
+        <Route path="/search/:query" element={<SearchResult/>} />  
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
       </Routes>
       <Footer />
     </ShopContextProvider>
