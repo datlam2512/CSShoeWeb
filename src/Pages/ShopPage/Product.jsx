@@ -1,9 +1,11 @@
+
 import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Import cart icon
+import { faEye, faShoppingCart, faX } from "@fortawesome/free-solid-svg-icons"; // Import cart icon
 import { ShopContext } from '../../context/shop-context';
 import { Link } from 'react-router-dom';
 import { ConfigProvider, InputNumber } from 'antd';
+import Swal from 'sweetalert2';
 
 export default function Product({ id, imgUrl, name, price }) {
     const { addToCart, cartItems } = useContext(ShopContext);
@@ -16,11 +18,16 @@ export default function Product({ id, imgUrl, name, price }) {
 
     const closePopup = () => {
         setIsPopupOpen(false);
+        setSelectedQuantity(1);
     };
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     const showAddToCartAlert = () => {
-        window.alert('Added to cart successfully');
+        Swal.fire({
+            title: 'Added To Cart Successfully',
+            icon: 'success',
+            bordered: "none"
+        });
     };
 
     return (
@@ -65,7 +72,7 @@ export default function Product({ id, imgUrl, name, price }) {
             {isPopupOpen && (
                 <div className='popup'>
                     <button className='close-popup' onClick={closePopup}>
-                        x
+                        <FontAwesomeIcon icon={faX} />
                     </button>
                     <div className='popup-infor'>
                         <div className='popup-img'>
@@ -106,6 +113,7 @@ export default function Product({ id, imgUrl, name, price }) {
                                     <ConfigProvider
                                         theme={{
                                             token: {
+                                                colorBgContainer: "#fff",
                                                 fontFamily: 'Karla, sans-serif',
                                                 fontSize: 16,
                                             },
@@ -115,8 +123,9 @@ export default function Product({ id, imgUrl, name, price }) {
                                                     hoverBorderColor: 'black',
                                                     controlWidth: '98%',
                                                     controlHeight: '48',
-                                                    handleBorderColor: 'black',
+                                                    handleBorderColor: 'none',
                                                     handleFontSize: 16,
+                                                    handleBg: "#e9e9e9"
                                                 },
                                             },
                                         }}
@@ -133,7 +142,6 @@ export default function Product({ id, imgUrl, name, price }) {
                             </div>
                         </form>
                     </div>
-
 
                     <div className='purchase-action'>
                         <div className='addCartBtn'>
