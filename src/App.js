@@ -14,7 +14,7 @@ import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import PaymentPage from './Pages/PaymentPage';
 import SizeContent from './Pages/SizeGuidePage/SizeContent';
-
+import SearchResult from './Pages/SearchResult';
 function App() {
   return (
     <div className="App">
@@ -31,6 +31,7 @@ function App() {
         <Route path='/contact' element={<Contact/>}></Route>
         <Route path='/payment' element={<PaymentPage/>}></Route>
         <Route path='/sizeguide' element={<SizeContent/>}></Route>
+        <Route path="/search/:query" element={SearchResult} />
       </Routes>
       <Footer />
     </ShopContextProvider>

@@ -3,17 +3,8 @@ import { Link } from "react-router-dom";
 import { AudioOutlined } from '@ant-design/icons';
 import "./HomePages/Header.css";
 import { Button, Dropdown , Input, Space } from "antd";
+import SearchBar from "./SearchBar";
 export default function Navbar() {
-    const { Search } = Input;
-    const suffix = (
-        <AudioOutlined
-          style={{
-            fontSize: 16,
-            color: '#1677ff',
-          }}
-        />
-      );
-      const onSearch = (value, _e, info) => console.log(info?.source, value);
   const items = [
     {
       key: "1",
@@ -80,15 +71,7 @@ export default function Navbar() {
           </div>
           <div className="col-3 OtherHead">
           <Space direction="vertical">
-    <Search
-      placeholder="Search"
-      onSearch={onSearch}
-      style={{
-        width: 200,
-        marginTop:'25px',
-        marginRight:'15px',
-      }}
-    />
+          <SearchBar />
   </Space>
             <button className="shopping-cart" type="submit">
               <Link to="/CartContent">
