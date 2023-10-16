@@ -1,13 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faShoppingCart } from "@fortawesome/free-solid-svg-icons"; // Import cart icon
 import { ShopContext } from '../../context/shop-context';
 import { Link } from 'react-router-dom';
+import { ConfigProvider, InputNumber } from 'antd';
 
-export default function Product({ id, imgUrl, name, price, addCart, cartQuantity }) {
-
+export default function Product({ id, imgUrl, name, price }) {
     const { addToCart, cartItems } = useContext(ShopContext);
     const CartItemAmount = cartItems[id];
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+    const openPopup = () => {
+        setIsPopupOpen(true);
+    };
+
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
+    const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+    const showAddToCartAlert = () => {
+        window.alert('Added to cart successfully');
+    };
 
     return (
         <>
@@ -25,18 +39,18 @@ export default function Product({ id, imgUrl, name, price, addCart, cartQuantity
                         </div>
                     </div>
                     <div className='view-product'>
-
                         <Link to={`/product-detail/${id}`}>
                             <button className='view-btn'>
                                 <FontAwesomeIcon icon={faEye} className='eye-view' />
                             </button>
                         </Link>
-
                     </div>
                     <div className='add-to-cart'>
                         <button
                             className='add-to-cart-btn'
-                            onClick={() => addToCart(id, 1)} // Pass 1 as the quantity to addToCart
+                            onClick={() => {
+                                openPopup();
+                            }}
                         >
                             <div className='item-icon'>
                                 <FontAwesomeIcon icon={faShoppingCart} />
@@ -48,6 +62,98 @@ export default function Product({ id, imgUrl, name, price, addCart, cartQuantity
                     </div>
                 </div>
             </div>
+            {isPopupOpen && (
+                <div className='popup'>
+                    <button className='close-popup' onClick={closePopup}>
+                        x
+                    </button>
+                    <div className='popup-infor'>
+                        <div className='popup-img'>
+                            <img src={imgUrl} alt={name} />
+                        </div>
+                        <div className='popup-name'>
+                            <h2>{name}</h2>
+                        </div>
+                        <form className='popup-size-quantity'>
+                            <div className='select-size'>
+                                <label htmlFor='lable-size' style={{ fontFamily: 'Karla, sans-serif' }}>
+                                    Size:
+                                </label>
+                                <br />
+                                <select id='option-size' style={{ fontFamily: 'Karla, sans-serif' }} name='lable-size'>
+                                    <option value='33'>33</option>
+                                    <option value='34'>34</option>
+                                    <option value='35'>35</option>
+                                    <option value='36'>36</option>
+                                    <option value='37'>37</option>
+                                    <option value='38'>38</option>
+                                    <option value='39'>39</option>
+                                    <option value='40'>40</option>
+                                    <option value='41'>41</option>
+                                    <option value='42'>42</option>
+                                    <option value='43'>43</option>
+                                    <option value='44'>44</option>
+                                    <option value='45'>45</option>
+                                    <option value='46'>46</option>
+                                </select>
+                            </div>
+                            <div className='line'></div>
+                            <div className='select-quantity'>
+                                <label htmlFor='quantity' style={{ fontFamily: 'Karla, sans-serif' }}>
+                                    Quantity:
+                                </label>
+                                <div className='control-quantity'>
+                                    <ConfigProvider
+                                        theme={{
+                                            token: {
+                                                fontFamily: 'Karla, sans-serif',
+                                                fontSize: 16,
+                                            },
+                                            components: {
+                                                InputNumber: {
+                                                    activeBorderColor: 'black',
+                                                    hoverBorderColor: 'black',
+                                                    controlWidth: '98%',
+                                                    controlHeight: '48',
+                                                    handleBorderColor: 'black',
+                                                    handleFontSize: 16,
+                                                },
+                                            },
+                                        }}
+                                    >
+                                        <InputNumber
+                                            bordered={true}
+                                            min={1}
+                                            max={99}
+                                            value={selectedQuantity}
+                                            onChange={setSelectedQuantity}
+                                        />
+                                    </ConfigProvider>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div className='purchase-action'>
+                        <div className='addCartBtn'>
+                            <button
+                                className='popup-add-to-cart'
+                                type='submit'
+                                onClick={() => {
+                                    addToCart(id, selectedQuantity);
+                                    showAddToCartAlert();
+                                }}
+                            >
+                                ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+            )
+            }
         </>
     );
 }
