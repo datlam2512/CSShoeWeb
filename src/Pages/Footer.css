@@ -17,11 +17,8 @@
 }
 .First-Color{
     background-color: black;
-    padding: 15px 0;
-}
-.Second-color{
-    background-color: #262626;
-    padding: 15px 0;
+    padding: 0 0;
+    padding-bottom: 15px;
 }
 .Second-color h1{
    color: #262626 ;
@@ -33,9 +30,18 @@
     margin: 0 15px;
     color: #fff;
 }
-.Contact p{
+.Contact-Footer p{
     margin-left: 15px;
+}
+.Contact-Footer{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .Footer li{
     font-family: Unica One,sans-serif;
+}
+.Contact-Footer a{
+    color: #fff;
 }

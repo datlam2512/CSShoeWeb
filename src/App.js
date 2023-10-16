@@ -14,12 +14,13 @@ import AboutUs from './Pages/AboutUs';
 import Contact from './Pages/Contact';
 import PaymentPage from './Pages/PaymentPage';
 import SizeContent from './Pages/SizeGuidePage/SizeContent';
+import Navshoes from './Pages/Navshoes';
 
 function App() {
   return (
     <div className="App">
     <ShopContextProvider>
-      <Navbar />
+     <Navshoes/>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
