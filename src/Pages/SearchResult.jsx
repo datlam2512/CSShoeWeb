@@ -26,16 +26,23 @@ function SearchResult() {
     //     </div>
     //   ))}
     // </div>
+  
     <div>
       <h1>Products:</h1>
-      {results.map(product => (
+      {results.length > 0 ? (
+        results.map(product => (
         <div key={product.id}>
           <h2>{product.name}</h2>
           <p>{product.brand}</p>
           <img src={product.imgUrl} />
         </div>
-      ))}
+      ))
+      ) : (
+        <p style={{fontFamily:'Unica One,sans-serif',
+                    fontSize:'50px'}}>No products found for "{query}"</p>
+      )}
     </div>
+    
   );
 }
 
