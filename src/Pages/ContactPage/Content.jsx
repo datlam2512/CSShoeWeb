@@ -10,7 +10,7 @@ export default function () {
       };
   return (
     <div className='Contact'>
-        <h1>Contact</h1>
+        <h1 className='Contact-h1'>Contact</h1>
         <div className='form-contact' >
             <p>Don’t hesitate to contact with us, we are always here to listen.....</p>
             <div className='contact-component'>
