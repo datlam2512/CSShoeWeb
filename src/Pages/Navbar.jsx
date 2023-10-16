@@ -39,9 +39,11 @@ export default function Navbar() {
     <div className="Navbar">
       <div className="Container">
         <div className="row">
+          <Link to="/">
           <div className="col-2 Logo">
             <img src="/Img/Logo.png" />
           </div>
+          </Link>
           <div className="col-7 Navigation">
             <nav>
               <ul className="menu">
