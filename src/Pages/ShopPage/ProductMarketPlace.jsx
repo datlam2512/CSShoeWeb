@@ -86,8 +86,7 @@ export default function ProductMarketPlace() {
                             imgUrl={product.imgUrl}
                             name={product.name}
                             price={product.price.toLocaleString() + " VNĐ"}
-                            addToCart={addToCart}
-                            cartQuantity={cartItems[product.id]}
+                        
                         />
                     ))}
             </div>

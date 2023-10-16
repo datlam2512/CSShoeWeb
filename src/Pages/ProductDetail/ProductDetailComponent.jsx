@@ -97,8 +97,8 @@ export default function ProductDetailComponent() {
                                     className='add-to-cart-button'
                                     type='submit'
                                     onClick={() => {
-                                        addToCart(shoes.id, selectedQuantity); 
-                                        showAddToCartAlert(); 
+                                        addToCart(shoes.id, selectedQuantity);
+                                        showAddToCartAlert();
                                     }}
                                 >
                                     ADD TO CART
