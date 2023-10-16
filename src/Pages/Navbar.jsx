@@ -42,16 +42,11 @@ export default function Navbar() {
                   <li>
                     <Link to="/">Home</Link>
                   </li>
-                  <Dropdown
-                    menu={{
-                      items,
-                    }}
-                    arrow
-                  >
+                
                    <li>
                     <Link to="">Shop</Link>
                   </li>
-                  </Dropdown>
+      
                   <li>
                     <Link to="/createyourown">Create Your Own</Link>
                   </li>

@@ -1,7 +1,72 @@
-.navmenu{
+.Navbar{
+  display: flex;
+  flex-direction: column;
   background-color: #fcf7f7;
+  margin: 0 7%;
 }
-.iconmobile{
-    color: #000;
-    font-size: 100%;
+.Navbarheader img{
+ width: 9%;
+ margin-top: 15px;
+}
+.menu{
+  display: flex;
+  padding: 15px 0;
+  margin-top: 15px;
+  width: 100%;
+}
+.menu li{
+  margin: 0 15px;
+}
+.link-nav{
+  color: #000;
+}
+.Navbarbottom{
+ display: flex;
+}
+.Login{
+ margin-left: 2%;
+}
+.Navbarheader{
+  display: flex;
+  flex-direction: row;
+}
+.search-cart-nav{
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+.searchtxt{
+  margin-top: 1%;
+  margin-right: 1%;
+}
+.container-search{
+  margin-top: 3%;
+  margin-right: 3%;
+  background-color: #fff;
+  height: 30px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.8s;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+.container-search:hover .input-search{
+  width: 200px;
+  cursor: pointer;
+}
+.container-search .input-search{
+  background:transparent;
+  border: none;
+  outline: none;
+  width: 0px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
+.link-nav:hover{
+  color: gray;
+}
+.link-nav{
+  text-transform: uppercase;
 }

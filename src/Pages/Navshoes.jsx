@@ -1,22 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Navigationshoe.css'
-import { NavItem,Navbar,Icon } from 'react-materialize';
-import { AudioOutlined } from '@ant-design/icons';
-import { Button, Dropdown , Input, Space } from "antd";
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navigationshoe.css";
+import { NavItem, Navbar, Icon, Tabs, Tab } from "react-materialize";
+import { AudioOutlined } from "@ant-design/icons";
+import { Button, Dropdown, Input, Space } from "antd";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function () {
-    const { Search } = Input;
-    const suffix = (
-        <AudioOutlined
-          style={{
-            fontSize: 16,
-            color: '#1677ff',
-          }}
-        />
-      );
-      const onSearch = (value, _e, info) => console.log(info?.source, value);
+  const { Search } = Input;
+  const onSearch = (value, _e, info) => console.log(info?.source, value);
   const items = [
     {
       key: "1",
@@ -37,34 +29,99 @@ export default function () {
       ),
     },
   ];
-  
   return (
-        <div className="Navbar">
-     <Navbar className='navmenu'
-  alignLinks="right"
-  brand={   <img src="/Img/Logo.png" />}
-  id="mobile-nav"
-  menuIcon={<FontAwesomeIcon className='iconmobile' icon={faBars} />}
-  options={{
-    draggable: true,
-    edge: 'left',
-    inDuration: 250,
-    onCloseEnd: null,
-    onCloseStart: null,
-    onOpenEnd: null,
-    onOpenStart: null,
-    outDuration: 200,
-    preventScrolling: true
-  }}
->
+    <div className="Navbar">
+      <div className="Navbarheader">
+        <img src="/Img/logo1.png" />
+        <div className="search-cart-nav">
+         <div className="container-search">
+         <input className="input-search" type="text" placeholder="seach"/>
+        <i><FontAwesomeIcon icon={faSearch} /></i>
+          </div>
+          <button className="shopping-cart" type="submit">
+            <Link to="/CartContent">
+              <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+            </Link>
+          </button>
+          <button className="Login" type="submit">
+          {" "}
+          <Link to="/Login">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+          </Link>
+        </button>
+        </div>
+      </div>
+      <div className="Navbarbottom">
+        <ul className="menu">
+          <li>
+            <Link
+              className="link-nav"
+              to="/"
+              style={{ textDecoration: "none" }}
+            >
+              Home
+            </Link>
+          </li>
 
-  <Link to="/"  style={{ textDecoration: "none", color:'black' }}>Home</Link>
-  <Link to=""  style={{ textDecoration: "none",color:'black' }}>Shop</Link>
-  <Link to="/createyourown"  style={{ textDecoration: "none",color:'black' }}>Create Your Own</Link>
-  <Link to="/about"  style={{ textDecoration: "none",color:'black' }}>About Us</Link>
-  <Link to="/contact"  style={{ textDecoration: "none",color:'black' }}>Contact</Link>
-  <Link to="/sizeguide"  style={{ textDecoration: "none",color:'black' }}>Size Guide</Link>
-</Navbar>
+          <li>
+            <Space direction="vertical">
+              <Space wrap>
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                  placement="bottom"
+                >
+                   <Link
+              className="link-nav"
+              to="/"
+              style={{ textDecoration: "none" }}
+            >
+              Shop
+            </Link>
+                </Dropdown>
+              </Space>
+            </Space>
+          </li>
+
+          <li>
+            <Link
+              className="link-nav"
+              to="/createyourown"
+              style={{ textDecoration: "none" }}
+            >
+              Create Your Own
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link-nav"
+              to="/about"
+              style={{ textDecoration: "none" }}
+            >
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link-nav"
+              to="/contact"
+              style={{ textDecoration: "none" }}
+            >
+              Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="link-nav"
+              to="/sizeguide"
+              style={{ textDecoration: "none" }}
+            >
+              Size Guide
+            </Link>
+          </li>
+        </ul>   
+      </div>
     </div>
-  )
+  );
 }

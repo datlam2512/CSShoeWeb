@@ -55,3 +55,11 @@
 .contact-button:hover{
     background-color: #bbb8b8;
 }
+.contact-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-contact{
+    width: 100%;
+}

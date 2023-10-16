@@ -20,7 +20,7 @@ export default function () {
     name="basic"
    
     style={{
-      maxWidth: 700,
+      maxWidth: 800,
     }}
     initialValues={{
       remember: true,
