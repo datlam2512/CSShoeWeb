@@ -201,3 +201,11 @@
 .item-name a:hover {
     color: #007bff;
 }
+
+.item-size {
+    display: flex;
+}
+
+.size-value {
+    padding-left: 7px;
+}

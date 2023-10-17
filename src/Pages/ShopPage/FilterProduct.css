@@ -17,6 +17,7 @@
     font-size: 14px;
     font-weight: 700;
     font-family: Karla, sans-serif;
+    background-color: #fff;
 }
 
 .price-range {
@@ -40,6 +41,8 @@
 }
 
 .split {
+    display: flex;
+    align-items: center;
     padding: 0 10px;
 }
 

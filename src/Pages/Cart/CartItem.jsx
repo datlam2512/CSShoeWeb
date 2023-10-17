@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const CartItem = (props) => {
   const { id, imgUrl, name, price } = props.data;
-  const { cartItems, addToCart, removeFromCart, updateCartItemcount } = useContext(ShopContext)
+  const { cartItems, addToCart, removeFromCart, updateCartItemcount, selectedSize } = useContext(ShopContext)
 
   const priceOfItem = (cartItems[id] * price).toLocaleString();
   return (
@@ -16,9 +16,12 @@ export const CartItem = (props) => {
       </div>
       <div className='cart-item-description'>
         <div className='cart-item-name'>
-          <h1 className='item-name'>
+          <div className='item-name'>
             <Link to={`/product-detail/${id}`}>{name}</Link>
-          </h1>
+          </div>
+          <div className='item-size'>
+            Size: <p className='size-value'>{selectedSize}</p>
+          </div>
         </div>
       </div>
 

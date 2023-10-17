@@ -4,9 +4,10 @@ import { ConfigProvider, Image, InputNumber } from 'antd';
 import { Link, useParams } from 'react-router-dom';
 import products from '../ShopPage/ProductList';
 import { ShopContext } from '../../context/shop-context';
+import Swal from 'sweetalert2';
 
 export default function ProductDetailComponent() {
-    const { addToCart, cartItems } = useContext(ShopContext);
+    const { addToCart, cartItems, selectSize, selectedSize } = useContext(ShopContext);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
 
     const shoesName = useParams();
@@ -15,7 +16,11 @@ export default function ProductDetailComponent() {
     });
 
     const showAddToCartAlert = () => {
-        window.alert('Added to cart successfully');
+        Swal.fire({
+            title: 'Added To Cart Successfully',
+            icon: 'success',
+            bordered: "none"
+        });
     };
 
     return (
@@ -38,7 +43,13 @@ export default function ProductDetailComponent() {
                                     Size:
                                 </label>
                                 <br />
-                                <select id='size' style={{ fontFamily: 'Karla, sans-serif' }} name='size'>
+                                <select id='size'
+                                    style={{ fontFamily: 'Karla, sans-serif' }}
+                                    name='size'
+                                    onChange={(e) => {
+                                        selectSize(e.target.value);
+                                    }}
+                                >
                                     <option value='33'>33</option>
                                     <option value='34'>34</option>
                                     <option value='35'>35</option>

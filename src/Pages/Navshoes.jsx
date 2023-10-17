@@ -13,19 +13,19 @@ export default function () {
     {
       key: "1",
       label: (
-        <Link to={'/nike'}  style={{ textDecoration: "none" }}>Nike</Link>
+        <Link to={'/nike'} style={{ textDecoration: "none" }}>Nike</Link>
       ),
     },
     {
       key: "2",
       label: (
-        <Link to={'/adidas'}  style={{ textDecoration: "none" }}>Adidas</Link>
+        <Link to={'/adidas'} style={{ textDecoration: "none" }}>Adidas</Link>
       ),
     },
     {
       key: "3",
       label: (
-        <Link to={'/vans'}  style={{ textDecoration: "none" }}>Vans</Link>
+        <Link to={'/vans'} style={{ textDecoration: "none" }}>Vans</Link>
       ),
     },
   ];
@@ -34,9 +34,9 @@ export default function () {
       <div className="Navbarheader">
         <img src="/Img/logo1.png" />
         <div className="search-cart-nav">
-         <div className="container-search">
-         <input className="input-search" type="text" placeholder="seach"/>
-        <i><FontAwesomeIcon icon={faSearch} /></i>
+          <div className="container-search">
+            <input className="input-search" type="text" placeholder="seach" />
+            <i><FontAwesomeIcon icon={faSearch} /></i>
           </div>
           <button className="shopping-cart" type="submit">
             <Link to="/CartContent">
@@ -44,11 +44,11 @@ export default function () {
             </Link>
           </button>
           <button className="Login" type="submit">
-          {" "}
-          <Link to="/Login">
-            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-          </Link>
-        </button>
+            {" "}
+            <Link to="/Login">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+            </Link>
+          </button>
         </div>
       </div>
       <div className="Navbarbottom">
@@ -72,13 +72,13 @@ export default function () {
                   }}
                   placement="bottom"
                 >
-                   <Link
-              className="link-nav"
-              to="/"
-              style={{ textDecoration: "none" }}
-            >
-              Shop
-            </Link>
+                  <Link
+                    className="link-nav"
+                    to="/"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Shop
+                  </Link>
                 </Dropdown>
               </Space>
             </Space>
@@ -120,7 +120,7 @@ export default function () {
               Size Guide
             </Link>
           </li>
-        </ul>   
+        </ul>
       </div>
     </div>
   );

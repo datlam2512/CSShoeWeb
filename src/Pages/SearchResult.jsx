@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import './SearchResult.css'
 import { Link, useParams } from 'react-router-dom';
 import products from './ShopPage/ProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
