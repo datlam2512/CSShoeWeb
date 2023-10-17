@@ -11,7 +11,7 @@
 .menu{
   display: flex;
   padding: 15px 0;
-  margin-top: 15px;
+  
   width: 100%;
 }
 .menu li{
