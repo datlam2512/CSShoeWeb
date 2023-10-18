@@ -23,7 +23,7 @@ import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
 import CreateYourOwnPage from './Pages/CreateYourOwnPage';
-
+import CreateAccountpage from './Pages/CreateAccountpage';
 function App() {
   return (
     <div className="App">
