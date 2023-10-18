@@ -1,13 +1,13 @@
 const productsadias = [
     {
-        id: 1,
+        id:55,
         imgUrl: 'https://cdn.shopify.com/s/files/1/0279/2072/8204/products/il_fullxfull.2093623708_nc0b_500x500.jpg?v=1579132884',
         name: 'ADIDAS STAN SMITH - DONUT DRIP - GOLD',
         price: 2500000,
         brand: "adidas"
     },
     {
-        id: 2,
+        id:56,
         imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_67_8319515594_720x.png?v=1579300211',
         name: 'ADIDAS SUPERSTAR - PURPLE GLITTER',
         price: 2800000,
