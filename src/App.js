@@ -17,6 +17,12 @@ import SizeContent from './Pages/SizeGuidePage/SizeContent';
 import Navshoes from './Pages/Navshoes';
 import SearchResult from './Pages/SearchResult';
 import PrivacyPolicy from './FooterNav/PrivacyPolicy';
+import ReturnPolicy from './FooterNav/ReturnPolicy';
+import TermAndCondition from './FooterNav/Term&Condition';
+import Shipment from './FooterNav/Shipment';
+import PaymentDetail from './FooterNav/PaymentDetail';
+import QuestionAnwser from './FooterNav/QuestionAnwser';
+
 function App() {
   return (
     <div className="App">
@@ -38,6 +44,12 @@ function App() {
         <Route path='/sizeguide' element={<SizeContent/>}></Route>
         <Route path="/search/:query" element={<SearchResult/>} />  
         <Route path='/privacy-policy' element={<PrivacyPolicy/>} />
+        <Route path='/shipment' element={<Shipment/>} />
+        <Route path='/return-policy' element={<ReturnPolicy/>} />
+        <Route path='/payment-detail' element={<PaymentDetail/>} />
+        <Route path='/term-and-conditions' element={<TermAndCondition/>} />
+        <Route path='/question-anwser' element={<QuestionAnwser/>} />
+       
       </Routes>
       </div>
       <div>

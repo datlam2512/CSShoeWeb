@@ -2,11 +2,10 @@ import React from 'react'
 
 export default function PrivacyPolicy() {
   return (
-    <div className='main-content'>
-    
-        <h1>PRIVACY POLICY </h1>
-            <div className='main-content'>
-                <p style={{padding:'50px'}}>
+          <div className='main-content'>
+              
+                <p>
+                <h1>PRIVACY POLICY </h1>
                 We respect your privacy and process your personal data only for the purpose for which you provided it and in accordance with the Dutch Personal Data Protection Act and the Telecommunications Act.
                 <br/><b>Company data</b> <br/>
                 Company name: Custom Sneaker VOF, trades under the name CustomSneaker.nl <br/>
@@ -52,7 +51,5 @@ export default function PrivacyPolicy() {
                 This privacy policy can be changed at any time. We will publish these changes here and, where appropriate, you will be notified by e-mail.
                 </p>
             </div>
-    </div>
-  
   )
 }

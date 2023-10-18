@@ -16,16 +16,16 @@ export default function () {
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
                         <li><a href=''>Account</a></li>
-                        <li><a href=''>Search</a></li>
+                        <li><a href='/search/:query'>Search</a></li>
                     </ul>
                </div>
                <div className='column col-4 service'>
                 <h1>Our Service</h1>
                     <ul>
-                        <li><a href=''>Q&A</a></li>
-                        <li><a href=''>Shipment</a></li>
-                        <li><a href=''>Return Policy</a></li>
-                        <li><a href=''>Payment detail</a></li>
+                        <li><a href='/question-anwser'>Q&A</a></li>
+                        <li><a href='/shipment'>Shipment</a></li>
+                        <li><a href='/return-policy'>Return Policy</a></li>
+                        <li><a href='/payment-detail'>Payment detail</a></li>
                     </ul>
                </div>
                <div className='column col-4'>
@@ -33,15 +33,15 @@ export default function () {
                     <ul>
                         <li><a href='/about'>About Us</a></li>
                         <li><a href='/privacy-policy'>Privacy Policy</a></li>
-                        <li><a href=''>Terms and Conditions</a></li>
-                        <li><a href=''>Contact</a></li>
+                        <li><a href='/term-and-conditions'>Terms and Conditions</a></li>
+                        <li><a href='/contact'>Contact</a></li>
                     </ul>
                </div>
                <div className='column col-2 Contact-Footer'>
                 <p>Folllow us</p>
-                <a href=''><FontAwesomeIcon icon={faInstagram} /></a>
-                <a href=''><FontAwesomeIcon icon={faTiktok} /></a>      
-                <a href=''><FontAwesomeIcon icon={faFacebook} /></a>
+                <a href='https://www.instagram.com/' target='_blank'><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href='https://www.tiktok.com/explore' target='_blank'><FontAwesomeIcon icon={faTiktok} /></a>      
+                <a href='https://www.facebook.com/' target='_blank'><FontAwesomeIcon icon={faFacebook} /></a>
                </div>
             </div>
           </div> 
