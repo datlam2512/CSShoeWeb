@@ -2,38 +2,38 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AudioOutlined } from '@ant-design/icons';
 import "./HomePages/Header.css";
-import { Button, Dropdown , Input, Space } from "antd";
+import { Button, Dropdown, Input, Space } from "antd";
 import SearchBar from "./SearchBar";
 export default function Navbar() {
   const items = [
     {
       key: "1",
       label: (
-        <Link to={'/nike'}  style={{ textDecoration: "none" }}>Nike</Link>
+        <Link to={'/nike'} style={{ textDecoration: "none" }}>Nike</Link>
       ),
     },
     {
       key: "2",
       label: (
-        <Link to={'/adidas'}  style={{ textDecoration: "none" }}>Adidas</Link>
+        <Link to={'/adidas'} style={{ textDecoration: "none" }}>Adidas</Link>
       ),
     },
     {
       key: "3",
       label: (
-        <Link to={'/vans'}  style={{ textDecoration: "none" }}>Vans</Link>
+        <Link to={'/vans'} style={{ textDecoration: "none" }}>Vans</Link>
       ),
     },
   ];
-  
+
   return (
     <div className="Navbar">
       <div className="Container">
         <div className="row">
           <Link to="/">
-          <div className="col-2 Logo">
-            <img src="/Img/Logo.png" />
-          </div>
+            <div className="col-2 Logo">
+              <img src="/Img/Logo.png" />
+            </div>
           </Link>
           <div className="col-7 Navigation">
             <nav>
@@ -42,16 +42,16 @@ export default function Navbar() {
                   <li>
                     <Link to="/">Home</Link>
                   </li>
-                
-                   <li>
+
+                  <li>
                     <Link to="">Shop</Link>
                   </li>
-      
+
                   <li>
-                    <Link to="/createyourown">Create Your Own</Link>
+                    <Link to="/create-your-own">Create Your Own</Link>
                   </li>
                   <li>
-                    <Link to="/about">About Us</Link>
+                    <Link to="/about">About USS</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>
@@ -59,20 +59,20 @@ export default function Navbar() {
                   <li>
                     <Link to="/sizeguide">Size Guide</Link>
                   </li>
-                 
+
                 </div>
               </ul>
             </nav>
           </div>
           <div className="col-3 OtherHead">
-          <Space direction="vertical">
-          <SearchBar />
-  </Space>
+            <Space direction="vertical">
+              <SearchBar />
+            </Space>
             <button className="shopping-cart" type="submit">
               <Link to="/CartContent">
                 <i class="fa fa-shopping-cart " aria-hidden="true"></i>
               </Link>
-              
+
             </button>
             <button className="Login" type="submit">
               {" "}

@@ -22,6 +22,7 @@ import TermAndCondition from './FooterNav/Term&Condition';
 import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
+import CreateYourOwnPage from './Pages/CreateYourOwnPage';
 
 function App() {
   return (
@@ -49,6 +50,9 @@ function App() {
         <Route path='/payment-detail' element={<PaymentDetail/>} />
         <Route path='/term-and-conditions' element={<TermAndCondition/>} />
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
+        <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
+
+
        
       </Routes>
       </div>
