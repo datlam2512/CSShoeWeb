@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AudioOutlined } from '@ant-design/icons';
 import "./HomePages/Header.css";
-import { Button, Dropdown, Input, Space } from "antd";
+import { Space } from "antd";
 import SearchBar from "./SearchBar";
 export default function Navbar() {
   const items = [
@@ -31,7 +31,7 @@ export default function Navbar() {
       <div className="Container">
         <div className="row">
           <Link to="/">
-            <div className="col-2 Logo">
+            <div className="col-2 Logo" >
               <img src="/Img/Logo.png" />
             </div>
           </Link>
