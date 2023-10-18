@@ -32,7 +32,7 @@ export default function () {
   return (
     <div className="Navbar">
       <div className="Navbarheader">
-        <img src="/Img/logo1.png" />
+        <img src="/Img/logo6.png" />
         <div className="search-cart-nav">
           <div className="container-search">
             <input className="input-search" type="text" placeholder="seach" />
@@ -40,13 +40,13 @@ export default function () {
           </div>
           <button className="shopping-cart" type="submit">
             <Link to="/CartContent">
-              <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+              <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
             </Link>
           </button>
           <button className="Login" type="submit">
             {" "}
             <Link to="/Login">
-              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+              <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
             </Link>
           </button>
         </div>
@@ -57,7 +57,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
             >
               Home
             </Link>
@@ -75,7 +75,7 @@ export default function () {
                   <Link
                     className="link-nav"
                     to="/"
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: "none", color:'#dbdbdb' }}
                   >
                     Shop
                   </Link>
@@ -88,7 +88,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/createyourown"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
             >
               Create Your Own
             </Link>
@@ -97,7 +97,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/about"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
             >
               About Us
             </Link>
@@ -106,7 +106,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/contact"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
             >
               Contact
             </Link>
@@ -115,7 +115,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/sizeguide"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
             >
               Size Guide
             </Link>

@@ -22,7 +22,7 @@ import TermAndCondition from './FooterNav/Term&Condition';
 import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
-
+import CreateAccountpage from './Pages/CreateAccountpage';
 function App() {
   return (
     <div className="App">
@@ -30,7 +30,7 @@ function App() {
       <div className='header'>
      <Navshoes/>
      </div>
-     <div>
+     <div className='Body-main'>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
@@ -49,10 +49,10 @@ function App() {
         <Route path='/payment-detail' element={<PaymentDetail/>} />
         <Route path='/term-and-conditions' element={<TermAndCondition/>} />
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
-       
+        <Route path='/create' element={<CreateAccountpage/>} />
       </Routes>
       </div>
-      <div>
+      <div className='Footer-main'>
       <Footer />
       </div>
     </ShopContextProvider>

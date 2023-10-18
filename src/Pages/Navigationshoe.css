@@ -1,12 +1,11 @@
 .Navbar{
   display: flex;
   flex-direction: column;
-  background-color: #fcf7f7;
+  background-color: #656662;
   margin: 0 7%;
 }
 .Navbarheader img{
  width: 9%;
- margin-top: 15px;
 }
 .menu{
   display: flex;
@@ -25,6 +24,7 @@
 }
 .Login{
  margin-left: 2%;
+ color: #dbdbdb;
 }
 .Navbarheader{
   display: flex;
@@ -40,7 +40,7 @@
   margin-right: 1%;
 }
 .container-search{
-  margin-top: 3%;
+  margin-top: 4%;
   margin-right: 3%;
   background-color: #fff;
   height: 30px;
@@ -64,9 +64,12 @@
   font-size: 16px;
   transition: 0.8s;
 }
-.link-nav:hover{
-  color: gray;
-}
 .link-nav{
   text-transform: uppercase;
+}
+.cart{
+  color: #dbdbdb;
+}
+.login{
+  color: #cfcece;
 }

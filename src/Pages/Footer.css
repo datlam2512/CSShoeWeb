@@ -2,21 +2,24 @@
     margin: 0;
     padding: 0;
 }
+.Footer{
+    margin-top: 6%;
+}
 .Footer h1{
     font-size: 100%;
-    color: #fff;
+    color: #dbdbdb;
 }
 .Footer li{
     list-style-type: none; 
 }
 .Footer li a{
-    color: #fff;
+    color: #dbdbdb;
 }
 .container{
     width: 100%;
 }
 .First-Color{
-    background-color: black;
+    background-color: #656662;
     padding: 0 0;
     padding-bottom: 15px;
 }
@@ -24,11 +27,11 @@
    color: #262626 ;
 }
 .First-Color p{
-    color: #fff;
+    color: #dbdbdb;
 }
 .Contact a{
     margin: 0 15px;
-    color: #fff;
+    color: #dbdbdb;
 }
 .Contact-Footer p{
     margin-left: 15px;
@@ -43,5 +46,11 @@
     font-family: Unica One,sans-serif;
 }
 .Contact-Footer a{
-    color: #fff;
+    color: #dbdbdb;
+}
+.service{
+    margin-top: 25px;
+}
+.follow-us{
+    margin-top: 25px;
 }

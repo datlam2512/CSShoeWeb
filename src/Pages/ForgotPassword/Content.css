@@ -4,11 +4,15 @@
     align-items: center;
     padding-top: 50px;
     padding-bottom: 100px;
+   margin-top: 5%;
 }
 .forgotpw h1{
-    text-transform: uppercase;
-    margin-top: 100px;
     font-family: Unica One,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-size: 200%;
 }
 .forgotpw p{
     margin-top: 15px;
@@ -19,4 +23,15 @@
     align-items: center;
     justify-content: center;
     scale: 120%;
+}
+.submit-forgotpw{
+    margin-top: 5%;
+    width: 80%;
+    margin-left: 10%;
+    background-color: rgb(81, 69, 245);
+    color: #fff ;
+}
+.cancel{
+    text-align: center;
+    margin-top: 3%;
 }

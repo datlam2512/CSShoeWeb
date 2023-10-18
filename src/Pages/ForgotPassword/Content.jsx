@@ -1,5 +1,6 @@
 import React from 'react'
 import './Content.css'
+import { Link } from 'react-router-dom';
 import { Button, Checkbox, Form, Input } from 'antd';
 export default function Content() {
   const onFinish = (values) => {
@@ -49,11 +50,8 @@ export default function Content() {
         span: 16,
       }}
     >
-     <div  className='submit-forgotpw'>
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-      </div>
+     <button className='submit-forgotpw'>Submit</button>
+     <Link to={'/Login'} className='cancel' ><p>Cancel</p></Link>
     </Form.Item>
   </Form>
 
