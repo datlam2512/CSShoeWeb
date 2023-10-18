@@ -51,7 +51,7 @@ export default function Body( { id, imgUrl, name, price } ) {
           className="card-home"
           style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
         >
-          <Link style={{ textDecoration: "none" }}>
+          <Link to={'/adidas'} style={{ textDecoration: "none" }}>
             <h1>Adidas</h1>
             <p></p>
             <img src="/Img/content3.png" />
@@ -61,7 +61,7 @@ export default function Body( { id, imgUrl, name, price } ) {
           className="card-home"
           style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
         >
-          <Link className="converse" style={{ textDecoration: "none" }}>
+          <Link  to={'/converse'} className="converse" style={{ textDecoration: "none" }}>
             <h1>Converse</h1>
             <p></p>
             <img src="/Img/contentconverse.jpg" />

@@ -24,6 +24,8 @@ import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
 import CreateYourOwnPage from './Pages/CreateYourOwnPage';
 import CreateAccountpage from './Pages/CreateAccountpage';
+import ShopAdidas from './Pages/ShopAdidas';
+import ProductDetailAdidas from './Pages/ProductDetailAdidas/ProductDetailComponent'
 function App() {
   return (
     <div className="App">
@@ -38,6 +40,7 @@ function App() {
         <Route path='/nike' element={<Shop />} />
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
+        <Route path='/product-detail-adidas/:id' element={<ProductDetailAdidas/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
@@ -52,9 +55,7 @@ function App() {
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
         <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
-
-
-       
+        <Route path='/adidas' element={<ShopAdidas/>} />
       </Routes>
       </div>
       <div className='Footer-main'>

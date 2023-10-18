@@ -3,9 +3,8 @@ import './CartContent.css'
 import products from '../ShopPage/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import { CartItem } from './CartItem'
-
 import { Link, useNavigate } from 'react-router-dom'
-
+import productsadias from '../ShopAdidas/ProductList'
 export default function CartContent() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext)
   const totalAmount = getTotalCartAmount()
@@ -18,13 +17,12 @@ export default function CartContent() {
         <h1>Shopping Cart</h1>
       </div>
       <div className='CartItems'>
-        {products.map((product) => {
+        {products.map((product)  => {
           if (cartItems[product.id] !== 0) {
             return <CartItem data={product} />
           }
         })}
       </div>
-
       <div className='checkout'>
         <div className='back-to-shopping'>
 
