@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
           <div className='main-content'>
               
                 <p>
-                <h1>PRIVACY POLICY </h1>
+                <h1 style={{fontSize:'40px'}}>PRIVACY POLICY </h1>
                 We respect your privacy and process your personal data only for the purpose for which you provided it and in accordance with the Dutch Personal Data Protection Act and the Telecommunications Act.
                 <br/><b>Company data</b> <br/>
                 Company name: Custom Sneaker VOF, trades under the name CustomSneaker.nl <br/>
