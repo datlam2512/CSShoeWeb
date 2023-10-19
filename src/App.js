@@ -13,7 +13,7 @@ import { ShopContextProvider } from './context/shop-context';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Contact from './Pages/Contact/Contact';
 import PaymentPage from './Pages/Payment/PaymentPage';
-import SizeContent from './Pages/SizeGuidePage/SizeContent';
+import SizeContent from './Pages/SizeGuide/SizeContent';
 import Navshoes from './Pages/General/Navshoes';
 import SearchResult from './Pages/General/SearchResult';
 import PrivacyPolicy from './FooterNav/PrivacyPolicy';

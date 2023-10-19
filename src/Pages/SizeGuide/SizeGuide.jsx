@@ -1,5 +1,5 @@
 import React from 'react'
-import SizeContent from './SizeGuidePage/SizeContent'
+import SizeContent from './SizeContent'
 
 export default function SizeGuide() {
   return (
