@@ -23,6 +23,7 @@ import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
 import CreateYourOwnPage from './Pages/CreateYourOwnPage';
+import CreateAccountpage from './Pages/CreateAccountpage';
 
 function App() {
   return (
@@ -51,7 +52,7 @@ function App() {
         <Route path='/term-and-conditions' element={<TermAndCondition/>} />
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
-        <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
+        <Route path='/createyourown' element={<CreateYourOwnPage/>} />
 
 
        

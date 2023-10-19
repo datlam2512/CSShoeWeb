@@ -48,7 +48,7 @@ export default function Navbar() {
                   </li>
 
                   <li>
-                    <Link to="/create-your-own">Create Your Own</Link>
+                    <Link to="/createyourown">Create Your Own</Link>
                   </li>
                   <li>
                     <Link to="/about">About USS</Link>
