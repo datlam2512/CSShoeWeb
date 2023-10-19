@@ -6,6 +6,7 @@ import { AudioOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Input, Space } from "antd";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchBar from "./SearchBar";
 export default function () {
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value);

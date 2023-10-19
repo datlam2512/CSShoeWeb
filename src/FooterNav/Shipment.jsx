@@ -3,7 +3,7 @@ import './shipment.css'
 export default function Shipment() {
   return (
     <div style={{marginLeft:'60px'}}>
-    <h1 className='title' style={{fontSize:'40px'}}>SHIPMENT</h1>
+    <h1 className='title-shipment' style={{fontSize:'40px'}}>SHIPMENT</h1>
     <h2>Shipping within Viet Nam</h2>
     <p>We aim to ship custom sneakers within 14 days. There are a number of factors that influence the feasibility of the shipping time we aim for. A number of factors are for example: shoes supplier & difficulty of design. When ordering custom sneakers we send an email with the expected time before we ship the package. PostNL always delivers the package within 48 hours.</p>
     <p>The shipping rates below.</p>

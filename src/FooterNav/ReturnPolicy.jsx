@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './shipment.css'
 export default function ReturnPolicy() {
   return (
     <div style={{marginLeft:'60px'}}>
-    <h1 className='title' style={{fontSize:'40px'}}>RETURN POLICY</h1>
+    <h1 className='title-return' style={{fontSize:'40px'}}>RETURN POLICY</h1>
     <b><p>According to the terms and conditions, Custom Sneaker does not return sneakers. Under certain conditions, sneakers that Sole Palette<br/> offers in its webshop can be taken back.</p></b>
     <br/>
     <h3>SNEAKERS RETURN POLICY</h3> 

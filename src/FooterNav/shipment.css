@@ -1,3 +1,11 @@
 .table td{
     padding: 20px 15px;
 }
+.title-shipment{
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+}
+.title-return{
+    margin: 25px 0;
+}
