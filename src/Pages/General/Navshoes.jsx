@@ -26,7 +26,7 @@ export default function () {
     {
       key: "3",
       label: (
-        <Link to={'/vans'} style={{ textDecoration: "none" }}>Vans</Link>
+        <Link to={'/converse'} style={{ textDecoration: "none" }}>Converse</Link>
       ),
     },
   ];

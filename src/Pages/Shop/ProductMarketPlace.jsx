@@ -78,7 +78,7 @@ export default function ProductMarketPlace() {
             </div>
 
 
-            <div className='row'>
+            <div className='row' >
                 {sortProducts(products, sortOption)
                     .slice((currentPage - 1) * limit, currentPage * limit)
                     .map((product) => (
@@ -90,7 +90,8 @@ export default function ProductMarketPlace() {
                             price={product.price.toLocaleString() + " VNĐ"}
                         
                         />
-                    ))}
+                    ))
+                }
             </div>
 
             <div className='pagination'>

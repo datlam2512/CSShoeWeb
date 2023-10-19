@@ -1,12 +1,12 @@
 import React from 'react'
 import { Collapse, Typography, Row } from 'antd'
-
+import './shipment.css'
 export default function QuestionAnwser() {
   const { Panel } = Collapse;
   const { Title } = Typography;
   return (
     <div>
-    <h1 className='title' style={{fontSize:'30px', marginLeft:'20px'}}>FREQUENTLY ASKED QUESTIONS</h1>
+    <h1 className='title-QNA' style={{fontSize:'30px', marginLeft:'20px'}}>FREQUENTLY ASKED QUESTIONS</h1>
     <Row justify="center"> 
     <div style={{ width: '80%' }}>
       <Title level={2} style={{ textAlign: 'center' }}>Delivery time</Title>

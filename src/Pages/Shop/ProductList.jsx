@@ -303,8 +303,7 @@ const products = [
         name: "NIKE AIR FORCE 1 '07 LOW - WIT",
         price: 2200000,
         brand: "nike",
-    },
-
+    },  
 ]
 
 export default products
