@@ -1,0 +1,128 @@
+.container {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.product-detail {
+    width: 1280px;
+    display: flex;
+}
+
+.product-image {
+    flex: 23%;
+}
+
+.product-infor {
+    flex: 60%;
+    padding-left: 20px;
+}
+
+.width-product-infor {
+    width: 560px;
+    height: auto;
+}
+.productSingle {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.productName {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.productPrice {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 3px;
+
+    color: #666;
+}
+
+
+.payment-form {
+    display: flex;
+    width: 100%;
+}
+
+.size-selector, .quantity-selector {
+    flex: 1;
+    
+}
+
+#size {
+    width: 80%;
+    height: 48px;
+    padding: 10px;
+    border-color:rgb(214, 213, 213) ;
+    border-radius: 5px;
+    font-size: 16;
+    color: rgba(33, 33, 33, 0.88);
+}
+
+#size:hover {
+    border-color: black;
+}
+
+#size:focus {
+    border-color: black;
+
+}
+.quantity-selector {
+    padding: 0;
+}
+
+.purchase-action {
+    width: 100%;
+    margin-top: 25px;
+   
+}
+
+
+.addCartBt, .buyNowBtn {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.add-to-cart-button, .buy-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14;
+    font-weight: 600;
+}
+
+.add-to-cart-button {
+    background-color: #fff;
+    color: #006EFF;
+    border: 0.5px solid #006EFF;
+    font-family: Karla,sans-seri;
+}
+
+.buy-button {
+    background-color: #006EFF;
+    color: #fff;
+    border: none;
+    font-size: 14;
+    font-weight: 600;
+    font-family: Karla,sans-seri;
+}
+
+.add-to-cart-button:hover {
+    color: #004fb6;
+    border: 0.5px solid #004fb6;
+    background-color: #fbfbfb;
+
+}
+
+.buy-button:hover {
+    background-color: #004fb6;
+    color: #fff;
+ 
+}

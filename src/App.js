@@ -23,7 +23,6 @@ import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
 import CreateYourOwnPage from './Pages/CreateYourOwnPage';
-import CreateAccountpage from './Pages/CreateAccountpage';
 
 function App() {
   return (
@@ -39,6 +38,7 @@ function App() {
         <Route path='/nike' element={<Shop />} />
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
+        <Route path='/product-detail-adidas/:id' element={<ProductDetailAdidas/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>
@@ -52,7 +52,7 @@ function App() {
         <Route path='/term-and-conditions' element={<TermAndCondition/>} />
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
-        <Route path='/createyourown' element={<CreateYourOwnPage/>} />
+        <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
 
 
        

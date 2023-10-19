@@ -1,0 +1,91 @@
+.filter-content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding-right: 30px;
+}
+
+.filter-price {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #dcdcdc;;
+}
+
+.title {
+    border: 0;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Karla, sans-serif;
+    background-color: #fff;
+}
+
+.price-range {
+    display: flex;
+    padding: 0;
+    padding-left: 10px;
+}
+
+.price-min,
+.price-max {
+    font-family: Karla, sans-serif;
+    font-weight: 400;
+    width: 30%;
+    padding: 5px;
+    float: left;
+    font-size: 13px;
+    border: 1px solid #e3e3e3;
+    border-radius: 0;
+
+    
+}
+
+.split {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.filter-size {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #dcdcdc;
+
+}
+.check-box {
+    padding-left: 10px;
+}
+
+.size{
+    font-family: Karla,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+.apply {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.apply-btn {
+    padding: 10px 0;
+    width: 100%;
+}
+.action-btn {
+    border: 0;
+    text-align: center;
+    width: 100%;
+    font-family: Karla,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 17px 40px;
+    border-radius: 0;
+    color: #fff;
+    background-color: #000000;
+}
+
+.action-btn:hover {
+    background-color: #202020;
+
+}
