@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import products from './ShopPage/ProductList';
+import products from '../Shop/ProductList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faShoppingCart, faX } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { ShopContext } from '../context/shop-context';
+import { ShopContext } from '../../context/shop-context';
 import { ConfigProvider, InputNumber } from 'antd';
 import Swal from 'sweetalert2';
 

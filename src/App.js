@@ -1,31 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import HomePage from './Pages/Home'
-import LoginPage from './Pages/Login'
-import Shop from './Pages/Shop';
-import Cart from './Pages/Cart';
-import ProductDetail from './Pages/ProductDetail';
+import HomePage from './Pages/General/Home'
+import LoginPage from './Pages/Login/Login'
+import Shop from './Pages/Shop/Shop';
+import Cart from './Pages/Cart/Cart';
+import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import { Routes, Route, Link } from 'react-router-dom';
-import Navbar from './Pages/Navbar';
-import Footer from './Pages/Footer';
-import ForgotPassword from './Pages/ForgotPassword'
+import Navbar from './Pages/General/Navbar';
+import Footer from './Pages/General/Footer';
+import ForgotPassword from './Pages/ForgotPassword/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
-import AboutUs from './Pages/AboutUs';
-import Contact from './Pages/Contact';
-import PaymentPage from './Pages/PaymentPage';
+import AboutUs from './Pages/AboutUs/AboutUs';
+import Contact from './Pages/Contact/Contact';
+import PaymentPage from './Pages/Payment/PaymentPage';
 import SizeContent from './Pages/SizeGuidePage/SizeContent';
-import Navshoes from './Pages/Navshoes';
-import SearchResult from './Pages/SearchResult';
+import Navshoes from './Pages/General/Navshoes';
+import SearchResult from './Pages/General/SearchResult';
 import PrivacyPolicy from './FooterNav/PrivacyPolicy';
 import ReturnPolicy from './FooterNav/ReturnPolicy';
 import TermAndCondition from './FooterNav/Term&Condition';
 import Shipment from './FooterNav/Shipment';
 import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
-import CreateYourOwnPage from './Pages/CreateYourOwnPage';
-import CreateAccountpage from './Pages/CreateAccountpage'
+import CreateYourOwnPage from './Pages/CreateYourOwn/CreateYourOwnPage';
+import CreateAccountpage from './Pages/CreateAccount/CreateAccountpage'
 import ProductDetailAdidas from './Pages/ProductDetailAdidas/ProductDetailComponent'
-import ShopAdidas from './Pages/ShopAdidas';
+import ShopAdidas from './Pages/Shop/ShopAdidas';
 function App() {
   return (
     <div className="App">

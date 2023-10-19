@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AudioOutlined } from '@ant-design/icons';
-import "./HomePages/Header.css";
+import "../Home/Header.css";
 import { Space } from "antd";
 import SearchBar from "./SearchBar";
 export default function Navbar() {
