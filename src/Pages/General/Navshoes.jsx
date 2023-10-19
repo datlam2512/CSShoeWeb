@@ -14,30 +14,40 @@ export default function () {
     {
       key: "1",
       label: (
-        <Link to={'/nike'} style={{ textDecoration: "none" }}>Nike</Link>
+        <Link to={"/nike"} style={{ textDecoration: "none" }}>
+          Nike
+        </Link>
       ),
     },
     {
       key: "2",
       label: (
-        <Link to={'/adidas'} style={{ textDecoration: "none" }}>Adidas</Link>
+        <Link to={"/adidas"} style={{ textDecoration: "none" }}>
+          Adidas
+        </Link>
       ),
     },
     {
       key: "3",
       label: (
-        <Link to={'/converse'} style={{ textDecoration: "none" }}>Converse</Link>
+        <Link to={"/converse"} style={{ textDecoration: "none" }}>
+          Converse
+        </Link>
       ),
     },
   ];
   return (
     <div className="Navbar">
       <div className="Navbarheader">
-        <img src="/Img/logo6.png" />
+        <Link to="/">
+          <img src="/Img/logo6.png" />
+        </Link>
         <div className="search-cart-nav">
           <div className="container-search">
             <input className="input-search" type="text" placeholder="seach" />
-            <i><FontAwesomeIcon icon={faSearch} /></i>
+            <i>
+              <FontAwesomeIcon icon={faSearch} />
+            </i>
           </div>
           <button className="shopping-cart" type="submit">
             <Link to="/CartContent">
@@ -58,7 +68,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/"
-              style={{ textDecoration: "none", color:'#dbdbdb' }}
+              style={{ textDecoration: "none", color: "#dbdbdb" }}
             >
               Home
             </Link>
@@ -76,7 +86,7 @@ export default function () {
                   <Link
                     className="link-nav"
                     to="/"
-                    style={{ textDecoration: "none", color:'#dbdbdb' }}
+                    style={{ textDecoration: "none", color: "#dbdbdb" }}
                   >
                     Shop
                   </Link>
@@ -89,7 +99,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/createyourown"
-              style={{ textDecoration: "none", color:'#dbdbdb' }}
+              style={{ textDecoration: "none", color: "#dbdbdb" }}
             >
               Create Your Own
             </Link>
@@ -98,7 +108,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/about"
-              style={{ textDecoration: "none", color:'#dbdbdb' }}
+              style={{ textDecoration: "none", color: "#dbdbdb" }}
             >
               About Us
             </Link>
@@ -107,7 +117,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/contact"
-              style={{ textDecoration: "none", color:'#dbdbdb' }}
+              style={{ textDecoration: "none", color: "#dbdbdb" }}
             >
               Contact
             </Link>
@@ -116,7 +126,7 @@ export default function () {
             <Link
               className="link-nav"
               to="/sizeguide"
-              style={{ textDecoration: "none", color:'#dbdbdb' }}
+              style={{ textDecoration: "none", color: "#dbdbdb" }}
             >
               Size Guide
             </Link>
