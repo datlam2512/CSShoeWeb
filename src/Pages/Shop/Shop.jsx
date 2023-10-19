@@ -1,9 +1,9 @@
 import React from 'react';
 import './ShopPage.css';
-import ProductMarketPlace from './ShopPage/ProductMarketPlace';
-import FilterProduct from './ShopPage/FilterProduct';
+import ProductMarketPlace from './ProductMarketPlace';
+import FilterProduct from './FilterProduct';
 import { Pagination } from 'antd';
-import ShopTitle from './ShopPage/ShopTitle';
+import ShopTitle from './ShopTitle';
 
 export default function Shop() {
   return (

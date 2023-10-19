@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import './ProductDetailComponent.css';
 import { ConfigProvider, Image, InputNumber } from 'antd';
 import { Link, useParams } from 'react-router-dom';
-import products from '../ShopPage/ProductList';
+import products from '../Shop/ProductList';
 import { ShopContext } from '../../context/shop-context';
 import Swal from 'sweetalert2';
 

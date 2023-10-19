@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductDetailComponent from './ProductDetail/ProductDetailComponent'
+import ProductDetailComponent from './ProductDetailComponent'
 
 export default function ProductDetail() {
   return (

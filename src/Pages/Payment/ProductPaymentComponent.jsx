@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './ProductPaymentComponent.css'
-import products from '../ShopPage/ProductList'
+import products from '../Shop/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import PaymentItem from './PaymentItem'
 

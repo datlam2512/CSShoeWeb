@@ -1,5 +1,5 @@
 import React from 'react'
-import CreateAccount from './CreateAccount/CreateAccount'
+import CreateAccount from './CreateAccount'
 
 export default function () {
   return (

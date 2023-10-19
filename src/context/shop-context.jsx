@@ -1,6 +1,6 @@
 // ShopContext.js
 import React, { createContext, useState } from 'react';
-import products from '../Pages/ShopPage/ProductList';
+import products from '../Pages/Shop/ProductList';
 
 export const ShopContext = createContext(null);
 
