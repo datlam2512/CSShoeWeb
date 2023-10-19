@@ -121,6 +121,15 @@ export default function () {
               Size Guide
             </Link>
           </li>
+          <li>
+            <Link
+              className="link-nav"
+              to="/blogs"
+              style={{ textDecoration: "none", color:'#dbdbdb' }}
+            >
+              Blog
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
