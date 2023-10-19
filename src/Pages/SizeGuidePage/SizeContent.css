@@ -14,11 +14,16 @@
     font-family: Unica One,sans-serif;
     font-size: 40px;
 }
-.title h1{
+.title-size h1{
     padding-top: 40px;
     padding-left: 40px;
     text-transform: uppercase;
     font-family: Unica One,sans-serif;
     font-size: 50px;
     display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.title-size{
+    background-color:#fcf7f7 ;
 }

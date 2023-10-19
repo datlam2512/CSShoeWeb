@@ -387,7 +387,7 @@ export default function SizeContent() {
 
     return (
     <div>
-        <div className='title'>
+        <div className='title-size'>
             <h1>Size Guide</h1>
         </div>
 

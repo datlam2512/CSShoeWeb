@@ -3,7 +3,7 @@ import React from 'react'
 export default function TermAndCondition() {
   return (
     <div style={{marginLeft:'40px'}}>
-      <h1 className='title' style={{fontSize:'40px'}}>Terms of Service</h1>
+      <h1 className='title-term' style={{fontSize:'40px'}}>Terms of Service</h1>
       <p>OVERVIEW<br/>
       This website is operated by TheCustomSneakerCo. Throughout the site, the terms “we”, “us” and “our” refer to TheCustomSneakerCo. TheCustomSneakerCo offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.</p>
 
