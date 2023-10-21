@@ -1,0 +1,13 @@
+.blog-content{
+    margin: 5%;
+}
+.card-blog{
+    background-color: #fcf7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+.card-blog img {
+    width: 60%;
+}

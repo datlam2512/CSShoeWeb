@@ -26,6 +26,7 @@ import CreateYourOwnPage from './Pages/CreateYourOwn/CreateYourOwnPage';
 import CreateAccountpage from './Pages/CreateAccount/CreateAccountpage'
 import ProductDetailAdidas from './Pages/ProductDetailAdidas/ProductDetailComponent'
 import ShopAdidas from './Pages/Shop/ShopAdidas';
+import Blogs from './Pages/BlogPages/Blog'
 function App() {
   return (
     <div className="App">
@@ -56,6 +57,7 @@ function App() {
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
         <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
+        <Route path='/blogs' element={<Blogs/>} />
 
 
        
