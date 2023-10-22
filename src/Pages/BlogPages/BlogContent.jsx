@@ -11,7 +11,7 @@ export default function BlogContent() {
    {Blogs.map((blogs)=>(
     <div className='col-lg-4 col-md-5 col-sm-6 card-blog'>
     <img src={blogs.img}/>
-    <Link >{blogs.tittle}</Link>
+    <Link to={`/blog-detail/${blogs.id}`} >{blogs.tittle}</Link>
     </div>
    ))}
    </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input, Space } from 'antd';
 import SearchResult from './SearchResult';
-
+import "./Navigationshoe.css";
 
 const { Search } = Input;
 export const SearchBar = () => {
@@ -15,13 +15,12 @@ export const SearchBar = () => {
 
   return (
     <Space direction="vertical">
-      <Search
-        placeholder="Search"
+      <Search className='input-search'
+      placeholder='Search'
         onSearch={onSearch}
         style={{
-          width: 200,
-          marginTop:'25px',
-          marginRight:'15px',
+          scale:'80%',
+          width:'100%',
         }}
       />
     </Space>

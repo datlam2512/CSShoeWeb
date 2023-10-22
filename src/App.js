@@ -27,6 +27,8 @@ import CreateAccountpage from './Pages/CreateAccount/CreateAccountpage'
 import ProductDetailAdidas from './Pages/ProductDetailAdidas/ProductDetailComponent'
 import ShopAdidas from './Pages/Shop/ShopAdidas';
 import Blogs from './Pages/BlogPages/Blog'
+import BlogDetail from './Pages/BlogPages/BlogDetail';
+import Search from 'antd/es/input/Search';
 function App() {
   return (
     <div className="App">
@@ -42,6 +44,7 @@ function App() {
         <Route path='/adidas' element={<ShopAdidas/>}/>
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
+        <Route path='/blog-detail/:id' element={<BlogDetail/>}></Route>
         <Route path='/product-detail-adidas/:id' element={<ProductDetailAdidas/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
@@ -57,10 +60,7 @@ function App() {
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
         <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
-        <Route path='/blogs' element={<Blogs/>} />
-
-
-       
+        <Route path='/blogs' element={<Blogs/>} /> 
       </Routes>
       </div>
       <div className='Footer-main'>

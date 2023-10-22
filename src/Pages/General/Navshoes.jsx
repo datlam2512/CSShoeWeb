@@ -8,6 +8,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBar from "./SearchBar";
 export default function () {
+
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value);
   const items = [
@@ -43,11 +44,8 @@ export default function () {
           <img src="/Img/logo6.png" />
         </Link>
         <div className="search-cart-nav">
-          <div className="container-search">
-            <input className="input-search" type="text" placeholder="seach" />
-            <i>
-              <FontAwesomeIcon icon={faSearch} />
-            </i>
+          <div className="search-bars">
+            <SearchBar/>
           </div>
           <button className="shopping-cart" type="submit">
             <Link to="/CartContent">
