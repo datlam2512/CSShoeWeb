@@ -59,7 +59,7 @@ function App() {
         <Route path='/term-and-conditions' element={<TermAndCondition/>} />
         <Route path='/question-anwser' element={<QuestionAnwser/>} />
         <Route path='/create' element={<CreateAccountpage/>} />
-        <Route path='/create-your-own' element={<CreateYourOwnPage/>} />
+        <Route path='/createyourown' element={<CreateYourOwnPage/>} />
         <Route path='/blogs' element={<Blogs/>} /> 
       </Routes>
       </div>

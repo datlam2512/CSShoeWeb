@@ -1,39 +1,39 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useState, useContext } from "react";
 import "./Body.css";
+import { ShopContext } from "../../context/shop-context";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faShoppingCart, faX } from "@fortawesome/free-solid-svg-icons"; // Import cart icon
 import { Button, Card } from "antd";
+import products from "../Shop/ProductList";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { Avatar, List, Radio, Space } from "antd";
-export default function Body( { id, imgUrl, name, price } ) {
-  const data = [
-    {
-      title: <img className="img-bottom" src="/Img/banner3.jpeg"/>,
-      name: <p>VIew All</p>
-    },
-    {
-      title: <img className="img-bottom-product"  src="/Img/Bottom-product1.png" />,
-      name:<p>Nike Air Force 1 Purple Sketch</p>,
-      price:<p>2.500.000</p>
-    },
-    { 
-      title: <img   className="img-bottom-product" src="/Img/Bottom-product2.png" />,
-      name:<p>Nike Air Force 1 Low Diamonds - Black</p>,
-      price:<p>3.500.000</p>
-    },
-    {
-      title: <img   className="img-bottom-product" src="/Img/Bottom-product3.png" />,
-      name:<p>Nike Air Force 1 Low Diamonds - White</p>,
-      price:<p>4.500.000</p>
-    },
-    {
-      title: <img  className="img-bottom-product" src="/Img/bottom-product4.png" />,
-      name:<p>Nike Air Force 1 Joker </p>,
-      price:<p>3.700.000</p>
-    },
-  ];
+export default function Body({ id, imgUrl, name, price }) {
   const { Meta } = Card;
+  const [product, setProduct] = useState([]);
+  const { addToCart, cartItems } = useContext(ShopContext);
+  const CartItemAmount = cartItems[id];
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedQuantity(1);
+  };
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  const showAddToCartAlert = () => {
+    Swal.fire({
+      title: "Added To Cart Successfully",
+      icon: "success",
+      bordered: "none",
+    });
+  };
+
   return (
     <div className="Body">
       <div className="View-items">
@@ -51,7 +51,7 @@ export default function Body( { id, imgUrl, name, price } ) {
           className="card-home"
           style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
         >
-          <Link to={'/adidas'} style={{ textDecoration: "none" }}>
+          <Link to={"/adidas"} style={{ textDecoration: "none" }}>
             <h1>Adidas</h1>
             <p></p>
             <img src="/Img/content3.png" />
@@ -61,7 +61,11 @@ export default function Body( { id, imgUrl, name, price } ) {
           className="card-home"
           style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
         >
-          <Link  to={'/converse'} className="converse" style={{ textDecoration: "none" }}>
+          <Link
+            to={"/converse"}
+            className="converse"
+            style={{ textDecoration: "none" }}
+          >
             <h1>Converse</h1>
             <p></p>
             <img src="/Img/contentconverse.jpg" />
@@ -80,42 +84,61 @@ export default function Body( { id, imgUrl, name, price } ) {
               the sneakers, but suddenly Everyone else has the same sneakers.
             </p>
             <p>
-              By CsShoe walk around on sneakers that nobody else has.
-              That's exactly what you want, right?
+              By CsShoe walk around on sneakers that nobody else has. That's
+              exactly what you want, right?
             </p>
             <p>
-            CsShoe sells a wide range of custom sneakers. There's
-              something for everyone, even if you want your own design.
+              CsShoe sells a wide range of custom sneakers. There's something
+              for everyone, even if you want your own design.
             </p>
             <h4>Possibilities:</h4>
             <p className="list-info">Pick from existing designs</p>
-            <p className="list-info">Pick from existing designs on a different sneaker</p>
+            <p className="list-info">
+              Pick from existing designs on a different sneaker
+            </p>
             <p className="list-info">Send your own design</p>
             <p className="list-info">To work together towards a design</p>
           </div>
         </div>
       </div>
       <div className="product-bottom">
-      
-        <List
-          className="list-card"
-          grid={{
-            gutter: 0,
-            column: 5,
-          }}
-          dataSource={data}
-          renderItem={(item) => (
-           
-          <List.Item>
-            
-              <Card className="card-product-bottom" title={item.title}>
-                <p className="name-bottom-product">{item.name}</p>
-                <p>{item.price}</p>
-              </Card>
-            </List.Item>
-       
-          )}
-        />
+        {products.slice(0, 4).map((product) => (
+          <div className="product-card">
+            <div className="product-img">
+              <img src={product.imgUrl} alt="ShoesImg" />
+            </div>
+            <div className="product-marketplace-infor">
+              <div className="product-name">
+                <p className="name">{product.name}</p>
+              </div>
+              <div className="product-price">
+                <span className="price">{product.price}</span>
+              </div>
+            </div>
+            <div className="view-product">
+              <Link to={`/product-detail/${product.id}`}>
+                <button className="view-btn">
+                  <FontAwesomeIcon icon={faEye} className="eye-view" />
+                </button>
+              </Link>
+            </div>
+            <div className="add-to-cart">
+              <button
+                className="add-to-cart-btn"
+                onClick={() => {
+                  openPopup();
+                }}
+              >
+                <div className="item-icon">
+                  <FontAwesomeIcon icon={faShoppingCart} />
+                </div>
+                <div className="item-number">
+                  {CartItemAmount > 0 && `${CartItemAmount}`}
+                </div>
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
