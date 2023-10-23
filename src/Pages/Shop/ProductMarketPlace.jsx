@@ -10,7 +10,7 @@ export default function ProductMarketPlace() {
     const [limit, setLimit] = useState(12);
     const { addToCart, cartItems } = useContext(ShopContext);
     const [currentPage, setCurrentPage] = useState(1);
-    const [selectedBrand, setSelectedBrand] = useState('All'); // Set the default brand to 'All'
+    const [selectedBrand, setSelectedBrand] = useState('All'); 
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     const sortProducts = (products, option) => {
