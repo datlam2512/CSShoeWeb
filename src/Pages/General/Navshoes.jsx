@@ -43,24 +43,7 @@ export default function () {
         <Link to="/">
           <img src="/Img/logo6.png" />
         </Link>
-        <div className="search-cart-nav">
-          <div className="search-bars">
-            <SearchBar/>
-          </div>
-          <button className="shopping-cart" type="submit">
-            <Link to="/CartContent">
-              <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
-            </Link>
-          </button>
-          <button className="Login" type="submit">
-            {" "}
-            <Link to="/Login">
-              <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
-            </Link>
-          </button>
-        </div>
-      </div>
-      <div className="Navbarbottom">
+        <div className="Navbarbottom">
         <ul className="menu">
           <li>
             <Link
@@ -139,6 +122,23 @@ export default function () {
             </Link>
           </li>
         </ul>
+        </div>
+        <div className="search-cart-nav">
+          <div className="search-bars">
+            <SearchBar/>
+          </div>
+          <button className="shopping-cart" type="submit">
+            <Link to="/CartContent">
+              <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
+            </Link>
+          </button>
+          <button className="Login" type="submit">
+            {" "}
+            <Link to="/Login">
+              <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );
