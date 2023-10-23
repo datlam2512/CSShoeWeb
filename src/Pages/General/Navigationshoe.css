@@ -1,7 +1,7 @@
 .Navbar{
   display: flex;
   flex-direction: column;
-  background-color: #656662;
+  background-color: #000;
   margin: 0 2%;
 }
 .Navbarheader img{

@@ -1,21 +1,19 @@
-
-
-import React, { useContext, useState } from 'react'
-import './ProductMarketPlace.css'
+import React, { useContext, useState, useEffect } from 'react';
+import './ProductMarketPlace.css';
 import Product from './Product';
-import products from './ProductList';
 import { ShopContext } from '../../context/shop-context';
-import './ProductMarketPlace.css'
 import { Pagination } from 'antd';
-import { useEffect } from 'react';
+import products from './ProductList';
+
 export default function ProductMarketPlace() {
     const [sortOption, setSortOption] = useState('choice');
     const [limit, setLimit] = useState(12);
     const { addToCart, cartItems } = useContext(ShopContext);
     const [currentPage, setCurrentPage] = useState(1);
+    const [selectedBrand, setSelectedBrand] = useState('All'); // Set the default brand to 'All'
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
-
-    function sortProducts(products, option) {
+    const sortProducts = (products, option) => {
         if (option === 'title-ascending') {
             return products.slice().sort((a, b) => a.name.localeCompare(b.name));
         } else if (option === 'title-descending') {
@@ -27,37 +25,67 @@ export default function ProductMarketPlace() {
         } else {
             return products;
         }
-    }
+    };
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
 
+    const handleLimitChange = (newLimit) => {
+        setLimit(newLimit);
+        setCurrentPage(1);
+    };
+
+    const handleBrandChange = (e) => {
+        const newBrand = e.target.value;
+        setSelectedBrand(newBrand);
+        setCurrentPage(1);
+        setSortOption('choice');
+    };
+
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [currentPage]);
+        let filtered = products;
+
+        if (selectedBrand !== 'All') {
+            filtered = filtered.filter((product) => product.brand === selectedBrand);
+        }
+
+        setFilteredProducts(sortProducts(filtered, sortOption));
+    }, [selectedBrand, sortOption]);
 
     return (
         <>
             <div className='sort'>
                 <div className='sort-limit'>
-                    <div class="sort-by limit-by">
-                        <label for="setLimit" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false">
+                    <div className='sort-by'>
+                        <label className="sort-by-toggle" role="button" tabIndex="0" aria-expanded="false">
+                            Brand
+                        </label>
+                        <select
+                            id="changeSortBy"
+                            className="sortby-select"
+                            onChange={handleBrandChange}
+                            value={selectedBrand}
+                        >
+                            <option value="All">All</option>
+                            <option value="nike">NIKE</option>
+                            <option value="adidas">ADIDAS</option>
+                            <option value="vans">VANS</option>
+                        </select>
+                    </div>
+                    <div className='sort-by limit-by'>
+                        <label htmlFor="setLimit" className="sort-by-toggle" role="button" tabIndex="0" aria-expanded="false">
                             Show
                         </label>
-
                         <select id="setLimit"
-                            class="sortby-select"
-                            onChange={(e) => setLimit(parseInt(e.target.value))}
+                            className="sortby-select"
+                            onChange={(e) => handleLimitChange(parseInt(e.target.value))}
                             value={limit}
                         >
                             <option value="12">12</option>
-                            <option selected="" value="24">24</option>
+                            <option value="24">24</option>
                         </select>
                     </div>
-
-
-
                     <div className='sort-by'>
                         <label className="sort-by-toggle" role="button" tabIndex="0" aria-expanded="false">
                             Sort By
@@ -77,9 +105,8 @@ export default function ProductMarketPlace() {
                 </div>
             </div>
 
-
-            <div className='row' >
-                {sortProducts(products, sortOption)
+            <div className='row'>
+                {filteredProducts
                     .slice((currentPage - 1) * limit, currentPage * limit)
                     .map((product) => (
                         <Product
@@ -88,25 +115,21 @@ export default function ProductMarketPlace() {
                             imgUrl={product.imgUrl}
                             name={product.name}
                             price={product.price.toLocaleString() + " VNĐ"}
-                        
                         />
                     ))
                 }
             </div>
 
             <div className='pagination'>
-                
                 <Pagination
                     size="default"
                     defaultCurrent={1}
-                    total={products.length}
+                    total={filteredProducts.length}
                     pageSize={limit}
                     current={currentPage}
-                    onChange={handlePageChange} />
+                    onChange={handlePageChange}
+                />
             </div>
-
-
-
         </>
     );
 }
