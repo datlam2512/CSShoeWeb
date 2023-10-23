@@ -186,3 +186,38 @@
 .product-bottom-img{
   width: 10%;
 }
+.product-card-nav{
+  background-color: #fcf7f7;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin-top: 10%;
+    margin-right:55%;
+}
+.product-card-nav:hover {
+  transform: translateY(-5px);
+}
+.product-card-nav:hover .add-to-cart-btn {
+  top: 0;
+  opacity: 1;
+  transform: translateX(0);
+  transition: top 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.product-card:hover .view-product .view-btn {
+  bottom: 50%;
+  opacity: 1;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+.product-card-nav:hover .view-product .view-btn {
+  bottom: 50%;
+  opacity: 1;
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+.product-card-shoes{
+  margin-right: 0.5%;
+  margin-left: 1%;
+  margin-top: 5%;
+}

@@ -8,6 +8,7 @@ import { Button, Card } from "antd";
 import products from "../Shop/ProductList";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { ConfigProvider, InputNumber } from "antd";
 import { Avatar, List, Radio, Space } from "antd";
 export default function Body({ id, imgUrl, name, price }) {
   const { Meta } = Card;
@@ -103,7 +104,8 @@ export default function Body({ id, imgUrl, name, price }) {
       </div>
       <div className="product-bottom">
         {products.slice(0, 4).map((product) => (
-          <div className="product-card">
+         <div className="product-card-shoes">
+         <div className="product-card-nav">
             <div className="product-img">
               <img src={product.imgUrl} alt="ShoesImg" />
             </div>
@@ -123,23 +125,13 @@ export default function Body({ id, imgUrl, name, price }) {
               </Link>
             </div>
             <div className="add-to-cart">
-              <button
-                className="add-to-cart-btn"
-                onClick={() => {
-                  openPopup();
-                }}
-              >
-                <div className="item-icon">
-                  <FontAwesomeIcon icon={faShoppingCart} />
-                </div>
-                <div className="item-number">
-                  {CartItemAmount > 0 && `${CartItemAmount}`}
-                </div>
-              </button>
+             
             </div>
-          </div>
-        ))}
+          </div>    
+          </div>  
+        ))}          
       </div>
     </div>
   );
 }
+
