@@ -6,7 +6,6 @@ import Shop from './Pages/Shop/Shop';
 import Cart from './Pages/Cart/Cart';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
 import { Routes, Route, Link } from 'react-router-dom';
-import Navbar from './Pages/General/Navbar';
 import Footer from './Pages/General/Footer';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';

@@ -1,76 +1,75 @@
-.Navbar{
-  display: flex;
-  flex-direction: column;
-  background-color: #000;
-  margin: 0 2%;
+.Navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    margin: 0 2%;
 }
-.Navbarheader img{
- width: 150%;
- display: flex;
- justify-content: space-between;
- align-items: center;
+.Navbarheader img {
+    width: 7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.header{
-  background-color: #000;
+.header {
+    background-color: #000;
 }
 .menu {
-  display: flex;
-  margin: 0 0 0 80px;
-  width: 100%;
-  justify-content: space-between;
+    display: flex;
+    margin: 0 0 0 80px;
+    width: 100%;
+    justify-content: space-between;
 }
-.menu li{
-  margin: 0 20px;
+.menu li {
+    margin: 0 20px;
 }
-.link-nav{
-  color: #000;
+.link-nav {
+    color: #000;
 }
-.Navbarbottom{
- display: flex;
- justify-content: space-around;
- align-items: center;
+.Navbarbottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
-.Login{
- margin-left: 2%;
- color: #dbdbdb;
+.Login {
+    margin-left: 2%;
+    color: #dbdbdb;
 }
-.Navbarheader{
-  display: flex;
-  flex-direction: row;
+.Navbarheader {
+    display: flex;
+    flex-direction: row;
 }
-.search-cart-nav{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 40px;
+.search-cart-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
 }
-.searchtxt{
-  margin-top: 1%;
-  margin-right: 1%;
+.searchtxt {
+    margin-top: 1%;
+    margin-right: 1%;
 }
-.link-nav{
-  text-transform: uppercase;
-  min-width: 100px; 
-  white-space: nowrap;
+.link-nav {
+    text-transform: uppercase;
+    min-width: 100px;
+    white-space: nowrap;
 }
-.cart{
-  color: #dbdbdb;
+.cart {
+    color: #dbdbdb;
 }
-.login{
-  color: #cfcece;
+.login {
+    color: #cfcece;
 }
-.search-bars{
-  display: flex;
-  align-items: center;
+.search-bars {
+    display: flex;
+    align-items: center;
 }
-.ant-input{
-height: 100%;
-padding: 0;
-padding-bottom: 6.7%;
-padding-top: 0.5%;
-background-color: #fff;
+.ant-input {
+    height: 100%;
+    padding: 0;
+    padding-bottom: 6.7%;
+    padding-top: 0.5%;
+    background-color: #fff;
 }
-.menu li{
-  width: 100%;
-  
+.menu li {
+    width: 100%;
 }
