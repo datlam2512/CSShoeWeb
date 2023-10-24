@@ -24,8 +24,6 @@ import PaymentDetail from './FooterNav/PaymentDetail';
 import QuestionAnwser from './FooterNav/QuestionAnwser';
 import CreateYourOwnPage from './Pages/CreateYourOwn/CreateYourOwnPage';
 import CreateAccountpage from './Pages/CreateAccount/CreateAccountpage'
-import ProductDetailAdidas from './Pages/ProductDetailAdidas/ProductDetailComponent'
-import ShopAdidas from './Pages/Shop/ShopAdidas';
 import Blogs from './Pages/BlogPages/Blog'
 import BlogDetail from './Pages/BlogPages/BlogDetail';
 import Search from 'antd/es/input/Search';
@@ -40,8 +38,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/Login' element={<LoginPage />} />
-        <Route path='/nike' element={<Shop />} />
-        <Route path='/adidas' element={<ShopAdidas/>}/>
+        <Route path='/shop' element={<Shop />} />
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
         <Route path='/blog-detail/:id' element={<BlogDetail/>}></Route>

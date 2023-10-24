@@ -61,6 +61,11 @@ label {
     margin-bottom: 20px;
 }
 
+.provide-upload img{
+    width: 50%;
+    height: 50%;
+}
+
 textarea {
     width: 100%;
 }
@@ -70,4 +75,26 @@ textarea {
     text-align: center;
     margin: 25px 0;
     font-family: Karla, sans-serif;
+}
+
+.upload-content{
+    margin: 15px 0;
+    position: relative;
+}
+
+.upload-button{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -11px;
+    left: 80px;
+    padding: 0 11px ;
+    border-radius: 50%;
+    font-size: 12px;
+    color: rgb(201, 2, 2);
+}
+
+.upload-button:hover{
+    background-color: red;
+    border: none;
 }

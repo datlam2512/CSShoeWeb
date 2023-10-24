@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './CreateYourOwn.css';
 import ImageGenerator from './ImageGenerator';
 import { UploadOutlined } from '@ant-design/icons';
-// Import danh sách sản phẩm từ file bạn đã cung cấp
 import createProducts from './ListCreateShoes';
 import { Button, ConfigProvider, Upload, message } from 'antd';
 
@@ -10,17 +9,38 @@ export default function CreateYourOwn() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState(''); // Sản phẩm được chọn
-  const [selectedSize, setSelectedSize] = useState(''); // Kích thước giày được chọn
-  const [idea, setIdea] = useState(''); // Ý tưởng
+  const [selectedProduct, setSelectedProduct] = useState(''); 
+  const [selectedSize, setSelectedSize] = useState(''); 
+  const [idea, setIdea] = useState(''); 
 
+  const [imageUrls, setImageUrls] = useState([]);
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg';
     if (!isJpgOrPng) {
       message.error('You can only upload JPG file!');
+    } else {
+      getBase64(file, imageUrl => {
+        if (imageUrls.includes(imageUrl)) {
+          message.error('You cannot upload duplicate images!');
+        } else {
+          setImageUrls(prevState => [...prevState, imageUrl]);
+          message.success("upload successfully!")
+        }
+      });
     }
-    return isJpgOrPng;
+    // Prevent upload
+    return false;
   }
+
+  const handleChange = info => {
+    if (info.file.status === 'error') {
+      getBase64(info.file.originFileObj, imageUrl => setImageUrls(prevState => [...prevState, imageUrl]));
+    }
+  };
+
+  const handleDelete = (url) => {
+    setImageUrls(prevState => prevState.filter(imageUrl => imageUrl !== url));
+  };
 
   const handleSelectChange = (e) => {
     setSelectedProduct(e.target.value);
@@ -97,30 +117,34 @@ export default function CreateYourOwn() {
                 </label>
               </div>
               <div className='provide-upload'>
-                <ConfigProvider
-                  theme={{
-   
-                    token: {
-                      colorPrimary: "black",
-                      colorPrimaryHover: "rgba(0, 0, 0, 1)",
-                      borderRadiusLG: 0,
-                      controlHeightLG: 55
-                    },
-                  }}
-                >
-                  <Upload
-                    name="avatar"
-                    listType="picture-card"
-                    className="avatar-uploader"
-                    showUploadList={false}
-                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                    beforeUpload={beforeUpload}
-                    >
-                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
-                  </Upload>
-                </ConfigProvider>
-
-              </div>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "black",
+            colorPrimaryHover: "rgba(0, 0, 0, 1)",
+            borderRadiusLG: 0,
+            controlHeightLG: 55
+          },
+        }}
+      >
+        <Upload
+          name="avatar"
+          listType="picture-card"
+          className="avatar-uploader"
+          showUploadList={false}
+          beforeUpload={beforeUpload}
+          onChange={handleChange}
+        >
+          <Button icon={<UploadOutlined/>}>Click to Upload</Button>
+        </Upload>
+        {imageUrls.map((url, index) => (
+          <div className='upload-content' key={index}>
+            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px'}} />
+            <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
+          </div>
+        ))}
+      </ConfigProvider>
+    </div>
               <div className='provide-idea'>
                 <label >
                   Idea:
@@ -140,4 +164,10 @@ export default function CreateYourOwn() {
       </div>
     </div>
   );
+
+  function getBase64(img, callback) {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result));
+    reader.readAsDataURL(img);
+  }
 }

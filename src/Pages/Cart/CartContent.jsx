@@ -5,8 +5,6 @@ import { ShopContext } from '../../context/shop-context'
 import {ShopContextAdidas} from '../../context/Shop-context-adidas'
 import { CartItem } from './CartItem'
 import { Link, useNavigate } from 'react-router-dom'
-import {CartItemAdidas} from './CartItem-adidas'
-import productsadias from '../ShopAdidas/ProductList'
 export default function CartContent() {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext,ShopContextAdidas)
   const totalAmount = getTotalCartAmount()

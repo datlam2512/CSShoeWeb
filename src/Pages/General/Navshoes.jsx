@@ -11,33 +11,7 @@ import SearchBar from "./SearchBar";
 export default function () {
 
   const { Search } = Input;
-  const onSearch = (value, _e, info) => console.log(info?.source, value);
-  const items = [
-    {
-      key: "1",
-      label: (
-        <Link to={"/nike"} style={{ textDecoration: "none" }}>
-          Nike
-        </Link>
-      ),
-    },
-    {
-      key: "2",
-      label: (
-        <Link to={"/adidas"} style={{ textDecoration: "none" }}>
-          Adidas
-        </Link>
-      ),
-    },
-    {
-      key: "3",
-      label: (
-        <Link to={"/converse"} style={{ textDecoration: "none" }}>
-          Converse
-        </Link>
-      ),
-    },
-  ];
+  const onSearch = (value, _e, info) => console.log(info?.source, value)
   return (
     <div className="Navbar">
       <div className="Navbarheader">
@@ -59,14 +33,20 @@ export default function () {
           <li>
             <Space direction="vertical">
               <Space wrap>
-                
+                <Dropdown
+                  menu={{
+                    items,
+                  }}
+                  placement="bottom"
+                >
                   <Link
                     className="link-nav"
-                    to="/nike "
+                    to="/"
                     style={{ textDecoration: "none", color: "#dbdbdb" }}
                   >
                     Shop
                   </Link>
+                </Dropdown>
               </Space>
             </Space>
           </li>
