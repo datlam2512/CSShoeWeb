@@ -10,6 +10,9 @@
  justify-content: space-between;
  align-items: center;
 }
+.header{
+  background-color: #000;
+}
 .menu {
   display: flex;
   margin: 0 0 0 80px;
