@@ -33,20 +33,15 @@ export default function () {
           <li>
             <Space direction="vertical">
               <Space wrap>
-                <Dropdown
-                  menu={{
-                    items,
-                  }}
-                  placement="bottom"
-                >
+                
                   <Link
                     className="link-nav"
-                    to="/"
+                    to="/shop"
                     style={{ textDecoration: "none", color: "#dbdbdb" }}
                   >
                     Shop
                   </Link>
-                </Dropdown>
+                
               </Space>
             </Space>
           </li>
