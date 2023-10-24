@@ -45,7 +45,6 @@ function App() {
         <Route path='/CartContent' element={<Cart/>} />
         <Route path='/product-detail/:id' element={<ProductDetail/>}></Route>
         <Route path='/blog-detail/:id' element={<BlogDetail/>}></Route>
-        <Route path='/product-detail-adidas/:id' element={<ProductDetailAdidas/>}></Route>
         <Route path='/forgot' element={<ForgotPassword/>}></Route>
         <Route path='/about' element={<AboutUs/>}></Route>
         <Route path='/contact' element={<Contact/>}></Route>

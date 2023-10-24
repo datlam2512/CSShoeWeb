@@ -514,6 +514,57 @@ const products = [
         brand: "adidas",
     },
 
+    {
+        id: 73,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/il_fullxfull.2100014972_9nk1_1024x1024.jpg?v=1579177683',
+        name: "VANS OLD SKOOL - DONUT DRIP",
+        price: 2200000,
+        brand: "vans",
+    },
+    {
+        id: 74,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_18_9248112007_360x.png?v=1579282277 ',
+        name: "VANS OLD SKOOL - DONUT DRIP",
+        price: 3000000,
+        brand: "vans",
+    },
+    {
+        id: 75,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_13_8861809338_360x.png?v=1579282296',
+        name: "VANS OLD SKOOL DIAMONDS - CHESS",
+        price: 2900000,
+        brand: "vans",
+    },
+    {
+        id: 76,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_26_9669378659_360x.png?v=1579282306',
+        name: "VANS OLD SKOOL DIAMONDS - GREY",
+        price: 3800000,
+        brand: "vans",
+    },
+    {
+        id: 77,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_20_9435152139_360x.png?v=1579282318',
+        name: "VANS OLD SKOOL DIAMONDS - LEOPARD",
+        price: 7000000,
+        brand: "vans",
+    },
+    {
+        id: 78,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/imageedit_11_7140943397_360x.png?v=1579280864',
+        name: "VANS OLD SKOOL DIAMONDS - PURPLE",
+        price: 6900000,
+        brand: "vans",
+    },
+    {
+        id: 79,
+        imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/IMG_6767_360x.jpg?v=1583924564',
+        name: "VANS OLD SKOOL X BABE SHARK TEETH'S",
+        price: 3200000,
+        brand: "vans",
+    },
+
+
 ]
 
 export default products

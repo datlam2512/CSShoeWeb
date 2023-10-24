@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Input, Space } from 'antd';
+import { ConfigProvider, Input, Space } from 'antd';
 import SearchResult from './SearchResult';
 import "./Navigationshoe.css";
 
@@ -14,17 +14,31 @@ export const SearchBar = () => {
   };
 
   return (
-    <Space direction="vertical">
-      <Search className='input-search'
-      placeholder='Search'
-        onSearch={onSearch}
-        style={{
-          scale:'80%',
-          width:'100%',
-        }}
-      />
-    </Space>
-    
+    <ConfigProvider
+      theme={{
+        components: {
+          Input: {
+            activeBg: '#fff',
+            hoverBg: '#fff'
+          },
+        },
+      }}
+    >
+      <Space direction="vertical">
+        <Search
+          className='input-search'
+          placeholder="Search"
+          onSearch={onSearch}
+          enterButton
+          style={{
+            scale: '90%',
+            width: '100%',
+          }}
+        />
+      </Space>
+    </ConfigProvider>
+
+
   );
 }
 
