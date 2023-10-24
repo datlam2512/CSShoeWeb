@@ -4,7 +4,7 @@ import ImageGenerator from './ImageGenerator';
 import { UploadOutlined } from '@ant-design/icons';
 // Import danh sách sản phẩm từ file bạn đã cung cấp
 import createProducts from './ListCreateShoes';
-import { Button, ConfigProvider, Upload } from 'antd';
+import { Button, ConfigProvider, Upload, message } from 'antd';
 
 export default function CreateYourOwn() {
   const [firstName, setFirstName] = useState('');
@@ -13,6 +13,14 @@ export default function CreateYourOwn() {
   const [selectedProduct, setSelectedProduct] = useState(''); // Sản phẩm được chọn
   const [selectedSize, setSelectedSize] = useState(''); // Kích thước giày được chọn
   const [idea, setIdea] = useState(''); // Ý tưởng
+
+  const beforeUpload = (file) => {
+    const isJpgOrPng = file.type === 'image/jpeg';
+    if (!isJpgOrPng) {
+      message.error('You can only upload JPG file!');
+    }
+    return isJpgOrPng;
+  }
 
   const handleSelectChange = (e) => {
     setSelectedProduct(e.target.value);
@@ -100,8 +108,15 @@ export default function CreateYourOwn() {
                     },
                   }}
                 >
-                  <Upload>
-                    <Button icon={<UploadOutlined />}>Choose your Design</Button>
+                  <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    beforeUpload={beforeUpload}
+                    >
+                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
                   </Upload>
                 </ConfigProvider>
 

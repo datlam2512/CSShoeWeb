@@ -65,3 +65,9 @@ textarea {
     width: 100%;
 }
 
+.create-your-own-title{
+    width: 100%;
+    text-align: center;
+    margin: 25px 0;
+    font-family: Karla, sans-serif;
+}
