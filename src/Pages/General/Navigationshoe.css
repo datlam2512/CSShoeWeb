@@ -48,31 +48,6 @@
   margin-top: 1%;
   margin-right: 1%;
 }
-.container-search{
-  margin-top: 5%;
-  margin-right: 3%;
-  background-color: #fff;
-  height: 30px;
-  border-radius: 30px;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  transition: 0.8s;
-  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-}
-.container-search:hover .input-search{
-  width: 200px;
-  cursor: pointer;
-}
-.container-search .input-search{
-  background:transparent;
-  border: none;
-  outline: none;
-  width: 0px;
-  font-weight: 500;
-  font-size: 16px;
-  transition: 0.8s;
-}
 .link-nav{
   text-transform: uppercase;
   min-width: 100px; 
