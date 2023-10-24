@@ -427,7 +427,7 @@ const products = [
         imgUrl: 'https://www.customsneaker.nl/cdn/shop/products/il_794xN.1898378630_jgy4_1024x1024.jpg?v=1579131954',
         name: "BABY - ADIDAS STAN SMITH - PLUTO",
         price: 3000000,
-        brand: "nike",
+        brand: "adidas",
     },
     {
         id: 61,
@@ -469,7 +469,7 @@ const products = [
         imgUrl: 'https://www.mimanerashop.com/images/adidas-superstar-pop-eyes.600x600.12101.webp',
         name: "Adidas Superstar Pop Eyes",
         price: 4000000,
-        brand: "nike",
+        brand: "adidas",
     },
     {
         id: 67,
