@@ -30,7 +30,10 @@ export default function () {
             </Link>
           </li>
 
-          <li> 
+          <li>
+            <Space direction="vertical">
+              <Space wrap>
+                
                   <Link
                     className="link-nav"
                     to="/shop"
@@ -38,6 +41,9 @@ export default function () {
                   >
                     Shop
                   </Link>
+                
+              </Space>
+            </Space>
           </li>
 
           <li>
