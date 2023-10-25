@@ -563,6 +563,27 @@ const products = [
         price: 3200000,
         brand: "vans",
     },
+    {
+        id: 80,
+        imgUrl: 'https://images.vans.com/is/image/Vans/VN0A3VC1_476_HERO?hei=617&wid=492&qlt=50&resMode=sharp2&op_sum=0.9,1.0,8,0',
+        name: "Vans Customs x Disney 100 Multi Character Sk8-Hi Shoe",
+        price: 5000000,
+        brand: "vans",
+    },
+    {
+        id: 81,
+        imgUrl: 'https://images.vans.com/is/image/Vans/VN0A3VC1_516_HERO?hei=617&wid=492&qlt=50&resMode=sharp2&op_sum=0.9,1.0,8,0',
+        name: "Disney X Vans Customs Mickey Old Skool Shoe",
+        price: 4000000,
+        brand: "vans",
+    },
+    {
+        id: 82,
+        imgUrl: 'https://bizweb.dktcdn.net/thumb/1024x1024/100/140/774/products/vans-slip-on-custom-culture-2018-vn0a4bv3017-1.jpg?v=1576922917380',
+        name: "VANS SLIP-ON CUSTOM CULTURE 2018",
+        price: 2000000,
+        brand: "vans",
+    },
 
 
 ]
