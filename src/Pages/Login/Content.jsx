@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Content.css";
-import { Button, Checkbox, Form, Input } from "antd";
-import { Link } from "react-router-dom";
+import { Button, Checkbox, Form, Input, message } from "antd";
+import { Link , useNavigate } from "react-router-dom";
+import { loginUser } from "./api";
+import { UserContext } from "../../context/user-context";
 export default function Content() {
-  const onFinish = (values) => {
-    console.log("Success:", values);
+  const { setUser } = React.useContext(UserContext);
+  const navigate = useNavigate();
+  const onFinish = async (values) => {
+    const { userName, password } = values;
+    try {
+      const user = await loginUser(userName, password);
+      if (user) {
+        console.log('Logged in user:', user);
+        setUser(user);
+        navigate('/');
+        message.success(`Welcome, ${user.username}`, 3);
+      } else {
+        console.error('Invalid username or password');
+        message.error('Your username or password is incorrect', 3);
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      message.error('Login failed', 3);
+    }
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -35,7 +54,7 @@ export default function Content() {
         <Form.Item
           className="Form-input"
           label={<p>Username</p>}
-          name="txtUserName"
+          name="userName"
           rules={[
             {
               message: "Please input your username!",
@@ -48,7 +67,7 @@ export default function Content() {
         <Form.Item
           className="Form-input"
           label={<p>Password</p>}
-          name="txtPassword"
+          name="password"
           rules={[
             {
               message: "Please input your password!",

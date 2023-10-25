@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import React from 'react';
 import HomePage from './Pages/General/Home'
 import LoginPage from './Pages/Login/Login'
 import Shop from './Pages/Shop/Shop';
@@ -28,9 +29,13 @@ import Blogs from './Pages/BlogPages/Blog'
 import BlogDetail from './Pages/BlogPages/BlogDetail';
 import Search from 'antd/es/input/Search';
 import AdminDashBoard from './Pages/AdminPage/Admin'
+import { UserContext } from './context/user-context';
+import AccountPage from './Account/AccountPage';
 function App() {
+  const [user, setUser] = React.useState(null);
   return (
     <div className="App">
+    <UserContext.Provider value={{ user,setUser }}>
     <ShopContextProvider>
       <div className='header'>
      <Navshoes/>
@@ -59,12 +64,14 @@ function App() {
         <Route path='/createyourown' element={<CreateYourOwnPage/>} />
         <Route path='/blogs' element={<Blogs/>} /> 
         <Route path='/admin' element={<AdminDashBoard/>} /> 
+        <Route path='/Account' element={<AccountPage/>} />
       </Routes>
       </div>
       <div className='Footer-main'>
       <Footer />
       </div>
     </ShopContextProvider>
+    </UserContext.Provider>
     </div>
   );
 }

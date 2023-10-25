@@ -1,6 +1,7 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navigationshoe.css";
 import { NavItem, Navbar, Icon, Tabs, Tab } from "react-materialize";
 import { AudioOutlined } from "@ant-design/icons";
@@ -8,11 +9,20 @@ import { Button, Dropdown, Input, Space } from "antd";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBar from "./SearchBar";
+import { UserContext } from "../../context/user-context";
 
 export default function () {
-
+  const { user } = React.useContext(UserContext);
+  const navigate = useNavigate();
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value)
+  const handleClick = () => {
+    if (user) {
+      navigate('/Account')
+    } else {
+      navigate('/Login')
+    }
+  };
   return (
     <div className="Navbar">
       <div className="Navbarheader">
@@ -103,7 +113,7 @@ export default function () {
               <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
             </Link>
           </button>
-          <button className="Login" type="submit">
+          <button className="Login" type="submit" onClick={handleClick}>
             {" "}
             <Link to="/Login">
               <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
