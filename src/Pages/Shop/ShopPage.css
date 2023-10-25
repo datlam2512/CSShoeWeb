@@ -5,6 +5,7 @@ ul li {
 .marketplace-container {
     width: 100%;
     margin-top: 60px;
+    padding-bottom: 100px;
 }
 
 .shop-title {

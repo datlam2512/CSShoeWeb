@@ -37,41 +37,17 @@ export default function Body({ id, imgUrl, name, price }) {
 
   return (
     <div className="Body">
-      <div className="View-items">
-        <Card
-          className="card-home"
-          style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
-        >
-          <Link to={"/nike"} style={{ textDecoration: "none" }}>
-            <h1>Nike</h1>
-            <p></p>
-            <img src="/Img/content1.png" />
-          </Link>
-        </Card>
-        <Card
-          className="card-home"
-          style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
-        >
-          <Link to={"/adidas"} style={{ textDecoration: "none" }}>
-            <h1>Adidas</h1>
-            <p></p>
-            <img src="/Img/content3.png" />
-          </Link>
-        </Card>
-        <Card
-          className="card-home"
-          style={{ width: 370, height: 400, textAlign: "center", border: 0 }}
-        >
-          <Link
-            to={"/converse"}
-            className="converse"
-            style={{ textDecoration: "none" }}
-          >
-            <h1>Converse</h1>
-            <p></p>
-            <img src="/Img/contentconverse.jpg" />
-          </Link>
-        </Card>
+      <div className="item-gif">
+        <div className="View-items">
+       <img src="https://freight.cargo.site/t/original/i/7c0a4f653ed5af639178b90252da9974c131e75855ee41b142832fc0ccb53cdb/004_Driving_Jimmy_Simpson.gif"/>
+       <div className="view-product">
+              <Link to='/shop'>
+                <button className="view-btn">
+                 <p>View All</p>
+                </button>
+              </Link>
+            </div>
+      </div>
       </div>
       <div className="home-content">
         <div className="content-shoe">
