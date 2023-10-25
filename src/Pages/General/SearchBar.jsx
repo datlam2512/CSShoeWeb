@@ -9,8 +9,12 @@ export const SearchBar = () => {
   const navigate = useNavigate();
 
   const onSearch = (value) => {
+    if(value.trim() === '') {
+      window.location.reload();
+    } else {
     console.log(value);
     navigate(`/search/${value}`);
+    }
   };
 
   return (
