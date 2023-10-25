@@ -1,10 +1,48 @@
 import React from "react";
 import "./Create.css";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, Modal, message } from "antd";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 export default function CreateAccount() {
-    const onFinish = (values) => {
-        console.log("Success:", values);
+    const checkUsernameOrEmailExists = async (username, email) => {
+        try {
+            const response = await axios.get('https://6538e61aa543859d1bb22827.mockapi.io/api/users');
+            const users = response.data;
+            return users.some(user => user.username === username || user.email === email);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    const navigate = useNavigate();
+    const register = async (values) => {
+        try {
+            const response = await axios.post('https://6538e61aa543859d1bb22827.mockapi.io/api/users', values);
+            console.log(response.data);
+        } catch (error) {
+            console.error(error);
+        }
     };
+
+    const onFinish = async(values) => {      
+        const { username, email } = values;
+        const exists = await checkUsernameOrEmailExists(username, email);
+        if(exists) {
+            Modal.confirm({
+                title: '😢 Account Creation Failed',
+                content: 'Username or email already exists. Do you want to reload the page?',
+                onOk() {
+                    window.location.reload();
+                },
+                style: { top: '50%', transform: 'translateY(-50%)' },
+            });
+            } else {
+                console.log("Success:", values);
+                message.success("Your account have been created successfully", 3)
+                register(values);
+                navigate('/Login');
+        }
+    }
     const onFinishFailed = (errorInfo) => {
         console.log("Failed:", errorInfo);
     };
@@ -33,10 +71,15 @@ export default function CreateAccount() {
                     >
                         <Form.Item
                             label="Full Name"
-                            name="txtusername"
+                            name="full-name"
                             rules={[
                                 {
-                                    message: "Please input your fullname!",
+                                    required: true,
+                                    message: "Please input your Full Name!",
+                                },
+                                {
+                                    pattern: /^.{1,15}$/,
+                                    message: "Full Name must be a string from 1 - 15 characters",
                                 },
                             ]}
                         >
@@ -44,10 +87,15 @@ export default function CreateAccount() {
                         </Form.Item>
                         <Form.Item
                             label="Email"
-                            name="txtemail"
+                            name="email"
                             rules={[
                                 {
+                                    required: true,
                                     message: "Please input your email!",
+                                },
+                                {
+                                    pattern: /^[a-zA-Z0-9]+@gmail\.com$/,
+                                    message: "Email must be end with '@gmail.com'",
                                 },
                             ]}
                         >
@@ -55,10 +103,15 @@ export default function CreateAccount() {
                         </Form.Item>
                         <Form.Item
                             label="Phone Number"
-                            name="txtphone"
+                            name="phone"
                             rules={[
                                 {
-                                    message: "Please input your phone!",
+                                    required: true,
+                                    message: "Please input your phone number!",
+                                },
+                                {
+                                    pattern: /^\d{10}$/,
+                                    message: "Phone number must be a filled with 10 numbers",
                                 },
                             ]}
                         >
@@ -69,7 +122,12 @@ export default function CreateAccount() {
                             name="username"
                             rules={[
                                 {
+                                    required: true,
                                     message: "Please input your username!",
+                                },
+                                {
+                                    pattern: /^.{1,10}$/,
+                                    message: "Username must be from 1 - 10 characters",
                                 },
                             ]}
                         >
@@ -81,7 +139,12 @@ export default function CreateAccount() {
                             name="password"
                             rules={[
                                 {
+                                    required: true,
                                     message: "Please input your password!",
+                                },
+                                {
+                                    pattern: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{1,15}$/,
+                                    message: "Password must have at least 1 special character, 1 number, and filled with 1 - 15 characters",
                                 },
                             ]}
                         >
