@@ -98,3 +98,23 @@
     margin: 0 15px;
 }
 
+.Header{
+    position: relative;
+}
+
+.butt-1{
+    position: absolute;
+    left: 2%;
+    transform: translateY(250px);
+    z-index: 2;
+}
+
+.butt-2{
+    position: absolute;
+    right: 2%;
+    transform: translateY(-250px);
+}
+
+.Header button:hover{
+    background-color: white;
+}
