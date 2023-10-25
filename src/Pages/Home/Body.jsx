@@ -78,6 +78,7 @@ export default function Body({ id, imgUrl, name, price }) {
           </div>
         </div>
       </div>
+      <div className="product-bottom-main">
       <div className="product-bottom">
         {products.slice(0, 4).map((product) => (
          <div className="product-card-shoes">
@@ -106,6 +107,7 @@ export default function Body({ id, imgUrl, name, price }) {
           </div>    
           </div>  
         ))}          
+      </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@
     margin-top: 50px;
 }
 .card-blog img {
-    width: 60%;
+    width: 90%;
 }
 .detail-blog{
     width: 100%
@@ -18,19 +18,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5% 20%;
+    margin: 0 20%;
 }
 .blog-content-detail h1{
     font-weight: 600;
     font-family: Karla, sans-serif;
     text-transform: uppercase;
     margin-top: 5%;
-    font-size: 130%;
+    width: 100%;
+    font-size: 200%;
 }
 .blog-content-detail img{
-    width: 50%;
+    width: 52em;
+    height: 30em;
 }
 .blog-content-detail p{
+    width: 100%;
     font-weight: 300;
-    font-size: 90%;
+    font-size: 130%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+    line-height: 2;
+}
+.card-blog p{
+    text-align: center;
+    color: #000;
+    display: flex;
 }

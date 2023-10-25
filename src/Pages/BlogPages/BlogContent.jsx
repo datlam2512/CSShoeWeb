@@ -7,11 +7,11 @@ export default function BlogContent() {
   return (
     <div>
       <div className='Container'>
-        <div className='row blog-content'>
+        <div className='row blog-content'>  
    {Blogs.map((blogs)=>(
     <div className='col-lg-4 col-md-5 col-sm-6 card-blog'>
     <img src={blogs.img}/>
-    <Link to={`/blog-detail/${blogs.id}`} >{blogs.tittle}</Link>
+    <Link to={`/blog-detail/${blogs.id}`} ><p className='infor-content'>{blogs.tittle}</p></Link>
     </div>
    ))}
    </div>

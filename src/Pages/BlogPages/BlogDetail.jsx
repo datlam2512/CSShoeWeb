@@ -10,10 +10,10 @@ export default function () {
   return (
     <div className='detail-blog'>
         <div className='blog-content-detail'>
-         <img src={blogs.img}/>
          <h1>{blogs.tittle}</h1>
+         <img src={blogs.img}/>
          <p>{blogs.content}</p>
-        </div>
+         </div>
     </div>
   )
 }

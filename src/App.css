@@ -5,8 +5,14 @@ html::-webkit-scrollbar {
     background-color: #fcf7f7;
 }
 .header{
-    background-color: #656662;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    width: 100%;
 }
 .Body-main{
-   
+    margin-top: 75px;
+    padding-top: 3px;
 }

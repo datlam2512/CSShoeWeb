@@ -57,3 +57,6 @@
 .chkremember{
     margin-bottom: 20px;
 }
+.ant-input-affix-wrapper{
+  padding: 1px;
+}

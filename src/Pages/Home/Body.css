@@ -145,6 +145,8 @@
 .product-bottom {
   display: flex;
   justify-content: center;
+  width: 1150px;
+  margin: 0 0;
 }
 .card-home img{
   width: 15rem;
@@ -200,12 +202,12 @@
   transition: top 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 .product-card:hover .view-product .view-btn {
-  bottom: 50%;
+  bottom: 60%;
   opacity: 1;
   transition: bottom 0.3s ease, opacity 0.3s ease;
 }
 .product-card-nav:hover .view-product .view-btn {
-  bottom: 50%;
+  bottom: 60%;
   opacity: 1;
   transition: bottom 0.3s ease, opacity 0.3s ease;
 }
@@ -245,4 +247,9 @@ width: 50%;
   text-transform: uppercase;
   font-weight: 500;
   font-size: 150%;
+}
+.product-bottom-main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

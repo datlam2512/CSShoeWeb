@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 import HomePage from './Pages/General/Home'
 import LoginPage from './Pages/Login/Login'
 import Shop from './Pages/Shop/Shop';
@@ -26,6 +27,7 @@ import CreateAccountpage from './Pages/CreateAccount/CreateAccountpage'
 import Blogs from './Pages/BlogPages/Blog'
 import BlogDetail from './Pages/BlogPages/BlogDetail';
 import Search from 'antd/es/input/Search';
+import AdminDashBoard from './Pages/AdminPage/Admin'
 function App() {
   return (
     <div className="App">
@@ -56,6 +58,7 @@ function App() {
         <Route path='/create' element={<CreateAccountpage/>} />
         <Route path='/createyourown' element={<CreateYourOwnPage/>} />
         <Route path='/blogs' element={<Blogs/>} /> 
+        <Route path='/admin' element={<AdminDashBoard/>} /> 
       </Routes>
       </div>
       <div className='Footer-main'>
