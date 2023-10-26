@@ -44,9 +44,12 @@ export default function CreateYourOwn() {
     setImageUrls(prevState => prevState.filter(imageUrl => imageUrl !== url));
   };
 
+
   const handleSelectChange = (e) => {
-    setSelectedProduct(e.target.value);
+    const selectedValue = e.target.value;
+    setSelectedProduct(selectedValue);
   };
+
 
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
@@ -66,6 +69,16 @@ export default function CreateYourOwn() {
 
   const handleIdeaChange = (e) => {
     setIdea(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    console.log("First Name:", firstName);
+    console.log("Last Name:", lastName);
+    console.log("Email:", email);
+    console.log("Selected Product:", selectedProduct);
+    console.log("Selected Size:", selectedSize);
+    console.log("Idea:", idea);
+    console.log("Image URLs:", imageUrls);
   };
 
   return (
@@ -108,7 +121,7 @@ export default function CreateYourOwn() {
                     <select value={selectedProduct} onChange={handleSelectChange}>
                       <option value="">Select a shoe</option>
                       {createProducts.map((product) => (
-                        <option key={product.id} value={product.id}>
+                        <option key={product.id} value={product.name}>
                           {product.name} - ${product.price}
                         </option>
                       ))}
@@ -162,6 +175,9 @@ export default function CreateYourOwn() {
                     rows="5"
                   />
                 </label>
+              </div>
+              <div className='submit-button'>
+                <Button type="primary" onClick={handleSubmit}>Submit</Button>
               </div>
             </div>
           </div>
