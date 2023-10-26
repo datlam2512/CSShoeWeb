@@ -6,44 +6,16 @@ import createProducts from './ListCreateShoes';
 import { Button, ConfigProvider, Upload, message } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
-import { createUserDesign } from '../Login/api';
-import { UserContext } from '../../context/user-context';
-import axios from 'axios';
 
 export default function CreateYourOwn() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState(''); 
-  const [selectedSize, setSelectedSize] = useState(''); 
-  const [idea, setIdea] = useState(''); 
+  const [selectedProduct, setSelectedProduct] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+  const [idea, setIdea] = useState('');
+
   const [imageUrls, setImageUrls] = useState([]);
-
-  const handleSubmit = async () => {
-    const product = createProducts.find(p => p.id === selectedProduct);
-    if (!selectedProduct) {
-    message.error('Please select a product.');
-    return;
-  }
-    const design = {
-      firstName,
-      lastName,
-      email,
-      product: product,
-      selectedSize,
-      imageUrls,
-      idea,
-    };
-    console.log(design)
-    try {
-      await axios.post('https://6538e61aa543859d1bb22827.mockapi.io/api/users', design);
-      message.success('Your design has been submitted successfully!', 3);
-    } catch (error) {
-      console.error('Failed to submit design:', error);
-      message.error('Failed to submit your design. Please try again.', 3);
-    }
-  };
-
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg';
     if (!isJpgOrPng) {
@@ -72,10 +44,10 @@ export default function CreateYourOwn() {
     setImageUrls(prevState => prevState.filter(imageUrl => imageUrl !== url));
   };
 
-
+  
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
-    setSelectedProduct(selectedValue);
+    setSelectedProduct();
   };
 
 
@@ -100,6 +72,7 @@ export default function CreateYourOwn() {
   };
 
   const handleSubmit = () => {
+    // Log all the information to the console
     console.log("First Name:", firstName);
     console.log("Last Name:", lastName);
     console.log("Email:", email);
@@ -149,7 +122,7 @@ export default function CreateYourOwn() {
                     <select value={selectedProduct} onChange={handleSelectChange}>
                       <option value="">Select a shoe</option>
                       {createProducts.map((product) => (
-                        <option key={product.id} value={product.name}>
+                        <option key={product.id} value={product.id}>
                           {product.name} - ${product.price}
                         </option>
                       ))}
@@ -211,7 +184,6 @@ export default function CreateYourOwn() {
           </div>
         </div>
       </div>
-      <button className="butt-submit" onClick={handleSubmit}>Send</button>
     </div>
   );
 
