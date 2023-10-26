@@ -139,7 +139,7 @@ export default function CreateYourOwn() {
         </Upload>
         {imageUrls.map((url, index) => (
           <div className='upload-content' key={index}>
-            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px'}} />
+            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px',objectFit:'cover'}} />
             <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
           </div>
         ))}

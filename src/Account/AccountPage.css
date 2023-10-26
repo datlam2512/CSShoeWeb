@@ -1,4 +1,32 @@
 .account-page{
     height: 500px;
+    display: flex;
+    margin-top: 15px;
+}
+.subnav-top{
+    display: flex;  
+    flex-direction: row;
+    border-top: 0;
+    border-bottom: 1px solid #000 ;
+    width: 30%;
+    text-align: center;
+}
+.subnav-top i{
+    font-size: 350%;
+}
+.subnav-account{
+    width: 30%;
+    padding: 0 15px;
+}
+.subnav-account{
+    margin-top: 150px;
+}
+.account-content{
+    width: 70%;
+}
+.subnav-top li{
+    margin: 15px;
+}
+.account-detail{
     margin-top: 15px;
 }
