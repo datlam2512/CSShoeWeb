@@ -86,15 +86,23 @@ textarea {
     display: flex;
     align-items: center;
     position: absolute;
-    top: -11px;
-    left: 80px;
-    padding: 0 11px ;
+    top: -8px;
+    left: 92px;
+    padding: 5px 6px ;
     border-radius: 50%;
-    font-size: 12px;
-    color: rgb(201, 2, 2);
+    font-size: 7px;
+    background-color: rgb(237, 0, 0);
+    border: 0;
 }
 
 .upload-button:hover{
-    background-color: red;
+    background-color: rgb(255, 46, 46);
+    color: #fff;
     border: none;
+    cursor: pointer;
+}
+
+.butt-submit{
+    position: absolute;
+    margin: 0 0 0 50%;
 }

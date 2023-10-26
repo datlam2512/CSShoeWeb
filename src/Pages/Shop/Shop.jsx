@@ -12,9 +12,9 @@ export default function Shop() {
         <ShopTitle />
       </div>
       <div className='main-content'>
-        <div className='subdue'>
+        {/* <div className='subdue'>
           <FilterProduct />
-        </div>
+        </div> */}
         <div className='product'>
           <ProductMarketPlace />
         </div>
