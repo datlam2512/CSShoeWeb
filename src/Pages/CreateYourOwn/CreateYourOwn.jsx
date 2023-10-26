@@ -6,6 +6,7 @@ import createProducts from './ListCreateShoes';
 import { Button, ConfigProvider, Upload, message } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faX } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
 export default function CreateYourOwn() {
   const [firstName, setFirstName] = useState('');
@@ -19,26 +20,26 @@ export default function CreateYourOwn() {
 
   const handleSubmit = async () => {
     const product = createProducts.find(p => p.id === selectedProduct);
-    if (!selectedProduct) {
-    message.error('Please select a product.');
-    return;
-  }
+    //   if (!selectedProduct) {
+    //   message.error('Please select a product.');
+    //   return;
+    // }
     const design = {
       firstName,
       lastName,
       email,
-      product: product,
+      product: selectedProduct,
       selectedSize,
       imageUrls,
       idea,
     };
     console.log(design)
     try {
-      await axios.post('https://6538e61aa543859d1bb22827.mockapi.io/api/users', design);
+      await axios.post('https://6535e178c620ba9358ecbd6c.mockapi.io/shoes/orderInfor', design);
       message.success('Your design has been submitted successfully!', 3);
     } catch (error) {
       console.error('Failed to submit design:', error);
-      message.error('Failed to submit your design. Please try again.', 3);
+      // message.error('Failed to submit your design. Please try again.', 3);
     }
   };
 
@@ -69,10 +70,10 @@ export default function CreateYourOwn() {
     setImageUrls(prevState => prevState.filter(imageUrl => imageUrl !== url));
   };
 
-  
+
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
-    setSelectedProduct();
+    setSelectedProduct(selectedValue);
   };
 
 
@@ -96,7 +97,7 @@ export default function CreateYourOwn() {
     setIdea(e.target.value);
   };
 
- 
+
   return (
     <div className='create-your-own-page'>
       <div className='create-your-own-container'>
@@ -152,34 +153,34 @@ export default function CreateYourOwn() {
                 </label>
               </div>
               <div className='provide-upload'>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "black",
-            colorPrimaryHover: "rgba(0, 0, 0, 1)",
-            borderRadiusLG: 0,
-            controlHeightLG: 55
-          },
-        }}
-      >
-        <Upload
-          name="avatar"
-          listType="picture-card"
-          className="avatar-uploader"
-          showUploadList={false}
-          beforeUpload={beforeUpload}
-          onChange={handleChange}
-        >
-          <Button icon={<UploadOutlined/>}>Click to Upload</Button>
-        </Upload>
-        {imageUrls.map((url, index) => (
-          <div className='upload-content' key={index}>
-            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px',objectFit:'cover'}} />
-            <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
-          </div>
-        ))}
-      </ConfigProvider>
-    </div>
+                <ConfigProvider
+                  theme={{
+                    token: {
+                      colorPrimary: "black",
+                      colorPrimaryHover: "rgba(0, 0, 0, 1)",
+                      borderRadiusLG: 0,
+                      controlHeightLG: 55
+                    },
+                  }}
+                >
+                  <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    beforeUpload={beforeUpload}
+                    onChange={handleChange}
+                  >
+                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
+                  </Upload>
+                  {imageUrls.map((url, index) => (
+                    <div className='upload-content' key={index}>
+                      <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
+                      <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
+                    </div>
+                  ))}
+                </ConfigProvider>
+              </div>
               <div className='provide-idea'>
                 <label>
                   Idea:
