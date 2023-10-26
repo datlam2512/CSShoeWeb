@@ -8,18 +8,23 @@
     flex-direction: row;
     border-top: 0;
     border-bottom: 1px solid #000 ;
-    width: 30%;
+    width: 100%;
+    align-items: center;
     text-align: center;
 }
 .subnav-top i{
     font-size: 350%;
+    width: 100%;
 }
 .subnav-account{
-    width: 30%;
+    width: 20%;
     padding: 0 15px;
-}
-.subnav-account{
+    border: 1px solid #000;
     margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
 }
 .account-content{
     width: 70%;
