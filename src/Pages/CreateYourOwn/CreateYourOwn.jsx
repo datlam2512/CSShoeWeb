@@ -29,7 +29,7 @@ export default function CreateYourOwn() {
       firstName,
       lastName,
       email,
-      product: product,
+      product: selectedProduct,
       selectedSize,
       imageUrls,
       idea,
@@ -72,9 +72,12 @@ export default function CreateYourOwn() {
     setImageUrls(prevState => prevState.filter(imageUrl => imageUrl !== url));
   };
 
+
   const handleSelectChange = (e) => {
-    setSelectedProduct(e.target.value);
+    const selectedValue = e.target.value;
+    setSelectedProduct(selectedValue);
   };
+
 
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
@@ -96,6 +99,7 @@ export default function CreateYourOwn() {
     setIdea(e.target.value);
   };
 
+  
   return (
     <div className='create-your-own-page'>
       <div className='create-your-own-container'>
@@ -136,7 +140,7 @@ export default function CreateYourOwn() {
                     <select value={selectedProduct} onChange={handleSelectChange}>
                       <option value="">Select a shoe</option>
                       {createProducts.map((product) => (
-                        <option key={product.id} value={product.id}>
+                        <option key={product.id} value={product.name}>
                           {product.name} - ${product.price}
                         </option>
                       ))}
@@ -190,6 +194,9 @@ export default function CreateYourOwn() {
                     rows="5"
                   />
                 </label>
+              </div>
+              <div className='submit-button'>
+                <Button type="primary" onClick={handleSubmit}>Submit</Button>
               </div>
             </div>
           </div>
