@@ -109,7 +109,7 @@ export default function CreateYourOwn() {
         <div className='form-container'>
           <div className='form-design'>
             <div className='form-title'>
-              <h1>Create your Own Sneaker</h1>
+              <h1>Customize Your Sneaker</h1>
             </div>
             <div className='provide-infor'>
               <div className='provide-name'>

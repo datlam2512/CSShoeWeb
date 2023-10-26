@@ -1,10 +1,19 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
 import './Contact.css'
+import axios from 'axios';
+
 export default function () {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
+  const onFinish = async (values) => {
+    console.log('Success:', values);
+    try {
+        const response = await axios.post('https://your-mock-api.com/endpoint', values);
+        console.log(response.data);
+    } catch (error) {
+        console.error(error);
+    }
+};
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
