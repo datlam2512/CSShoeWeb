@@ -70,13 +70,15 @@ textarea {
     width: 100%;
 }
 
-.create-your-own-title{
-    width: 100%;
-    text-align: center;
-    margin: 25px 0;
+.form-title h1{
     font-family: Karla, sans-serif;
 }
-
+.create-your-own-title h1{
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    font-family: Karla, sans-serif;
+}
 .upload-content{
     margin: 15px 0;
     position: relative;
@@ -87,10 +89,10 @@ textarea {
     align-items: center;
     position: absolute;
     top: -8px;
-    left: 92px;
-    padding: 5px 6px ;
+    left: 87px;
+    padding: 5px 10px ;
     border-radius: 50%;
-    font-size: 7px;
+    font-size: 10px;
     background-color: rgb(237, 0, 0);
     border: 0;
 }
@@ -105,4 +107,9 @@ textarea {
 .butt-submit{
     position: absolute;
     margin: 0 0 0 50%;
+}
+
+.ant-upload{
+    border: none!important;
+    max-height: 50px;
 }

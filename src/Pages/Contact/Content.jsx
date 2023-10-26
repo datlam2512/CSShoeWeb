@@ -1,10 +1,19 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
 import './Contact.css'
+import axios from 'axios';
+
 export default function () {
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
+  const onFinish = async (values) => {
+    console.log('Success:', values);
+    try {
+        const response = await axios.post('https://your-mock-api.com/endpoint', values);
+        console.log(response.data);
+    } catch (error) {
+        console.error(error);
+    }
+};
       const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
       };
@@ -15,12 +24,12 @@ export default function () {
             <p>Don’t hesitate to contact with us, we are always here to listen.....</p>
             <div className='contact-component'>
              <div className='Name-email'>
-             <Form
-             className='input-contact'
+             </div>
+             <Form    
     name="basic"
    
     style={{
-      maxWidth: 800,
+      maxWidth: 480,
     }}
     initialValues={{
       remember: true,
@@ -29,7 +38,7 @@ export default function () {
     onFinishFailed={onFinishFailed}
     autoComplete="off"
   >
-    <Form.Item  className="Form-input"
+     <Form.Item  className="Form-input"
       label="Name"
       name="txtName"
       rules={[
@@ -54,21 +63,6 @@ export default function () {
     >
         <Input />
     </Form.Item>
-  </Form>
-             </div>
-             <Form    
-    name="basic"
-   
-    style={{
-      maxWidth: 480,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
     <Form.Item className="Form-input"
       label="Phone"
       name="txtPhone"

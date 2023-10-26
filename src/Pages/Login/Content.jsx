@@ -15,7 +15,7 @@ export default function Content() {
         console.log('Logged in user:', user);
         setUser(user);
         navigate('/');
-        message.success(`Welcome, ${user.username}`, 3);
+        message.success(`Welcome, ${user.Username}`, 3);
       } else {
         console.error('Invalid username or password');
         message.error('Your username or password is incorrect', 3);

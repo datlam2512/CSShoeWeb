@@ -16,6 +16,32 @@ export default function CreateYourOwn() {
   const [idea, setIdea] = useState('');
 
   const [imageUrls, setImageUrls] = useState([]);
+
+  const handleSubmit = async () => {
+    const product = createProducts.find(p => p.id === selectedProduct);
+    if (!selectedProduct) {
+    message.error('Please select a product.');
+    return;
+  }
+    const design = {
+      firstName,
+      lastName,
+      email,
+      product: product,
+      selectedSize,
+      imageUrls,
+      idea,
+    };
+    console.log(design)
+    try {
+      await axios.post('https://6538e61aa543859d1bb22827.mockapi.io/api/users', design);
+      message.success('Your design has been submitted successfully!', 3);
+    } catch (error) {
+      console.error('Failed to submit design:', error);
+      message.error('Failed to submit your design. Please try again.', 3);
+    }
+  };
+
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg';
     if (!isJpgOrPng) {
@@ -26,7 +52,6 @@ export default function CreateYourOwn() {
           message.error('You cannot upload duplicate images!');
         } else {
           setImageUrls(prevState => [...prevState, imageUrl]);
-          message.success("Upload successful!")
         }
       });
     }
@@ -71,17 +96,7 @@ export default function CreateYourOwn() {
     setIdea(e.target.value);
   };
 
-  const handleSubmit = () => {
-    // Log all the information to the console
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
-    console.log("Email:", email);
-    console.log("Selected Product:", selectedProduct);
-    console.log("Selected Size:", selectedSize);
-    console.log("Idea:", idea);
-    console.log("Image URLs:", imageUrls);
-  };
-
+ 
   return (
     <div className='create-your-own-page'>
       <div className='create-your-own-container'>
@@ -91,7 +106,7 @@ export default function CreateYourOwn() {
         <div className='form-container'>
           <div className='form-design'>
             <div className='form-title'>
-              <h1>Create your Own Sneaker</h1>
+              <h1>Customize Your Sneaker</h1>
             </div>
             <div className='provide-infor'>
               <div className='provide-name'>
@@ -137,34 +152,34 @@ export default function CreateYourOwn() {
                 </label>
               </div>
               <div className='provide-upload'>
-                <ConfigProvider
-                  theme={{
-                    token: {
-                      colorPrimary: "black",
-                      colorPrimaryHover: "rgba(0, 0, 0, 1)",
-                      borderRadiusLG: 0,
-                      controlHeightLG: 55
-                    },
-                  }}
-                >
-                  <Upload
-                    name="avatar"
-                    listType="picture-card"
-                    className="avatar-uploader"
-                    showUploadList={false}
-                    beforeUpload={beforeUpload}
-                    onChange={handleChange}
-                  >
-                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
-                  </Upload>
-                  {imageUrls.map((url, index) => (
-                    <div className='upload-content' key={index}>
-                      <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px' }} />
-                      <a className="upload-button" onClick={() => handleDelete(url)}> <FontAwesomeIcon icon={faX} /> </a>
-                    </div>
-                  ))}
-                </ConfigProvider>
-              </div>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "black",
+            colorPrimaryHover: "rgba(0, 0, 0, 1)",
+            borderRadiusLG: 0,
+            controlHeightLG: 55
+          },
+        }}
+      >
+        <Upload
+          name="avatar"
+          listType="picture-card"
+          className="avatar-uploader"
+          showUploadList={false}
+          beforeUpload={beforeUpload}
+          onChange={handleChange}
+        >
+          <Button icon={<UploadOutlined/>}>Click to Upload</Button>
+        </Upload>
+        {imageUrls.map((url, index) => (
+          <div className='upload-content' key={index}>
+            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px',objectFit:'cover'}} />
+            <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
+          </div>
+        ))}
+      </ConfigProvider>
+    </div>
               <div className='provide-idea'>
                 <label>
                   Idea:
