@@ -101,3 +101,8 @@ textarea {
     border: none;
     cursor: pointer;
 }
+
+.butt-submit{
+    position: absolute;
+    margin: 0 0 0 50%;
+}
