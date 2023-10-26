@@ -4,27 +4,29 @@ import ImageGenerator from './ImageGenerator';
 import { UploadOutlined } from '@ant-design/icons';
 import createProducts from './ListCreateShoes';
 import { Button, ConfigProvider, Upload, message } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faX } from '@fortawesome/free-solid-svg-icons';
 
 export default function CreateYourOwn() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState(''); 
-  const [selectedSize, setSelectedSize] = useState(''); 
-  const [idea, setIdea] = useState(''); 
+  const [selectedProduct, setSelectedProduct] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
+  const [idea, setIdea] = useState('');
 
   const [imageUrls, setImageUrls] = useState([]);
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg';
     if (!isJpgOrPng) {
-      message.error('You can only upload JPG file!');
+      message.error('You can only upload JPG files!');
     } else {
       getBase64(file, imageUrl => {
         if (imageUrls.includes(imageUrl)) {
           message.error('You cannot upload duplicate images!');
         } else {
           setImageUrls(prevState => [...prevState, imageUrl]);
-          message.success("upload successfully!")
+          message.success("Upload successful!")
         }
       });
     }
@@ -58,6 +60,10 @@ export default function CreateYourOwn() {
     setLastName(e.target.value);
   };
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleIdeaChange = (e) => {
     setIdea(e.target.value);
   };
@@ -85,12 +91,12 @@ export default function CreateYourOwn() {
                   <input type="text" value={lastName} onChange={handleLastNameChange} />
                 </label>
               </div>
-              
+
               <div className='provide-email'>
                 <form>
                   <label>
                     Email:
-                    <input type="email" value={email} placeholder="Enter your email" className='width-100'/>
+                    <input type="email" value={email} onChange={handleEmailChange} placeholder="Enter your email" className='width-100' />
                   </label>
                 </form>
               </div>
@@ -117,39 +123,38 @@ export default function CreateYourOwn() {
                 </label>
               </div>
               <div className='provide-upload'>
-      <ConfigProvider
-        theme={{
-          token: {
-            colorPrimary: "black",
-            colorPrimaryHover: "rgba(0, 0, 0, 1)",
-            borderRadiusLG: 0,
-            controlHeightLG: 55
-          },
-        }}
-      >
-        <Upload
-          name="avatar"
-          listType="picture-card"
-          className="avatar-uploader"
-          showUploadList={false}
-          beforeUpload={beforeUpload}
-          onChange={handleChange}
-        >
-          <Button icon={<UploadOutlined/>}>Click to Upload</Button>
-        </Upload>
-        {imageUrls.map((url, index) => (
-          <div className='upload-content' key={index}>
-            <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px'}} />
-            <Button className="upload-button" onClick={() => handleDelete(url)}>x</Button>
-          </div>
-        ))}
-      </ConfigProvider>
-    </div>
+                <ConfigProvider
+                  theme={{
+                    token: {
+                      colorPrimary: "black",
+                      colorPrimaryHover: "rgba(0, 0, 0, 1)",
+                      borderRadiusLG: 0,
+                      controlHeightLG: 55
+                    },
+                  }}
+                >
+                  <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    beforeUpload={beforeUpload}
+                    onChange={handleChange}
+                  >
+                    <Button icon={<UploadOutlined />}>Click to Upload</Button>
+                  </Upload>
+                  {imageUrls.map((url, index) => (
+                    <div className='upload-content' key={index}>
+                      <img className="upload-image" src={url} alt={`avatar${index}`} style={{ width: '100px', height: '100px' }} />
+                      <a className="upload-button" onClick={() => handleDelete(url)}> <FontAwesomeIcon icon={faX} /> </a>
+                    </div>
+                  ))}
+                </ConfigProvider>
+              </div>
               <div className='provide-idea'>
-                <label >
+                <label>
                   Idea:
                   <br />
-
                   <textarea
                     value={idea}
                     onChange={handleIdeaChange}
