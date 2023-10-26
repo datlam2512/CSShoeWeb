@@ -29,7 +29,7 @@ export default function CreateYourOwn() {
       firstName,
       lastName,
       email,
-      product: product,
+      product: selectedProduct,
       selectedSize,
       imageUrls,
       idea,
@@ -99,16 +99,7 @@ export default function CreateYourOwn() {
     setIdea(e.target.value);
   };
 
-  const handleSubmit = () => {
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
-    console.log("Email:", email);
-    console.log("Selected Product:", selectedProduct);
-    console.log("Selected Size:", selectedSize);
-    console.log("Idea:", idea);
-    console.log("Image URLs:", imageUrls);
-  };
-
+  
   return (
     <div className='create-your-own-page'>
       <div className='create-your-own-container'>
