@@ -42,6 +42,7 @@ export default function CreateYourOwn() {
       console.error('Failed to submit design:', error);
       message.error('Failed to submit your design. Please try again.', 3);
     }
+    window.location.reload();
   };
 
   const beforeUpload = (file) => {
@@ -54,7 +55,6 @@ export default function CreateYourOwn() {
           message.error('You cannot upload duplicate images!');
         } else {
           setImageUrls(prevState => [...prevState, imageUrl]);
-          message.success("Upload successful!")
         }
       });
     }
@@ -202,7 +202,6 @@ export default function CreateYourOwn() {
           </div>
         </div>
       </div>
-      <button className="butt-submit" onClick={handleSubmit}>Send</button>
     </div>
   );
 
