@@ -93,6 +93,9 @@ export default function Body({ id, imgUrl, name, price }) {
                     </div>
                 </div>
             </div>
+            <div className="featured-product">
+                <h1>Featured Product</h1>
+            </div>
             <div className="product-bottom-main">
                 <div className="product-bottom">
                     {products.slice(0, 4).map((product) => (
