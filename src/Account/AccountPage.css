@@ -2,6 +2,8 @@
     height: 500px;
     display: flex;
     margin-top: 15px;
+    justify-content: center;
+    
 }
 .subnav-top{
     display: flex;  
@@ -32,6 +34,25 @@
 .subnav-top li{
     margin: 15px;
 }
+
 .account-detail{
     margin-top: 15px;
+}
+.profile-title{
+    padding: 20px;
+}
+.profile-detail{
+    height: 500px;
+    margin-top: 20px;
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    scale: 80%;
+    margin-left: 20px;
+}
+
+.profile{
+    margin-left: 30px;
+    
 }
