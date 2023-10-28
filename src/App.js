@@ -31,6 +31,8 @@ import Search from 'antd/es/input/Search';
 import AdminDashBoard from './Pages/AdminPage/Admin'
 import { UserContext } from './context/user-context';
 import AccountPage from './Account/AccountPage';
+import Protected from './Pages/Login/Context/Protected';
+
 function App() {
   const [user, setUser] = React.useState(null);
   return (
@@ -64,7 +66,7 @@ function App() {
         <Route path='/createyourown' element={<CreateYourOwnPage/>} />
         <Route path='/blogs' element={<Blogs/>} /> 
         <Route path='/admin' element={<AdminDashBoard/>} /> 
-        <Route path='/Account' element={<AccountPage/>} />
+        <Route path='/Account' element={<Protected><AccountPage/></Protected>} />
       </Routes>
       </div>
       <div className='Footer-main'>

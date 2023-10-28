@@ -60,3 +60,8 @@
 .ant-input-affix-wrapper{
   padding: 1px;
 }
+.Form-GoogleButton{
+  padding-top: 20px;
+  scale: 80%;
+  padding-left: 50px;
+}

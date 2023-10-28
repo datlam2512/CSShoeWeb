@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Shoes } from '../../ListShoes/ListOfShoes'
 import Body from './Body'
+import Header from './Header'
 export default class Main extends Component {
     constructor(){
         super()

@@ -23,7 +23,7 @@ export default function () {
       navigate('/Login')
     }
   };
-
+  
   return (
     <div className="Navbar">
       <div className="Navbarheader">

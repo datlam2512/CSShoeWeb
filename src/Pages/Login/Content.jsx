@@ -1,10 +1,24 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Content.css";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { Link , useNavigate } from "react-router-dom";
 import { loginUser } from "./api";
 import { UserContext } from "../../context/user-context";
+import GoogleButton from 'react-google-button';
+import { UserAuth } from "./Context/AuthContext";
+import { loginApi } from "./UserService";
+import { flexbox } from "@mui/system";
+
 export default function Content() {
+  const {googleSignIn, user} = UserAuth();
+  const handleGoogleSignIn = async()=>{
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   const { setUser } = React.useContext(UserContext);
   const navigate = useNavigate();
   const onFinish = async (values) => {
@@ -25,9 +39,17 @@ export default function Content() {
       message.error('Login failed', 3);
     }
   };
+
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
+  useEffect(()=>{
+    if(user!=null){
+      navigate('/src/Account/AccountPage.jsx')
+    }
+  },[user]);
+
   return (
     <div className="content">
       <h1>Login</h1>
@@ -94,7 +116,14 @@ export default function Content() {
             span: 16,
           }}
         >
-          <button>Submit</button>
+          <button>
+            Login
+            </button>
+
+          <div className="Form-GoogleButton">
+            <GoogleButton onClick={handleGoogleSignIn}/>
+          </div>  
+
           <Link className="forgotpassword" to={"/forgot"}>
             <p>Forgot Your Password?</p>
           </Link>
