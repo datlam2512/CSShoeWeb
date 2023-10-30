@@ -4,7 +4,7 @@
     justify-content: center;
 }
 .create-content {
-    width: 53%;
+    width: 120%;
     text-align: center;
     margin-top: 6%;
 }
@@ -15,6 +15,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 200%;
+    margin-left: 2%;
 }
 .button-create {
     font-family: Unica One, sans-serif;
@@ -22,4 +23,7 @@
     width: 100%;
     background-color: rgb(81, 69, 245);
     color: #fff;
+}
+.ant-form{
+  margin-right: 120px;  
 }

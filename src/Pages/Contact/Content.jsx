@@ -25,9 +25,9 @@ export default function Contact() {
           <label>Name</label>
           <input className='input' type="text" name="user_name" />
           <label>Email</label>
-          <input type="email" name="user_email" />
+          <input className='input' type="email" name="user_email" />
           <label>Phone</label>
-          <input type="input" name="user_phone" />
+          <input className='input' type="input" name="user_phone" />
           <label>Message</label>
           <textarea name="message" />
           <input className='submit' type="submit" value="Send" />
