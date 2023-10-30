@@ -11,6 +11,7 @@ export default function
     emailjs.sendForm('service_an92sag', 'template_fvx71ed', form.current, 'MfcBNeLDL7S9m3IiC')
       .then((result) => {
           console.log(result.text);
+          console.log("message sent");
       }, (error) => {
           console.log(error.text);
       });
