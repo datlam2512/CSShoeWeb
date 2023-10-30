@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../context/user-context";
 import "./AccountPage.css";
 
+import {useNavigate } from "react-router-dom";
+
 function AccountPage() {
   const { user, setUser } = useContext(UserContext);
 
@@ -17,12 +19,17 @@ function AccountPage() {
     setUser(updatedUser);
     setIsEditing(false);
   };
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    setUser(null);
+    navigate("/Login");
+  }
 
   return (
     <div className="profile">
       <div><h2 className="profile-title">Profile</h2></div>
       {isEditing ? (
-        <div className="profile-detail">
+        <div className="profile-update-detail">
           <label>
             First Name:
             <input
@@ -98,7 +105,7 @@ function AccountPage() {
           <button onClick={saveProfile}>Save</button>
         </div>
       ) : (
-        <div>
+        <div className="profile-detail">
           <p>First Name: {user?.firstName}</p>
           <p>Last Name: {user?.lastName}</p>
           <p>User Name: {user?.userName}</p>
@@ -110,6 +117,7 @@ function AccountPage() {
           <button onClick={() => setIsEditing(true)}>Edit Profile</button>
         </div>
       )}
+      <div className="logout-button" ><button onClick={handleLogout}>Logout</button></div>
     </div>
   );
 }
