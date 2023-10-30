@@ -1,91 +1,34 @@
-/* eslint-disable import/no-anonymous-default-export */
-import React from 'react'
-import { Button, Checkbox, Form, Input } from 'antd';
+import React,{ useRef } from 'react'
+import emailjs from '@emailjs/browser';
 import './Contact.css'
-import axios from 'axios';
+export default function 
+() {
+  const form = useRef();
 
-export default function () {
-  const onFinish = async (values) => {
-    console.log('Success:', values);
-    try {
-        const response = await axios.post('https://your-mock-api.com/endpoint', values);
-        console.log(response.data);
-    } catch (error) {
-        console.error(error);
-    }
-};
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-      };
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_an92sag', 'template_fvx71ed', form.current, 'MfcBNeLDL7S9m3IiC')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
   return (
-    <div className='Contact'>
-        <h1 className='Contact-h1'>Contact</h1>
-        <div className='form-contact' >
-            <p>Don’t hesitate to contact with us, we are always here to listen.....</p>
-            <div className='contact-component'>
-             <div className='Name-email'>
-             </div>
-             <Form    
-    name="basic"
-   
-    style={{
-      maxWidth: 480,
-    }}
-    initialValues={{
-      remember: true,
-    }}
-    onFinish={onFinish}
-    onFinishFailed={onFinishFailed}
-    autoComplete="off"
-  >
-     <Form.Item  className="Form-input"
-      label="Name"
-      name="txtName"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your Name!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-
-    <Form.Item className="Form-input"
-      label="Email"
-      name="txtEmail"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your Email!',
-        },
-      ]}
-    >
-        <Input />
-    </Form.Item>
-    <Form.Item className="Form-input"
-      label="Phone"
-      name="txtPhone"
-      rules={[
-        {
-          required: true,
-          message: 'Please input your Phone!',
-        },
-      ]}
-    >
-      <Input />
-    </Form.Item>
-    <Form.Item name="txtMessage" label="Message" className="Form-input">
-      <Input.TextArea className='input' />
-    </Form.Item>
-    <div  className='submit-contact'>
-      <button className='contact-button' type="primary" htmlType="submit">
-        Send
-      </button>
-      </div>
-  </Form>
-  </div>
-        </div>
+    <div className='form-contact'>
+      <h1 className='Contact-h1'>Contact</h1>
+      <div className='form-input'>
+        <form ref={form} onSubmit={sendEmail}>
+      <label >Name</label>
+      <input className='input' type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input className='submit' type="submit" value="Send" />
+    </form>
+    </div>
     </div>
   )
 }
