@@ -4,7 +4,7 @@
 .profile-title{
     padding: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 .profile-detail{
@@ -23,13 +23,10 @@
   }
 
 .profile-update-detail{
-    height: 500px;
+    margin-top: -40px;
     background: #fff;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    scale: 80%;
-    margin-left: 20px;
+    scale: 90%;    
+    margin-bottom: -10px;
 }
 
 .profile-detail button:hover {
@@ -39,7 +36,7 @@
 .profile {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px 10px 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
@@ -77,5 +74,15 @@
   .profile-update-detail label {
     display: block;
     margin-bottom: 10px;
+  }
+
+  .profile-update-detail button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
   }
 
