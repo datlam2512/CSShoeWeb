@@ -11,6 +11,7 @@ export default function Content() {
     const { userName, password } = values;
     try {
       const user = await loginUser(userName, password);
+
       if (user) {
         console.log('Logged in user:', user);
         setUser(user);
