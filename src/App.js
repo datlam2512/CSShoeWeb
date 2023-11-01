@@ -36,6 +36,7 @@ import DashBoardContent from './Pages/AdminPage/DashBoardContent';
 import ManageOrder from './Pages/AdminPage/ManageOrder';
 import ManageProduct from './Pages/AdminPage/ManageProduct';
 import ManageBlog from './Pages/AdminPage/ManageBlog';
+import AdminProfile from './Pages/AdminPage/AdminProfile';
 function App() {
   const [user, setUser] = React.useState(null);
   return (
@@ -69,6 +70,7 @@ function App() {
               <Route path='/createyourown' element={<CreateYourOwnPage />} />
               <Route path='/blogs' element={<Blogs />} />
               <Route path='/admin' element={<AdminDashBoard />} >
+                <Route path='profileadmin' element={<AdminProfile/>}/>
               <Route path='dashboard' element={<DashBoardContent />} />
               <Route path='manage-order' element={<ManageOrder />} />
               <Route path='manage-product' element={<ManageProduct />} />
