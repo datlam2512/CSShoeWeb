@@ -86,3 +86,14 @@
     margin-bottom: 10px;
   }
 
+  .profile-update-detail button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+

@@ -18,7 +18,6 @@
     font-weight: bold;
 }
 
-
 .cart-container {
     width: 100%;
     height: auto;
@@ -41,9 +40,8 @@
     font-family: Unica One, sans-serif;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-
 }
 
 .checkout {
@@ -51,7 +49,6 @@
     margin-top: 60px;
     display: flex;
     justify-content: space-between;
-
 }
 
 .subtotal {
@@ -62,7 +59,6 @@
     font-family: Karla, sans-serif;
     font-weight: 700;
     font-style: normal;
-
 }
 
 .subtotal-title {
@@ -74,7 +70,6 @@
     justify-content: end;
 }
 .check-out-btn {
-   
     width: 284px;
 }
 
@@ -92,23 +87,25 @@
     font-weight: 700;
     font-style: normal;
     letter-spacing: 2px;
-
 }
 
 .check-out-btn button:hover {
     background-color: #005acf;
+}
 
+.back-to-shopping{
+    text-align: center;
+    margin-top: 3em;
 }
 
 .back-to-shopping button {
     border: none;
     color: #0063e6;
-    font-size: 16px;
+    font-size: 1.5em;
 }
 
 .back-to-shopping button:hover {
     color: #0046a2;
-
 }
 
 /* cart item */
@@ -118,15 +115,12 @@
     height: 155px;
 }
 
-
-
 .cart-item-img {
     display: flex;
     height: 100%;
     align-items: center;
     padding: 20px;
     flex: 1.5;
-
 }
 
 .cart-item-img img {
@@ -140,7 +134,6 @@
     display: flex;
     height: 100%;
     padding: 20px;
-
 }
 
 .countHandler button,
@@ -150,8 +143,6 @@
     border: 0;
     text-align: center;
     background-color: #fff;
-
-
 }
 
 .cart-item-price {
@@ -160,10 +151,9 @@
     padding: 20px;
     display: flex;
     align-items: center;
- 
 }
 
-.cart-item-price p{
+.cart-item-price p {
     margin: 0;
 }
 
@@ -173,7 +163,6 @@
     padding: 20px;
     height: 100%;
     align-items: center;
-
 }
 
 .cart-item-price p {
@@ -184,7 +173,6 @@
     font-family: Karla, sans-serif;
     font-weight: 400;
     font-style: normal;
-
 }
 
 .item-name a {
@@ -208,4 +196,10 @@
 
 .size-value {
     padding-left: 7px;
+}
+
+.cart-empty{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
 }
