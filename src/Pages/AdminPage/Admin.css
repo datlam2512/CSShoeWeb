@@ -1,0 +1,14 @@
+.dashBoard{
+   width: 98%;
+   margin: 60px auto;
+   display: flex;
+}
+
+
+.sideBarDashBoeard {
+   flex: 3;
+}
+
+.dashBoardContent {
+   flex: 7;
+}
