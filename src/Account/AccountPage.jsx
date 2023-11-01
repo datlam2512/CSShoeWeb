@@ -23,7 +23,7 @@ function AccountPage() {
     navigate("/Login");
   }
 
-  return (
+  return (  
     <div className="profile">
       <div><h2 className="profile-title">Profile</h2></div>
       {isEditing ? (
