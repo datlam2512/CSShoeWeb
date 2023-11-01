@@ -12,12 +12,14 @@ import ManageBlog from './ManageBlog'
 export default function Admin() {
   return (
         <div className="sideBarDashBoard">
+          <div>
         <ul>
         <li><Link to="/admin/dashboard">Dash Board</Link></li>
         <li><Link to="/admin/manage-order">Manage Order</Link></li>
         <li><Link to="/admin/manage-product">Manage Product</Link></li>
         <li><Link to="/admin/manage-blog">Manage Blog</Link></li>
       </ul>
+      </div>
       <Outlet/>
         </div>
   )
