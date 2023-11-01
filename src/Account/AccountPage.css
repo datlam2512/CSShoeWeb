@@ -1,3 +1,48 @@
+.account-detail{
+    margin-top: 15px;
+}
+.profile-title{
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.profile-detail{
+    margin-bottom: 10px;
+    justify-content: center
+}
+
+.profile-detail button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+.profile-update-detail{
+    margin-top: -40px;
+    background: #fff;
+    scale: 90%;    
+    margin-bottom: -10px;
+}
+
+.profile-detail button:hover {
+    background-color: #0056b3;
+  }
+
+.profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+
 .logout-button button{
     background-color: #000000;
     color: #fff;
@@ -6,6 +51,16 @@
     border-radius: 3px;
     font-size: 16px;
     cursor: pointer;
+}
+
+.profile-update-detail  button{
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .logout-button button:hover {
@@ -17,27 +72,28 @@
     margin-top: 20px;
 }
 
-.profile{
-  margin-top: 40px;
-  margin-bottom: 120px;
-  text-align: center;
-}
+.profile-update-detail input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
 
-.profile-title{
-  text-align: center;
-  border: #000000;
-  font-size: 30px;
-}
+  .profile-update-detail label {
+    display: block;
+    margin-bottom: 10px;
+  }
 
-.profile button{
-  scale: 90%;
-  margin-left: 10px;
-  background-color: #000000;
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+  .profile-update-detail button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 
 

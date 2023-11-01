@@ -814,7 +814,6 @@ export default function SizeContent() {
           <br />
           <b>DETERMINE YOUR SIZE</b> <br />
           Use your measurements and the table below to determine your shoe size.
-          <br />
           <b>
             Note: the length from your heel to your toe (cm) will be slightly
             smaller than the size in cm on the shoe box. We have already taken
