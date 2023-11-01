@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../context/user-context";
 import "./AccountPage.css";
-import {useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function AccountPage() {
   const { user, setUser } = useContext(UserContext);
@@ -23,7 +23,7 @@ function AccountPage() {
     navigate("/Login");
   }
 
-  return (  
+  return (
     <div className="profile">
       <div><h2 className="profile-title">Profile</h2></div>
       {isEditing ? (

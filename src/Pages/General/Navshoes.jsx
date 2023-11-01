@@ -5,14 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navigationshoe.css";
 import { NavItem, Navbar, Icon, Tabs, Tab } from "react-materialize";
 import { AudioOutlined } from "@ant-design/icons";
-import { Button, Dropdown, Input, Space } from "antd";
+import { Button, Dropdown, Input, Space, Menu } from "antd";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBar from "./SearchBar";
 import { UserContext } from "../../context/user-context";
+import { DownOutlined } from '@ant-design/icons';
 
 export default function () {
-  const { user } = React.useContext(UserContext);
+  const { user, setUser } = React.useContext(UserContext);
   const navigate = useNavigate();
   const { Search } = Input;
   const onSearch = (value, _e, info) => console.log(info?.source, value)
@@ -23,7 +24,20 @@ export default function () {
       navigate('/Login')
     }
   };
-
+  const handleLogout = () => {
+    setUser(null);
+    navigate("/Login");
+  }
+  const menu = (
+    <Menu style={{backgroundColor:'black'}}>
+      <Menu.Item key="1" onClick={handleClick} style={{color:'white', fontFamily:'Unica One,sans-serif', fontSize:'larger'}}>
+        Profile
+      </Menu.Item>
+      <Menu.Item key="2" onClick={handleLogout} style={{color:'white', fontFamily:'Unica One,sans-serif', fontSize:'larger'}}>
+        Logout
+      </Menu.Item>
+    </Menu>
+  );
   return (
     <div className="Navbar">
       <div className="Navbarheader">
@@ -114,11 +128,18 @@ export default function () {
               <i class="fa fa-shopping-cart cart" aria-hidden="true"></i>
             </Link>
           </button>
-          <button className="Login" type="submit" onClick={handleClick}>
-            {" "}
-            <Link to="/Login">
-              <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
-            </Link>
+          <button className="Login" type="submit" onClick={user ? null : handleClick}>
+            {user ? (
+              <Dropdown overlay={menu} trigger={['click']}>
+                <Link style={{ display: 'flex', alignItems: 'center' }}>
+                  <i class="fa fa-user-circle-o login" aria-hidden="true"></i> <DownOutlined />
+                </Link>
+              </Dropdown>
+            ) : (
+              <Link to="/Login">
+                <i class="fa fa-user-circle-o login" aria-hidden="true"></i>
+              </Link>
+            )}
           </button>
         </div>
       </div>

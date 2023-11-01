@@ -30,6 +30,10 @@ export default function ProductMarketPlace() {
             return products.slice().sort((a, b) => a.price - b.price);
         } else if (option === 'price-descending') {
             return products.slice().sort((a, b) => b.price - a.price);
+        } else if (option === 'suprise'){
+            let shuffledProducts = [...products];
+            shuffleArray(shuffledProducts);
+            return shuffledProducts;
         } else {
             return products;
         }
@@ -56,10 +60,6 @@ export default function ProductMarketPlace() {
 
         if (selectedBrand !== 'All') {
             filtered = filtered.filter((product) => product.brand === selectedBrand);
-        }
-
-        if (selectedBrand === 'All') {
-            filtered = shuffleArray(filtered);
         }
 
         setFilteredProducts(sortProducts(filtered, sortOption));
@@ -113,6 +113,7 @@ export default function ProductMarketPlace() {
                             <option value="title-descending">Alphabetically, Z-A</option>
                             <option value="price-ascending">Price, low to high</option>
                             <option value="price-descending">Price, high to low</option>
+                            <option value="suprise">Suprise me!</option>
                         </select>
                     </div>
                 </div>

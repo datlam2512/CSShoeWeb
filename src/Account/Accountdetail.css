@@ -1,0 +1,32 @@
+.account-detail-form {
+    width: 100%;
+    margin-left: 390px;
+}
+.profile-change-title{
+    font-family: Karla, sans-serif;
+    text-align: center;
+    margin: 40px;
+}
+
+.form-item {
+    width: 50%;
+}
+
+.form-item label{
+    margin-right: 50px;
+    width: 100px;
+    display: inline-block;
+    font-family: Karla, sans-serif;
+}
+
+.form-item input{
+    width: 70%;
+    font-family: Karla, sans-serif;
+    color: #333;
+}
+
+.change-profile-butt{
+    max-width: 525px;
+    text-align: right;
+}
+
