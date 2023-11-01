@@ -33,49 +33,51 @@ export default function Product({ id, imgUrl, name, price }) {
         <>
             <div className="product-item col-md-3" key={id}>
                 <div className="product-card">
-                    <div className="product-img">
-                        <img
-                            src={imgUrl}
-                            onError={({ currentTarget }) => {
-                                currentTarget.onerror = null; // prevents looping
-                                currentTarget.src = "/Img/logo6.png";
-                            }}
-                            alt={name}
-                        />
-                    </div>
-                    <div className="product-marketplace-infor">
-                        <div className="product-name">
-                            <p className="name">{name}</p>
+                    <Link to={`/product-detail/${id}`}>
+                        <div className="product-img">
+                            <img
+                                src={imgUrl}
+                                onError={({ currentTarget }) => {
+                                    currentTarget.onerror = null; // prevents looping
+                                    currentTarget.src = "/Img/logo6.png";
+                                }}
+                                alt={name}
+                            />
                         </div>
-                        <div className="product-price">
-                            <span className="price">{price}</span>
+                        <div className="product-marketplace-infor">
+                            <div className="product-name">
+                                <p className="name">{name}</p>
+                            </div>
+                            <div className="product-price">
+                                <span className="price">{price}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div className="view-product">
-                        <Link to={`/product-detail/${id}`}>
-                            <button className="view-btn">
-                                <FontAwesomeIcon
-                                    icon={faEye}
-                                    className="eye-view"
-                                />
+                        <div className="view-product">
+                            <Link to={`/product-detail/${id}`}>
+                                <button className="view-btn">
+                                    <FontAwesomeIcon
+                                        icon={faEye}
+                                        className="eye-view"
+                                    />
+                                </button>
+                            </Link>
+                        </div>
+                        <div className="add-to-cart">
+                            <button
+                                className="add-to-cart-btn"
+                                onClick={() => {
+                                    openPopup();
+                                }}
+                            >
+                                <div className="item-icon">
+                                    <FontAwesomeIcon icon={faShoppingCart} />
+                                </div>
+                                <div className="item-number">
+                                    {CartItemAmount > 0 && `${CartItemAmount}`}
+                                </div>
                             </button>
-                        </Link>
-                    </div>
-                    <div className="add-to-cart">
-                        <button
-                            className="add-to-cart-btn"
-                            onClick={() => {
-                                openPopup();
-                            }}
-                        >
-                            <div className="item-icon">
-                                <FontAwesomeIcon icon={faShoppingCart} />
-                            </div>
-                            <div className="item-number">
-                                {CartItemAmount > 0 && `${CartItemAmount}`}
-                            </div>
-                        </button>
-                    </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
             {isPopupOpen && (
