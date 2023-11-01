@@ -68,13 +68,14 @@ function App() {
               <Route path='/create' element={<CreateAccountpage />} />
               <Route path='/createyourown' element={<CreateYourOwnPage />} />
               <Route path='/blogs' element={<Blogs />} />
-              <Route path='/admin' element={<AdminDashBoard />} />
+              <Route path='/admin' element={<AdminDashBoard />} >
+              <Route path='dashboard' element={<DashBoardContent />} />
+              <Route path='manage-order' element={<ManageOrder />} />
+              <Route path='manage-product' element={<ManageProduct />} />
+              <Route path='manage-blog' element={<ManageBlog />} />
+              </Route>
               <Route path='/Account' element={<AccountPage />} />
               <Route path='/Account-detail' element={<Accountdetail />} />
-              <Route path='/dashboard' element={<DashBoardContent />} />
-              <Route path='/manage-order' element={<ManageOrder />} />
-              <Route path='/manage-product' element={<ManageProduct />} />
-              <Route path='/manage-blog' element={<ManageBlog />} />
             </Routes>
           </div>
           <div className='Footer-main'>
