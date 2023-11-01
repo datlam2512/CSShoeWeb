@@ -1,7 +1,8 @@
 import React from 'react'
+import './PaymentDetail.css'
 export default function PaymentDetail() {
   return (
-    <div className='main-content'>
+    <div className='detail-pay main-content'>
     <p><h1>PAYMENT</h1>
         <p>SolePalette.nl works with Mollie's secure internet payment system to process the payment of an order. All payments are made in a secure environment. At the SolePalette.nl webshop you can pay with:</p> 
         <ul> 

@@ -71,7 +71,7 @@ function App() {
               <Route path='/blogs' element={<Blogs />} />
               <Route path='/admin' element={<AdminDashBoard />} >
                 <Route path='profileadmin' element={<AdminProfile/>}/>
-              <Route path='dashboard' element={<DashBoardContent />} />
+              <Route path='customerinfo' element={<DashBoardContent />} />
               <Route path='manage-order' element={<ManageOrder />} />
               <Route path='manage-product' element={<ManageProduct />} />
               <Route path='manage-blog' element={<ManageBlog />} />

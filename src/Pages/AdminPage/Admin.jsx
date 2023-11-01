@@ -20,7 +20,7 @@ export default function Admin() {
           </div>
           <div className='sidebar-content'>
         <ul className='sidebar-link'>
-        <li><Link className='item-sidebar' to="/admin/dashboard" style={{textDecoration:"none"}}>Dash Board</Link></li>
+        <li><Link className='item-sidebar' to="/admin/customerinfo" style={{textDecoration:"none"}}>Account User</Link></li>
         <li><Link className='item-sidebar' to="/admin/manage-order" style={{textDecoration:"none"}}>Manage Order</Link></li>
         <li><Link className='item-sidebar' to="/admin/manage-product" style={{textDecoration:"none"}}>Manage Product</Link></li>
         <li><Link className='item-sidebar' to="/admin/manage-blog" style={{textDecoration:"none"}}>Manage Blog</Link></li>
