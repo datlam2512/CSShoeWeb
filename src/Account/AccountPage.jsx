@@ -16,116 +16,56 @@ const UserProfile = () => {
   });
 
   const { user, setUser } = useContext(UserContext);
-  const [isEditing, setIsEditing] = useState(false);
-  const [updatedUser, setUpdatedUser] = useState({ ...user });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setUpdatedUser({ ...updatedUser, [name]: value });
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleEdit = (field) => {
+    setIsEditing(field);
   };
 
-  const saveProfile = () => {
-    setUser(updatedUser);
+  const handleSave = (field, value) => {
+    setUserInfo({ ...userInfo, [field]: value });
     setIsEditing(false);
   };
+
+  const renderField = (field, label) => (
+    <div>
+      <strong>{label}:</strong>
+      {isEditing === field ? (
+        <div>
+          <input
+            type="text"
+            value={userInfo[field]}
+            onChange={(e) => setUserInfo({ ...userInfo, [field]: e.target.value })}
+          />
+          <button onClick={() => handleSave(field, userInfo[field])}>Save</button>
+        </div>
+      ) : (
+        <div>
+          {userInfo[field]}
+          <button onClick={() => handleEdit(field)}>Edit</button>
+        </div>
+      )}
+    </div>
+  );
+
   const navigate = useNavigate();
+  
   const handleLogout = () => {
     setUser(null);
     navigate("/Login");
   }
-
   return (
-    <div className="profile">
-      <div><h2 className="profile-title">Profile</h2></div>
-      {isEditing ? (
-        <div className="profile-update-detail">
-          <label>
-            First Name:
-            <input
-              type="text"
-              name="firstName"
-              value={updatedUser.firstName}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Last Name:
-            <input
-              type="text"
-              name="lastName"
-              value={updatedUser.lastName}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            User Name:
-            <input
-              type="text"
-              name="userName"
-              value={updatedUser.userName}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={updatedUser.email}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Gender:
-            <input
-              type="text"
-              name="gender"
-              value={updatedUser.gender}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Phone Number:
-            <input
-              type="tel"
-              name="phoneNumber"
-              value={updatedUser.phoneNumber}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Shipping Address:
-            <input
-              type="text"
-              name="shippingAddress"
-              value={updatedUser.shippingAddress}
-              onChange={handleInputChange}
-            />
-          </label>
-          <label>
-            Billing Address:
-            <input
-              type="text"
-              name="billingAddress"
-              value={updatedUser.billingAddress}
-              onChange={handleInputChange}
-            />
-          </label>
-          <button onClick={saveProfile}>Save</button>
-        </div>
-      ) : (
-        <div className="profile-detail">
-          <p>First Name: {user?.firstName}</p>
-          <p>Last Name: {user?.lastName}</p>
-          <p>User Name: {user?.userName}</p>
-          <p>Email: {user?.email}</p>
-          <p>Gender: {user?.gender}</p>
-          <p>Phone Number: {user?.phoneNumber}</p>
-          <p>Shipping Address: {user?.shippingAddress}</p>
-          <p>Billing Address: {user?.billingAddress}</p>
-          <button onClick={() => setIsEditing(true)}>Edit Profile</button>
-        </div>
-      )}
+    <div className='profile'>
+      <h1 className='profile-title'>User Profile</h1>
+      {renderField('firstName', 'First Name')}
+      {renderField('lastName', 'Last Name')}
+      {renderField('userName', 'User Name')}
+      {renderField('email', 'Email')}
+      {renderField('gender', 'Gender')}
+      {renderField('phoneNumber', 'Phone Number')}
+      {renderField('shippingAddress', 'Shipping Address')}
+      {renderField('billingAddress', 'Billing Address')}
       <div className="logout-button" ><button onClick={handleLogout}>Logout</button></div>
     </div>
   );
