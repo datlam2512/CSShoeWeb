@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <div className='Header'>
       <Button className="butt-1" type="ghost" icon={<LeftOutlined />} onClick={previous} />
-      <Carousel autoplay autoplaySpeed={2000} ref={carouselRef}>
+      <Carousel autoplay autoplaySpeed={5000} ref={carouselRef}>
         <div className='banner'>
           <img src='/Img/banner.png' style={contentStyle}/>
         </div>
