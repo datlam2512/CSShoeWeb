@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { UserContext } from "../context/user-context";
-import { Form, Input, Button, Modal } from 'antd';
+import { Form, Input, Button, Modal, message } from 'antd';
 import './Accountdetail.css'
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +37,7 @@ function Accountdetail() {
           ShippingAddress: shippingAddress,
         });
         navigate('/Account');
+        message.success('Save changes successfully', 2)
         console.log(user);
       },
       style: { top: '50%', transform: 'translateY(-50%)' },
