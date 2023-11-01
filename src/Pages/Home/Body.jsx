@@ -94,37 +94,46 @@ export default function Body({ id, imgUrl, name, price }) {
                 </div>
             </div>
             <div className="featured-product">
-                <h1>Featured Product</h1>
+                <h1>Featured Products</h1>
             </div>
             <div className="product-bottom-main">
                 <div className="product-bottom">
                     {products.slice(0, 4).map((product) => (
                         <div className="product-card-shoes">
                             <div className="product-card-nav">
-                                <div className="product-img">
-                                    <img src={product.imgUrl} alt="ShoesImg" />
-                                </div>
-                                <div className="product-marketplace-infor">
-                                    <div className="product-name">
-                                        <p className="name">{product.name}</p>
+                                <Link to={`/product-detail/${product.id}`}>
+                                    <div className="product-img">
+                                        <img
+                                            src={product.imgUrl}
+                                            alt="ShoesImg"
+                                        />
                                     </div>
-                                    <div className="product-price">
-                                        <span className="price">
-                                            {product.price}
-                                        </span>
+                                    <div className="product-marketplace-infor">
+                                        <div className="product-name">
+                                            <p className="name">
+                                                {product.name}
+                                            </p>
+                                        </div>
+                                        <div className="product-price">
+                                            <span className="price">
+                                                {product.price}
+                                            </span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="view-product">
-                                    <Link to={`/product-detail/${product.id}`}>
-                                        <button className="view-btn">
-                                            <FontAwesomeIcon
-                                                icon={faEye}
-                                                className="eye-view"
-                                            />
-                                        </button>
-                                    </Link>
-                                </div>
-                                <div className="add-to-cart"></div>
+                                    <div className="view-product">
+                                        <Link
+                                            to={`/product-detail/${product.id}`}
+                                        >
+                                            <button className="view-btn">
+                                                <FontAwesomeIcon
+                                                    icon={faEye}
+                                                    className="eye-view"
+                                                />
+                                            </button>
+                                        </Link>
+                                    </div>
+                                    <div className="add-to-cart"></div>
+                                </Link>
                             </div>
                         </div>
                     ))}
