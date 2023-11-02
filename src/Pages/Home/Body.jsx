@@ -110,13 +110,13 @@ export default function Body({ id, imgUrl, name, price }) {
                                     </div>
                                     <div className="product-marketplace-infor">
                                         <div className="product-name">
-                                            <p className="name">
+                                            <p  className="name">
                                                 {product.name}
                                             </p>
                                         </div>
                                         <div className="product-price">
                                             <span className="price">
-                                                {product.price}
+                                            {product.price.toLocaleString() + ' VNĐ'}
                                             </span>
                                         </div>
                                     </div>

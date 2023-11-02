@@ -3,13 +3,12 @@ import './CartContent.css'
 import products from '../Shop/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import {  Modal } from "antd";
-import {ShopContextAdidas} from '../../context/Shop-context-adidas'
 import { CartItem } from './CartItem'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/user-context'
 export default function CartContent() {
   const { user } = useContext(UserContext);
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext,ShopContextAdidas)
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext)
   const totalAmount = getTotalCartAmount()
   const navigate = useNavigate();
   const handleClickCart = () => {

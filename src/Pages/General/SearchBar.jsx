@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ConfigProvider, Input, Space } from 'antd';
+import { ConfigProvider, Input, Space, message } from 'antd';
 import SearchResult from './SearchResult';
 import "./Navigationshoe.css";
 
@@ -10,7 +10,7 @@ export const SearchBar = () => {
 
   const onSearch = (value) => {
     if(value.trim() === '') {
-      window.location.reload();
+      
     } else {
     console.log(value);
     navigate(`/search/${value}`);
