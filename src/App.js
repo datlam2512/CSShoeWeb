@@ -32,11 +32,10 @@ import AdminDashBoard from './Pages/AdminPage/Admin'
 import { UserContext } from './context/user-context';
 import AccountPage from './Account/AccountPage';
 import Accountdetail from './Account/Accountdetail';
-import DashBoardContent from './Pages/AdminPage/DashBoardContent';
-import ManageOrder from './Pages/AdminPage/ManageOrder';
-import ManageProduct from './Pages/AdminPage/ManageProduct';
-import ManageBlog from './Pages/AdminPage/ManageBlog';
-import AdminProfile from './Pages/AdminPage/AdminProfile';
+import AdminProduct from './Pages/AdminPage/AdminProduct';
+import { ToastContainer } from 'react-toastify';
+import AdminAddProduct from './Pages/AdminPage/AdminAddProduct';
+import AdminEditProduct from './Pages/AdminPage/AdminEditProduct';
 function App() {
   const [user, setUser] = React.useState(null);
   return (
@@ -69,13 +68,10 @@ function App() {
               <Route path='/create' element={<CreateAccountpage />} />
               <Route path='/createyourown' element={<CreateYourOwnPage />} />
               <Route path='/blogs' element={<Blogs />} />
-              <Route path='/admin' element={<AdminDashBoard />} >
-                <Route path='profileadmin' element={<AdminProfile/>}/>
-              <Route path='customerinfo' element={<DashBoardContent />} />
-              <Route path='manage-order' element={<ManageOrder />} />
-              <Route path='manage-product' element={<ManageProduct />} />
-              <Route path='manage-blog' element={<ManageBlog />} />
-              </Route>
+              <Route path='/admin' element={<AdminDashBoard />} />
+              <Route path='/admin/product' element={<AdminProduct/>} />
+              <Route path='/admin/product/:id' element={<AdminEditProduct/>}></Route>
+              <Route path='/admin/add-product' element={<AdminAddProduct/>}></Route>
               <Route path='/Account' element={<AccountPage />} />
               <Route path='/Account-detail' element={<Accountdetail />} />
             </Routes>
