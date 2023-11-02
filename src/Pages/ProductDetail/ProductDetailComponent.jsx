@@ -1,40 +1,23 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './ProductDetailComponent.css';
-import { ConfigProvider, Image, InputNumber, Modal } from 'antd';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ConfigProvider, Image, InputNumber } from 'antd';
+import { Link, useParams } from 'react-router-dom';
 import products from '../Shop/ProductList';
 import { ShopContext } from '../../context/shop-context';
 import Swal from 'sweetalert2';
-import { UserContext } from '../../context/user-context';
 
 export default function ProductDetailComponent() {
-    const { user } = useContext(UserContext);
     const { addToCart, cartItems, selectSize } = useContext(ShopContext);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState('33'); // Default size
     const [shoes, setShoes] = useState(null);
-    const navigate = useNavigate();
+
     const shoesName = useParams();
 
     useEffect(() => {
         const selectedShoes = products.find((obj) => obj.id == shoesName.id);
         setShoes(selectedShoes);
     }, [shoesName.id]);
-
-    const handleClickBuy = () => {
-        if (user) {
-          addToCart(shoes.id, selectedQuantity, selectedSize);
-          navigate('/payment');
-        } else {
-          Modal.confirm({
-            title: 'You must login first to buy items!',
-            onOk() {
-              navigate('/Login')
-            },
-            style: { top: '50%', transform: 'translateY(-50%)' },
-        });
-        }
-      }
 
     const showAddToCartAlert = () => {
         Swal.fire({
@@ -144,11 +127,11 @@ export default function ProductDetailComponent() {
                                     </button>
                                 </div>
                                 <div className='buyNowBtn'>
-                                        <button className='buy-button' 
-                                                type='submit'
-                                                onClick={() => {handleClickBuy()}}>
+                                    <Link to='/payment'>
+                                        <button className='buy-button' type='submit'>
                                             BUY NOW
-                                        </button>                               
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

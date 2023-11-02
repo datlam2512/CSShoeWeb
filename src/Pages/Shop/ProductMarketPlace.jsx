@@ -4,6 +4,7 @@ import Product from './Product';
 import { ShopContext } from '../../context/shop-context';
 import { Pagination } from 'antd';
 import products from './ProductList';
+import API from '../../config/api';
 
 export default function ProductMarketPlace() {
     const [sortOption, setSortOption] = useState('choice');
@@ -12,6 +13,7 @@ export default function ProductMarketPlace() {
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedBrand, setSelectedBrand] = useState('All');
     const [filteredProducts, setFilteredProducts] = useState([]);
+    const [listShoe, setListShoe] = useState([])
 
     const shuffleArray = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
@@ -30,10 +32,6 @@ export default function ProductMarketPlace() {
             return products.slice().sort((a, b) => a.price - b.price);
         } else if (option === 'price-descending') {
             return products.slice().sort((a, b) => b.price - a.price);
-        } else if (option === 'suprise'){
-            let shuffledProducts = [...products];
-            shuffleArray(shuffledProducts);
-            return shuffledProducts;
         } else {
             return products;
         }
@@ -56,14 +54,49 @@ export default function ProductMarketPlace() {
     };
 
     useEffect(() => {
-        let filtered = products;
+        const getListShoes = async () => {
+            try {
+                const res = await API.getListProduct()
+                setListShoe(res.data)
+            } catch (err) {
+
+            }
+        }
+        getListShoes()
+    }, [])
+
+    useEffect(() => {
+        // const getListShoes = async () => {
+        //     try {
+        //         const res = await API.getListProduct()
+        //         let filtered = res.data;
+
+        //         if (selectedBrand !== 'All') {
+        //             filtered = filtered.filter((product) => product.brand === selectedBrand);
+        //         }
+
+        //         if (selectedBrand === 'All') {
+        //             filtered = shuffleArray(filtered);
+        //         }
+
+        //         setFilteredProducts(sortProducts(filtered, sortOption));
+        //     } catch (err) {
+
+        //     }
+        // }
+        // getListShoes()
+        let filtered = listShoe;
 
         if (selectedBrand !== 'All') {
             filtered = filtered.filter((product) => product.brand === selectedBrand);
         }
 
+        if (selectedBrand === 'All') {
+            filtered = shuffleArray(filtered);
+        }
+
         setFilteredProducts(sortProducts(filtered, sortOption));
-    }, [selectedBrand, sortOption]);
+    }, [listShoe, selectedBrand, sortOption]);
 
     return (
         <>
@@ -113,7 +146,6 @@ export default function ProductMarketPlace() {
                             <option value="title-descending">Alphabetically, Z-A</option>
                             <option value="price-ascending">Price, low to high</option>
                             <option value="price-descending">Price, high to low</option>
-                            <option value="suprise">Suprise me!</option>
                         </select>
                     </div>
                 </div>
@@ -126,7 +158,7 @@ export default function ProductMarketPlace() {
                         <Product
                             key={product.id}
                             id={product.id}
-                            imgUrl={product.imgUrl}
+                            imgUrl={product.urlImg}
                             name={product.name}
                             price={product.price.toLocaleString() + ' VNĐ'}
                         />

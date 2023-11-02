@@ -1,18 +1,37 @@
-.account-page {
-  display: flex;
-  justify-content: space-between;
+.account-page{
+    height: 500px;
+    display: flex;
+    margin-top: 15px;
 }
-
-.history-purchasing {
-  width: 80%;
-  margin: 80px 0 0 50px;
-  font-family: Karla, sans-serif;
+.subnav-top{
+    display: flex;  
+    flex-direction: row;
+    border-top: 0;
+    border-bottom: 1px solid #000 ;
+    width: 100%;
+    align-items: center;
+    text-align: center;
 }
-
-.profile-section {
-  width: 20%;
-  right: 0;
-  margin-top: 210px;
-  font-family: Karla, sans-serif;
+.subnav-top i{
+    font-size: 350%;
+    width: 100%;
 }
-
+.subnav-account{
+    width: 20%;
+    padding: 0 15px;
+    border: 1px solid #000;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+.account-content{
+    width: 70%;
+}
+.subnav-top li{
+    margin: 15px;
+}
+.account-detail{
+    margin-top: 15px;
+}

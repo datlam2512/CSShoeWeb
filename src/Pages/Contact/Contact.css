@@ -1,6 +1,32 @@
-
-.Contact-h1{
+.input-contact{
+    display: flex;
+    flex-direction: row;
+}
+.form-contact{
+    margin: 0 10%;
+    margin-right: 18%;
+    margin-left: 17%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: solid 1px #545353;
+    border-radius: 15px;
+    padding: 15px 0;
+    background-color: #ededed;
+}
+.form-contact p{
+    margin-bottom: 50px;
+    font-family:'Courier New', Courier, monospace;
+    width: 100%
+}
+.Contact{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
     margin-top: 50px;
+}
+.Contact-h1{
+    margin-top: 20px;
     margin-bottom: 20px;
     font-family: Unica One,sans-serif;
     font-style: normal;
@@ -8,23 +34,36 @@
     letter-spacing: .1em;
     text-transform: uppercase;
     font-size: 200%;
-    margin-right: 15px;
-    text-align: center;
+    margin-left: 0.2%;
 }
-.form-contact{
-    padding: 50px 0;
+.contact-component{
+    margin-left: 210px;
 }
-.form-input{
-    width: 50%;
-    margin-left: 25%;
+.Form-input{
+   margin-bottom: 50px;
 }
-.input{
-    margin: 10px 0;
+.submit-contact{
+    margin-bottom: 15px;
+    align-items: center;
+   
 }
-.submit{
-    margin-top: 20px;
-    color: #000;
+.contact-button{
+     scale: 120%;
+     width: 60%;
+     margin-left: 30px;
+     background-color: #787777;
+     color: #fff;
+     border-radius: 15px;
 }
-.submit:hover{
-    background-color: rgb(215, 213, 213);
+.contact-button:hover{
+    background-color: #bbb8b8;
+}
+.contact-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.input-contact{
+    width: 100%;
 }

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import vietnamCities from './vietnamCities ';
 import './ContactComponent.css';
 import { Link } from 'react-router-dom';
+import { image_qr } from '../../config/qrImage';
 
 export default function ContactComponent() {
-    const [phone, setPhone] = useState("+84");
+    const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [selectedCity, setSelectedCity] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -20,7 +21,8 @@ export default function ContactComponent() {
     const [isDistrictEmpty, setDistrictEmpty] = useState(false);
     const [isApartmentEmpty, setApartmentEmpty] = useState(false);
     const [isCityEmpty, setSelectedCityEmpty] = useState(false);
-
+    const [error, setError] = useState(true)
+    const showModal = false;
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
@@ -30,18 +32,63 @@ export default function ContactComponent() {
     const handlePhoneChange = (e) => {
         const value = e.target.value;
         setPhone(value);
-        setPhoneValid(/^\+\d{11,12}$/.test(value));
+        // console.log(value.length);
+        if (value.length < 10 || value.length > 11 || value % 1 !== 0) {
+            setPhoneValid(false);
+        }
+        else setPhoneValid(true)
     };
 
     const handleFormSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const hasError = validateFields();
         if (!hasError) {
 
         }
     };
 
+    const handleFirstNameChange = (e) => {
+        e.preventDefault(e.target.value);
+        setFirstName(e.target.value);
+        if (e.target.value !== "") {
+            setFirstNameEmpty(false);
+        }
+        else
+            setFirstNameEmpty(true)
+    }
+
+    const handleLastNameChange = (e) => {
+        e.preventDefault(e.target.value);
+        setLastName(e.target.value);
+        if (e.target.value !== "") {
+            setLastNameEmpty(false);
+        }
+        else
+            setLastNameEmpty(true)
+    }
+
+    const handleDistrictChange = (e) => {
+        e.preventDefault(e.target.value);
+        setDistrict(e.target.value);
+        if (e.target.value !== "") {
+            setDistrictEmpty(false);
+        }
+        else
+            setDistrictEmpty(true)
+    }
+
+    const handelApartmentChange = (e) => {
+        e.preventDefault(e.target.value);
+        setApartment(e.target.value);
+        if (e.target.value !== "") {
+            setApartmentEmpty(false);
+        }
+        else
+            setApartmentEmpty(true)
+    }
+
     const validateFields = () => {
+        
         let hasError = false;
 
         if (email === "") {
@@ -49,8 +96,9 @@ export default function ContactComponent() {
             hasError = true;
         }
 
-        if (phone === "" || !/^\+\d{11,12}$/.test(phone)) {
-            setPhoneValid(false);
+        if (phone === "" || (phone.length < 10 || phone.length > 11 || phone % 1 !== 0)) {
+            console.log(phone.length);
+            setPhoneValid(true);
             hasError = true;
         }
 
@@ -59,27 +107,33 @@ export default function ContactComponent() {
             hasError = true;
         }
 
-        if (firstName === "" || !/^[a-zA-Z]+$/i.test(firstName)) {
+        if (firstName === "") {
             setFirstNameEmpty(true);
             hasError = true;
         }
 
-        if (lastName === "" || !/^[a-zA-Z]+$/i.test(lastName)) {
+        if (lastName === "") {
             setLastNameEmpty(true);
             hasError = true;
         }
 
-        if (district === "" || apartment === "") {
+        if (district === "" ) {
             setDistrictEmpty(true);
+            hasError = true;
+        }
+
+        if(apartment === "") {
             setApartmentEmpty(true);
             hasError = true;
         }
+        setError(hasError);
 
         return hasError;
     };
 
     return (
         <div className='contact-infor'>
+
             <div className='contact'>
                 <h1>Contact</h1>
                 <div className={`email padding-form ${!isEmailValid ? "error" : ""}`}>
@@ -111,6 +165,7 @@ export default function ContactComponent() {
                             type="text"
                             placeholder="First Name"
                             className={`${isFirstNameEmpty ? "error" : ""}`}
+                            onChange={handleFirstNameChange}
                         />
                         {isFirstNameEmpty && <div className="error-message">First Name is required</div>}
                     </div>
@@ -118,6 +173,7 @@ export default function ContactComponent() {
                         <input
                             type="text"
                             placeholder="Last Name"
+                            onChange={handleLastNameChange}
                             className={`${isLastNameEmpty ? "error" : ""}`}
                         />
                         {isLastNameEmpty && <div className="error-message">Last Name is required</div>}
@@ -128,7 +184,9 @@ export default function ContactComponent() {
                         <select
                             id="city"
                             value={selectedCity}
-                            onChange={(e) => setSelectedCity(e.target.value)}
+                            onChange={(e) =>
+                                setSelectedCity(e.target.value)
+                            }
                         >
                             <option value="">Select a City</option>
                             {vietnamCities.map((city, index) => (
@@ -137,11 +195,12 @@ export default function ContactComponent() {
                                 </option>
                             ))}
                         </select>
-                        {isCityEmpty && <div className="error-message">Please select a city</div>}
+                        {selectedCity === "Select a City" && <div className="error-message">Please select a city</div>}
                     </div>
                     <div className={`district padding-form ${isDistrictEmpty ? "error" : ""}`}>
                         <input
                             type="text"
+                            onChange={handleDistrictChange}
                             placeholder="District"
                         />
                         {isDistrictEmpty && <div className="error-message">District is required</div>}
@@ -149,6 +208,7 @@ export default function ContactComponent() {
                     <div className={`apartment padding-form ${isApartmentEmpty ? "error" : ""}`}>
                         <input
                             type="text"
+                            onChange={handelApartmentChange}
                             placeholder="Apartment"
                         />
                         {isApartmentEmpty && <div className="error-message">Apartment is required</div>}
@@ -167,12 +227,39 @@ export default function ContactComponent() {
                 </div>
 
                 <div className='submit-btn'>
-                    <button type="submit" onClick={handleFormSubmit}>
+                    <button
+                        type="submit"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        onClick={handleFormSubmit}
+                    >
                         Submit
+                        {/* {console.log(error)} */}
                     </button>
+
+                </div>
+            </div>  
+            <div style={error ? { display: "none", visibility: "hidden", height: 0 }: {}}>
+                <div class='modal fade' id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden='true'>
+                    <div class="modal-dialog d-flex align-items-center justify-content-center">
+                        <div class="modal-content d-flex align-items-center justify-content-center">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Vui lòng thanh toán</h5>
+                                <button type="button"  onClick={() => {setError(true)}} class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src={image_qr.baseURL} alt="" />
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning btn btn-outline-danger" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Close</button>
+                                <button type="button" class="btn btn-primary btn btn-outline-success" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Payment confirmed</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            {!error ? <div class="modal-backdrop fade show" style={{display: 'block'}}></div> : ''}
         </div>
     );
 }

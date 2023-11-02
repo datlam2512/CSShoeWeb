@@ -17,18 +17,7 @@ function SearchResult() {
   const { addToCart, cartItems } = useContext(ShopContext);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
-  // const [results, setResults] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('API_URL')
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       const filteredProducts = data.filter(product =>
-  //         product.name.toLowerCase().includes(query.toLowerCase())
-  //       );
-  //       setResults(filteredProducts);
-  //     });
-  // }, [query]);
 
   const openPopup = (imgUrl, name, id) => {
     setSelectedProduct({ imgUrl, name, id });
@@ -45,7 +34,7 @@ function SearchResult() {
     Swal.fire({
       title: 'Added To Cart Successfully',
       icon: 'success',
-  });
+    });
   };
 
   return (
