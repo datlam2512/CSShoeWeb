@@ -36,11 +36,13 @@ import AdminProduct from './Pages/AdminPage/AdminProduct';
 import { ToastContainer } from 'react-toastify';
 import AdminAddProduct from './Pages/AdminPage/AdminAddProduct';
 import AdminEditProduct from './Pages/AdminPage/AdminEditProduct';
+import { UserProvider } from './context/user-context';
+
 function App() {
   const [user, setUser] = React.useState(null);
   return (
     <div className="App">
-      <UserContext.Provider value={{ user, setUser }}>
+      <UserProvider>
         <ShopContextProvider>
           <div className='header'>
             <Navshoes />
@@ -80,7 +82,7 @@ function App() {
             <Footer />
           </div>
         </ShopContextProvider>
-      </UserContext.Provider>
+        </UserProvider>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export default function ContactComponent() {
         // e.preventDefault();
         const hasError = validateFields();
         if (!hasError) {
-
+            
         }
     };
 

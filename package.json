@@ -16,6 +16,7 @@
     "antd": "^5.10.0",
     "axios": "^1.5.1",
     "hover-carousel": "^1.1.0",
+    "js-cookie": "^3.0.5",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
