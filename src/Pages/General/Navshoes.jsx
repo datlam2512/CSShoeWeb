@@ -25,6 +25,8 @@ export default function () {
     }
   };
   const handleLogout = () => {
+    sessionStorage.removeItem('email');
+    sessionStorage.removeItem('phone');
     setUser(null);
     navigate("/Login");
   }

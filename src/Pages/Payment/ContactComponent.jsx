@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import vietnamCities from './vietnamCities ';
 import './ContactComponent.css';
 import { Link } from 'react-router-dom';
 import { image_qr } from '../../config/qrImage';
+import { UserContext } from "../../context/user-context";
 
 export default function ContactComponent() {
-    const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
+    const { user } = useContext(UserContext);
+    const [phone, setPhone] = useState(sessionStorage.getItem('phone') || user?.PhoneNumber || "");
+    const [email, setEmail] = useState(sessionStorage.getItem('email') || user?.Email || "");
     const [selectedCity, setSelectedCity] = useState("");
-    const [firstName, setFirstName] = useState("");
+    const [firstName, setFirstName] = useState(""); 
     const [lastName, setLastName] = useState("");
-    const [district, setDistrict] = useState("");
-    const [apartment, setApartment] = useState("");
+    const [district, setDistrict] = useState("" || "");
+    const [apartment, setApartment] = useState("" || "");
 
     const [isEmailValid, setEmailValid] = useState(true);
     const [isPhoneValid, setPhoneValid] = useState(true);
@@ -26,12 +28,14 @@ export default function ContactComponent() {
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
+        sessionStorage.setItem('email', value);
         setEmailValid(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value));
     };
 
     const handlePhoneChange = (e) => {
         const value = e.target.value;
         setPhone(value);
+        sessionStorage.setItem('phone', value);
         // console.log(value.length);
         if (value.length < 10 || value.length > 11 || value % 1 !== 0) {
             setPhoneValid(false);
@@ -43,7 +47,7 @@ export default function ContactComponent() {
         // e.preventDefault();
         const hasError = validateFields();
         if (!hasError) {
-            
+            e.preventDefault();
         }
     };
 
@@ -248,9 +252,9 @@ export default function ContactComponent() {
                                 <button type="button"  onClick={() => {setError(true)}} class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <img src={image_qr.baseURL} alt="" />
+                                <img src={image_qr.baseURL} alt=""/>
 
-                            </div>
+                            </div>  
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-warning btn btn-outline-danger" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Close</button>
                                 <button type="button" class="btn btn-primary btn btn-outline-success" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Payment confirmed</button>
