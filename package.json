@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.10.0",
     "axios": "^1.5.1",
+    "bootstrap": "^5.3.2",
     "hover-carousel": "^1.1.0",
     "js-cookie": "^3.0.5",
     "materialize-css": "^1.0.0-rc.2",

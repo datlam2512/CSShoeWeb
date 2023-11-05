@@ -1,54 +1,77 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import vietnamCities from './vietnamCities ';
 import './ContactComponent.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { image_qr } from '../../config/qrImage';
 import { UserContext } from "../../context/user-context";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { message } from 'antd';
 
 export default function ContactComponent() {
     const { user } = useContext(UserContext);
-    const [phone, setPhone] = useState(sessionStorage.getItem('phone') || user?.PhoneNumber || "");
-    const [email, setEmail] = useState(sessionStorage.getItem('email') || user?.Email || "");
+    const [phone, setPhone] = useState(() => localStorage.getItem('phone') || user?.PhoneNumber || "");
+    const [email, setEmail] = useState(() => localStorage.getItem('email') || user?.Email || "");
     const [selectedCity, setSelectedCity] = useState("");
     const [firstName, setFirstName] = useState(""); 
     const [lastName, setLastName] = useState("");
     const [district, setDistrict] = useState("" || "");
     const [apartment, setApartment] = useState("" || "");
 
-    const [isEmailValid, setEmailValid] = useState(true);
-    const [isPhoneValid, setPhoneValid] = useState(true);
+    const [isEmailValid, setEmailValid] = useState(email !== "" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email));
+    const [isPhoneValid, setPhoneValid] = useState(phone !== "" && phone.length >= 10 && phone.length <= 11 && phone % 1 === 0);
 
     const [isFirstNameEmpty, setFirstNameEmpty] = useState(false);
     const [isLastNameEmpty, setLastNameEmpty] = useState(false);
     const [isDistrictEmpty, setDistrictEmpty] = useState(false);
     const [isApartmentEmpty, setApartmentEmpty] = useState(false);
     const [isCityEmpty, setSelectedCityEmpty] = useState(false);
-    const [error, setError] = useState(true)
+    const [error, setError] = useState(true);
+
     const showModal = false;
+    const navigate = useNavigate();
+    const handlePaymentConfirm = () => {
+        setError(true);
+        navigate('/');
+    }
     const handleEmailChange = (e) => {
         const value = e.target.value;
         setEmail(value);
-        sessionStorage.setItem('email', value);
-        setEmailValid(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value));
+        localStorage.setItem('email', value);
+        setEmailValid(value !== "" && /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value));
     };
 
     const handlePhoneChange = (e) => {
         const value = e.target.value;
         setPhone(value);
-        sessionStorage.setItem('phone', value);
-        // console.log(value.length);
-        if (value.length < 10 || value.length > 11 || value % 1 !== 0) {
-            setPhoneValid(false);
-        }
-        else setPhoneValid(true)
+        localStorage.setItem('phone', value);
+        setPhoneValid(value !== "" && value.length >= 10 && value.length <= 11 && value % 1 === 0);
     };
+    useEffect(() => {
+        const showMessage = localStorage.getItem('showMessage');
 
+        if (showMessage === 'true') {
+            message.error('Error! Please Try Again');
+            localStorage.removeItem('showMessage');  
+            setTimeout(() => {
+                message.destroy();
+            }, 2000);
+        }
+    }, []);
     const handleFormSubmit = (e) => {
-        // e.preventDefault();
+        e.preventDefault();
         const hasError = validateFields();
         if (!hasError) {
-            e.preventDefault();
+            setError(false);
+        } else {
+            setError(true);
+            localStorage.setItem('showMessage', 'true');
+            window.location.reload();
         }
+        // if (isEmailValid && isPhoneValid && firstName && lastName && district && apartment && selectedCity) {
+        //     setError(false);
+        // } else {
+        //     setError(true);
+        // }
     };
 
     const handleFirstNameChange = (e) => {
@@ -219,7 +242,6 @@ export default function ContactComponent() {
                     </div>
                 </div>
             </div>
-
             <div className='data-footer'>
                 <div className='return-to-infor'>
                     <Link to='/CartContent'>
@@ -244,11 +266,11 @@ export default function ContactComponent() {
                 </div>
             </div>  
             <div style={error ? { display: "none", visibility: "hidden", height: 0 }: {}}>
-                <div class='modal fade' id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden='true'>
+                <div class='modal fade' id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden='true' data-bs-backdrop="static">
                     <div class="modal-dialog d-flex align-items-center justify-content-center">
                         <div class="modal-content d-flex align-items-center justify-content-center">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Vui lòng thanh toán</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Scan Below QR Code to Complete</h5>
                                 <button type="button"  onClick={() => {setError(true)}} class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -257,7 +279,7 @@ export default function ContactComponent() {
                             </div>  
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-warning btn btn-outline-danger" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Close</button>
-                                <button type="button" class="btn btn-primary btn btn-outline-success" data-bs-dismiss="modal" onClick={() => {setError(true)}}>Payment confirmed</button>
+                                <button type="button" class="btn btn-primary btn btn-outline-success" data-bs-dismiss="modal" onClick={handlePaymentConfirm}>Payment confirmed</button>
                             </div>
                         </div>
                     </div>
