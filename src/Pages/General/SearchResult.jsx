@@ -9,14 +9,13 @@ import { ShopContext } from '../../context/shop-context';
 
 function SearchResult() {
   const { query } = useParams();
-  const [results, setResults] = useState([]); // Initialize as an empty array
+  const [results, setResults] = useState([]); 
   const { addToCart, cartItems } = useContext(ShopContext);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   useEffect(() => {
-    // Fetch the list of products from the API based on the query
     const fetchProductList = async () => {
       try {
         const response = await API.getListProduct();
@@ -31,8 +30,7 @@ function SearchResult() {
     };
 
     fetchProductList();
-  }, [query]); // Re-fetch when the query parameter changes
-
+  }, [query]); 
   const openPopup = (urlImg, name, id) => {
     setSelectedProduct({ urlImg, name, id });
     setIsPopupOpen(true);
