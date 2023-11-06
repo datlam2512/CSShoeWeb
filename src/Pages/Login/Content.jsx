@@ -1,22 +1,47 @@
 import React, { useContext } from "react";
 import "./Content.css";
 import { Button, Checkbox, Form, Input, message } from "antd";
-import { Link , useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "./api";
 import { UserContext } from "../../context/user-context";
+import API from "../../config/api";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserRedux, clearUser } from "../../redux/slice/userSlice";
+import { useEffect } from "react";
+
+
+
 export default function Content() {
   const { setUser } = React.useContext(UserContext);
+  const currentUser = useSelector((state) => state.user.currentUser)
   const navigate = useNavigate();
-  const onFinish = async (values) => {
-    const { userName, password } = values;
-    try {
-      const user = await loginUser(userName, password);
+  const dispatch = useDispatch();
 
-      if (user) {
-        console.log('Logged in user:', user);
-        setUser(user);
-        navigate('/');
-        message.success(`Welcome, ${user.Username}`, 3);
+  useEffect(() => {
+    if (currentUser.token) {
+      navigate('/')
+    }
+  }, [])
+
+  const onFinish = async (values) => {
+    const { userName, password } = values
+    const data = {
+      Username: userName,
+      Password: password
+    }
+    try {
+      console.log(data);
+      const res = await API.login(data);
+      if (res.data) {
+        setUser(data);
+        dispatch(setUserRedux(res.data))
+        if (res.data.isAdmin) {
+          navigate('/admin');
+        }
+        else {
+          navigate('/');
+        }
+        message.success(`Welcome, ${res.data.Username}`, 3);
       } else {
         console.error('Invalid username or password');
         message.error('Your username or password is incorrect', 3);

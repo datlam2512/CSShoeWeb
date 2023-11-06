@@ -1,14 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useContext } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faInstagram, faTiktok } from '@fortawesome/free-brands-svg-icons'
 import './Footer.css'
-import { Link } from 'react-router-dom';
-import { UserContext } from '../../context/user-context';
-
+import { Link } from 'react-router-dom'
 export default function () {
-  const {user} = useContext(UserContext);
+    
   return (
     <div className='Footer'>
        <div className='First-Color'>
@@ -17,8 +15,8 @@ export default function () {
                <div className='column col-2 service'>
                     <ul>
                         <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={user ? '/Account' : '/Login'}>Account</Link></li>
-                        <li><Link to='/search/:query'>Search</Link></li>
+                        <li><a href=''>Account</a></li>
+                        <li><a href='/search/:query'>Search</a></li>
                     </ul>
                </div>
                <div className='column col-4 service'>

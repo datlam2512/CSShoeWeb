@@ -4,14 +4,13 @@ import { ShopContext } from "../../context/shop-context";
 import { Link } from 'react-router-dom';
 
 export const CartItem = (props) => {
-  const { id, imgUrl, name, price } = props.data;
+  const { id, urlImg, name, price } = props.data;
   const { cartItems, addToCart, removeFromCart, updateCartItemcount, selectedSize } = useContext(ShopContext)
-
   const priceOfItem = (cartItems[id] * price).toLocaleString();
   return (
     <div className='cart-item'>
       <div className='cart-item-img'>
-        <img src={imgUrl} />
+        <img src={urlImg} />
 
       </div>
       <div className='cart-item-description'>

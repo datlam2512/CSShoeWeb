@@ -30,6 +30,10 @@
     justify-content: space-around;
     align-items: center;
 }
+.Login {
+    margin-left: 2%;
+    color: #dbdbdb;
+}
 .Navbarheader {
     display: flex;
     flex-direction: row;

@@ -7,7 +7,7 @@ import LoginPage from './Pages/Login/Login'
 import Shop from './Pages/Shop/Shop';
 import Cart from './Pages/Cart/Cart';
 import ProductDetail from './Pages/ProductDetail/ProductDetail';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import Footer from './Pages/General/Footer';
 import ForgotPassword from './Pages/ForgotPassword/ForgotPassword'
 import { ShopContextProvider } from './context/shop-context';
@@ -31,18 +31,30 @@ import Search from 'antd/es/input/Search';
 import AdminDashBoard from './Pages/AdminPage/Admin'
 import { UserContext } from './context/user-context';
 import AccountPage from './Account/AccountPage';
-import Accountdetail from './Account/Accountdetail';
-import AdminProduct from './Pages/AdminPage/AdminProduct';
 import { ToastContainer } from 'react-toastify';
 import AdminAddProduct from './Pages/AdminPage/AdminAddProduct';
 import AdminEditProduct from './Pages/AdminPage/AdminEditProduct';
-import { UserProvider } from './context/user-context';
+
+import PurchaseHistory from './Account/PurchaseHistory';
+import PurchaseHistoryDetail from './Account/PurchaseHistoryDetail';
+
+import AdminPayment from './Pages/AdminPage/AdminPayment';
+import AdminBlog from './Pages/AdminPage/AdminBlog';
+import AdminAddBlog from './Pages/AdminPage/AdminAddBlog';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [user, setUser] = React.useState(null);
+  const currentUser = useSelector((state) => state.user.currentUser);
+
+  const showAlertAndNavigate = () => {
+    window.alert("Bạn không phải là admin");
+    window.location.href = "/Account";
+  };
+
   return (
     <div className="App">
-      <UserProvider>
+      <UserContext.Provider value={{ user, setUser }}>
         <ShopContextProvider>
           <div className='header'>
             <Navshoes />
@@ -70,19 +82,42 @@ function App() {
               <Route path='/create' element={<CreateAccountpage />} />
               <Route path='/createyourown' element={<CreateYourOwnPage />} />
               <Route path='/blogs' element={<Blogs />} />
-              <Route path='/admin' element={<AdminDashBoard />} />
-              <Route path='/admin/product' element={<AdminProduct/>} />
-              <Route path='/admin/product/:id' element={<AdminEditProduct/>}></Route>
-              <Route path='/admin/add-product' element={<AdminAddProduct/>}></Route>
-              <Route path='/Account' element={<AccountPage />} />
-              <Route path='/Account-detail' element={<Accountdetail />} />
+              {currentUser.token ? ( 
+                <>
+                  {currentUser.isAdmin ? (
+                    <Route path="/admin" element={<AdminDashBoard />} />
+                  ) : (
+                    <Route
+                      path="/admin"
+                      element={<Navigate to="/Account" replace />}
+                      onClick={showAlertAndNavigate}
+                    />
+                  )}
+                  <Route path="/Account" element={<AccountPage />} />
+                </>
+              ) : (
+                <>
+                  <Route path="/admin" element={<Navigate to="/Login" />} /> {/* Redirect to Login if not logged in */}
+                  <Route path="/Account" element={<Navigate to="/Login" />} /> {/* Redirect to Login if not logged in */}
+                </>
+              )}
+              <Route path='/admin/product/:id' element={<AdminEditProduct />}></Route>
+              <Route path='/admin/add-product' element={<AdminAddProduct />}></Route>
+
+              <Route path='/Account/purchase-history' element={<PurchaseHistory />}></Route>
+              <Route path='/Account/purchase-history/:id' element={<PurchaseHistoryDetail />}></Route>
+
+              <Route path='/admin/payment' element={<AdminPayment />}></Route>
+              <Route path='/admin/blog' element={<AdminBlog />}></Route>
+              <Route path='/admin/add-blog' element={<AdminAddBlog />}></Route>
+
             </Routes>
           </div>
           <div className='Footer-main'>
             <Footer />
           </div>
         </ShopContextProvider>
-        </UserProvider>
+      </UserContext.Provider>
     </div>
   );
 }

@@ -194,7 +194,7 @@ export default function CreateYourOwn() {
                 </label>
               </div>
               <div className='submit-button'>
-                <Button type="primary" onClick={handleSubmit}>Submit</Button>
+                <Button onClick={handleSubmit}>Submit</Button>
               </div>
             </div>
           </div>

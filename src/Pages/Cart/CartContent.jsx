@@ -1,18 +1,26 @@
 import React, { useContext } from 'react'
 import './CartContent.css'
-import products from '../Shop/ProductList'
+// import products from '../Shop/ProductList'
 import { ShopContext } from '../../context/shop-context'
-import {  Modal } from "antd";
+import { Modal } from "antd";
+import { ShopContextAdidas } from '../../context/Shop-context-adidas'
 import { CartItem } from './CartItem'
 import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/user-context'
+import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import API from '../../config/api';
 export default function CartContent() {
   const { user } = useContext(UserContext);
-  const { cartItems, getTotalCartAmount } = useContext(ShopContext)
+  const [products, setProducts] = useState([])
+  const { cartItems, getTotalCartAmount } = useContext(ShopContext, ShopContextAdidas)
   const totalAmount = getTotalCartAmount()
   const navigate = useNavigate();
+  const currentUser = useSelector((state) => state.user.currentUser)
+  // console.log(cartItems);
+
   const handleClickCart = () => {
-    if (user) {
+    if (currentUser.token) {
       navigate('/payment');
     } else {
       Modal.confirm({
@@ -21,9 +29,22 @@ export default function CartContent() {
           navigate('/Login')
         },
         style: { top: '50%', transform: 'translateY(-50%)' },
-    });
+      });
     }
   }
+
+  useEffect(() => {
+    const getListShoes = async () => {
+        try {
+            const res = await API.getListProduct()
+            setProducts(res.data)
+        } catch (err) {
+
+        }
+    }
+    getListShoes()
+
+}, [])
   let totalPrice = totalAmount.toLocaleString();
   return (
     <div className='cart-content'>
@@ -31,7 +52,7 @@ export default function CartContent() {
         <h1>Shopping Cart</h1>
       </div>
       <div className='CartItems'>
-        {products.map((product)  => {
+        {products?.map((product) => {
           if (cartItems[product.id] !== 0) {
             return <CartItem data={product} />
           }
@@ -53,7 +74,7 @@ export default function CartContent() {
 
           <div className='nav-btn'>
             <div className='check-out-btn'>
-                <button onClick={handleClickCart}> CHECK OUT </button>
+              <button onClick={handleClickCart}> CHECK OUT </button>
             </div>
           </div>
         </div>

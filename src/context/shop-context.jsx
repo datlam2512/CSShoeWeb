@@ -1,22 +1,34 @@
 // ShopContext.js
-import React, { createContext, useState } from 'react';
-import products from '../Pages/Shop/ProductList';
+import React, { createContext, useState, useEffect } from 'react';
+// import products from '../Pages/Shop/ProductList';
+import API from '../config/api';
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
+const getDefaultCart = (products) => {
     let i = 1;
     let cart = {};
-    for (i; i < products.length + 1; i++) {
+    for (i; i < 200; i++) {
         cart[i] = 0;
     }
     return cart;
 };
 
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [products, setProducts] = useState([])
+    const [cartItems, setCartItems] = useState(getDefaultCart(products));
     const [selectedSize, setSelectedSize] = useState('33'); // Default size
+    useEffect(() => {
+        const getListShoes = async () => {
+            try {
+                const res = await API.getListProduct()
+                setProducts(res.data)
+            } catch (err) {
 
+            }
+        }
+        getListShoes()
+    }, [])
     const getTotalCartAmount = () => {
         let total = 0;
         for (const item in cartItems) {
@@ -35,6 +47,9 @@ export const ShopContextProvider = (props) => {
     const removeFromCart = (itemID) => {
         setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] - 1 }));
     };
+    const removeAll = (itemID) => {
+        setCartItems((prev) => ({ ...prev, [itemID]: 0 }))
+    }
 
     const updateCartItemcount = (newAmount, itemID) => {
         setCartItems((prev) => ({ ...prev, [itemID]: newAmount }));
@@ -52,6 +67,7 @@ export const ShopContextProvider = (props) => {
         updateCartItemcount,
         selectSize,
         getTotalCartAmount,
+        removeAll
     };
 
     return (

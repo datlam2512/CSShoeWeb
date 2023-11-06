@@ -1,40 +1,33 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './ProductDetailComponent.css';
-import { ConfigProvider, Image, InputNumber, Modal } from 'antd';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ConfigProvider, Image, InputNumber } from 'antd';
+import { Link, useParams } from 'react-router-dom';
 import products from '../Shop/ProductList';
 import { ShopContext } from '../../context/shop-context';
 import Swal from 'sweetalert2';
-import { UserContext } from '../../context/user-context';
+import API from '../../config/api';
 
 export default function ProductDetailComponent() {
-    const { user } = useContext(UserContext);
     const { addToCart, cartItems, selectSize } = useContext(ShopContext);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [selectedSize, setSelectedSize] = useState('33'); // Default size
-    const [shoes, setShoes] = useState(null);
-    const navigate = useNavigate();
+    // const [shoes, setShoes] = useState(null);
+    const [shoe, setShoe] = useState([])
+
     const shoesName = useParams();
 
     useEffect(() => {
-        const selectedShoes = products.find((obj) => obj.id == shoesName.id);
-        setShoes(selectedShoes);
-    }, [shoesName.id]);
+        const getListShoes = async () => {
+            try {
+                const res = await API.getProductById(shoesName.id)
+                setShoe(res.data)
+            } catch (err) {
 
-    const handleClickBuy = () => {
-        if (user) {
-          addToCart(shoes.id, selectedQuantity, selectedSize);
-          navigate('/payment');
-        } else {
-          Modal.confirm({
-            title: 'You must login first to buy items!',
-            onOk() {
-              navigate('/Login')
-            },
-            style: { top: '50%', transform: 'translateY(-50%)' },
-        });
+            }
         }
-      }
+        getListShoes()
+
+    }, [])
 
     const showAddToCartAlert = () => {
         Swal.fire({
@@ -52,17 +45,17 @@ export default function ProductDetailComponent() {
 
     return (
         <div className='container'>
-            {shoes ? (
+            {shoe ? (
                 <div className='product-detail'>
                     <div className='product-image'>
-                        <Image width={468} src={shoes.imgUrl} />
+                        <Image width={468} src={shoe.urlImg} />
                     </div>
 
                     <div className='product-infor'>
                         <div className='width-product-infor'>
                             <div className='productSingle'>
-                                <div className='productName'>{shoes.name}</div>
-                                <div className='productPrice'>{shoes.price.toLocaleString() + ' VNĐ'}</div>
+                                <div className='productName'>{shoe.name}</div>
+                                <div className='productPrice'>{shoe.price?.toLocaleString() + ' VNĐ'}</div>
                             </div>
 
                             <form className='payment-form'>
@@ -136,19 +129,12 @@ export default function ProductDetailComponent() {
                                         className='add-to-cart-button'
                                         type='submit'
                                         onClick={() => {
-                                            addToCart(shoes.id, selectedQuantity, selectedSize);
+                                            addToCart(shoe.id, selectedQuantity, selectedSize);
                                             showAddToCartAlert();
                                         }}
                                     >
                                         ADD TO CART
                                     </button>
-                                </div>
-                                <div className='buyNowBtn'>
-                                        <button className='buy-button' 
-                                                type='submit'
-                                                onClick={() => {handleClickBuy()}}>
-                                            BUY NOW
-                                        </button>                               
                                 </div>
                             </div>
                         </div>
