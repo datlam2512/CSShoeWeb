@@ -4,7 +4,7 @@ import './ContactComponent.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { image_qr } from '../../config/qrImage';
 import { UserContext } from "../../context/user-context";
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import { message } from 'antd';
 
 export default function ContactComponent() {
