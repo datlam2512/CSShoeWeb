@@ -48,6 +48,34 @@ const AdminEditProduct = () => {
         }
         getBrand()
     }, [])
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const res = await API.getProductById(param.id)
+                setName(res.data.name)
+                setPrice(res.data.price)
+                setBrand(res.data.brand.BrandID)
+                setUrlImg(res.data.urlImg)
+                setShoes(res.data)
+            } catch (err) {
+
+            }
+        }
+        getProduct()
+    }, [param.id]);
+
+    useEffect(() => {
+        const getBrand = async () => {
+            try {
+                const res = await API.getBrand()
+                setListBrand(res.data)
+            } catch (err) {
+
+            }
+        }
+        getBrand()
+    }, [])
     const showAddToCartAlert = () => {
         Swal.fire({
             title: 'Added To Cart Successfully',
