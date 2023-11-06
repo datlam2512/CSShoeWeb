@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect } from 'react';
 import './AdminEditProduct.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import products from '../Shop/ProductList';
 import { ShopContext } from '../../context/shop-context';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import API from '../../config/api';
 import { faL } from '@fortawesome/free-solid-svg-icons';
+import { useSelector } from 'react-redux';
 
 
 const AdminEditProduct = () => {
@@ -18,8 +19,15 @@ const AdminEditProduct = () => {
     const [brand, setBrand] = useState("")
     const [urlImg, setUrlImg] = useState("")
     const [loading, setLoading] = useState(false)
-
     const param = useParams();
+    const currentUser = useSelector((state) => state.user.currentUser)
+    const naviagte = useNavigate()
+
+    useEffect(() => {
+        if (!currentUser.isAdmin) {
+            naviagte("/")
+        }
+    }, [])
 
     useEffect(() => {
         const getProduct = async () => {

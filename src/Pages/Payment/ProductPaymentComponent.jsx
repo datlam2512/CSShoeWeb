@@ -1,11 +1,15 @@
 import React, { useContext } from 'react'
 import './ProductPaymentComponent.css'
-import products from '../Shop/ProductList'
+// import products from '../Shop/ProductList'
 import { ShopContext } from '../../context/shop-context'
 import PaymentItem from './PaymentItem'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import API from '../../config/api'
 
 export default function ProductPaymentComponent() {
     const { cartItems, getTotalCartAmount } = useContext(ShopContext)
+    const[products, setProducts] = useState([])
     const totalAmount = getTotalCartAmount()
 
     let subtotalPrice = totalAmount.toLocaleString();
@@ -13,6 +17,17 @@ export default function ProductPaymentComponent() {
     let shipping = deli_cost.toLocaleString();
     const totalPrice = totalAmount + deli_cost;
     let total =totalPrice.toLocaleString();
+    useEffect(() => {
+        const getListShoes = async () => {
+            try {
+                const res = await API.getListProduct()
+                setProducts(res.data)
+            } catch (err) {
+
+            }
+        }
+        getListShoes()
+    }, [])
 
     return (
         <div className='product-infor'>
