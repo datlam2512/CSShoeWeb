@@ -17,7 +17,6 @@ export default function ContactComponent() {
 
   const { cartItems,addToCart, removeFromCart, updateCartItemcount, selectedSize,removeAll, getTotalCartAmount } = useContext(
     ShopContext,
-    
   );
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
