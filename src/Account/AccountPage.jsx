@@ -1,47 +1,27 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../context/user-context";
-import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import "./AccountPage.css";
-import { loginUser } from "../Pages/Login/api";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Accountdetail from "./Accountdetail";
-import { clearUser } from "../redux/slice/userSlice";
-import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 function AccountPage() {
   const { user, setUser } = useContext(UserContext);
-  const navigate = useNavigate();
-  const dispatch = useDispatch()
-  const handleLogout = () => {
-    setUser(null); //clear user tu context
-    dispatch(clearUser())
-    navigate("/Login");
-  };
+  let displayGender = user && user.Gender === "M" ? "Male" : "Female";  
   return (
     <div className="account-page">
-      <div className="subnav-account">
-        <div className="subnav-top">
-          <i>
-            <FontAwesomeIcon icon={faUserCircle} />
-          </i>
-          <p>{user ? user.Username : ""}</p>
-        </div>
-        <ul>
-          <li className="account-detail">
-            <Link to={"#accountdetail"}>Account detail</Link>
-          </li>
-          <li className="account-detail">
-            <Link to={"#addressship"}>Address detail</Link>
-          </li>
-          <li className="account-detail">
-            <Link to={"/Account/purchase-history"}>Purchase History</Link>
-          </li>
-        </ul>
-        <button onClick={handleLogout}>Logout</button>
+      <div className="history-purchasing">
+        <h2>Purchase History</h2>
+        {/* De order history */}
       </div>
-      <div className="account-content"></div>
-      <div></div>
+      <div className="profile-section">
+        <h2>Profile</h2>
+        <p>{user?.Username}</p>
+        <p>{user?.Email}</p>
+        <p>{user?.FirstName}, {user?.LastName}</p>
+        <p>{displayGender}</p>
+        <p>{user?.PhoneNumber}</p>
+        <p>{user?.ShippingAddress}</p>
+        <Link to="/Account-detail" style={{textDecoration:'underline'}}>Change Profile </Link>
+      </div>
     </div>
   );
 }
