@@ -1,3 +1,4 @@
+
 import React, { useContext, useState, useEffect } from 'react';
 import './ProductMarketPlace.css';
 import Product from './Product';
@@ -86,9 +87,9 @@ export default function ProductMarketPlace() {
         // }
         // getListShoes()
         let filtered = listShoe;
-
+        
         if (selectedBrand !== 'All') {
-            filtered = filtered.filter((product) => product.brand === selectedBrand);
+            filtered = filtered.filter((product) => product.brand.Name.toLowerCase() === selectedBrand);
         }
 
         if (selectedBrand === 'All') {

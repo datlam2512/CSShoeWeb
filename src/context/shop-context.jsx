@@ -1,19 +1,39 @@
 // ShopContext.js
 import React, { createContext, useState } from 'react';
 import products from '../Pages/Shop/ProductList';
+import API from '../config/api';
+import { useEffect } from 'react';
+
 
 export const ShopContext = createContext(null);
 
-const getDefaultCart = () => {
-    let i = 1;
-    let cart = {};
-    for (i; i < products.length + 1; i++) {
-        cart[i] = 0;
-    }
-    return cart;
-};
+
 
 export const ShopContextProvider = (props) => {
+    const [listShoe, setListShoe] = useState([])
+
+    useEffect(() => {
+        const getListShoes = async () => {
+            try {
+                const res = await API.getListProduct()
+                setListShoe(res.data)
+            } catch (err) {
+
+            }
+        }
+        getListShoes()
+    }, [])
+
+    const getDefaultCart = () => {
+        let i = 1;
+        let cart = {};
+        for (i; i < products.length + 1; i++) {
+            cart[i] = 0;
+        }
+        return cart;
+    };
+    
+
     const [cartItems, setCartItems] = useState(getDefaultCart());
     const [selectedSize, setSelectedSize] = useState('33'); // Default size
 

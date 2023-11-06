@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import AdminProduct from './AdminProduct'
@@ -42,24 +43,24 @@ export default function DashBoard() {
         <div className='flex'>
             <div className='flex flex-col text-xl pt-4 ps-12'>
                 <Link
-                    className='px-1.5 py-0.5 border-b text-blue-500 hover:no-underline'
+                    className='px-1.5 py-0.5 hover:no-underline'
                     to={'/admin'}>
                     Product
                 </Link>
-                <div className='ps-6 border-b'>
+                <div className='ps-6'>
                     <Link
                         className='text-lg hover:no-underline'
                         to={'/admin/add-product'}>
-                        {`+Thêm mới`}
+                        {`+ Thêm mới`}
                     </Link>
                 </div>
                 <Link
-                    className='px-1.5 py-0.5 border-b hover:no-underline'
+                    className='px-1.5 py-0.5 hover:no-underline'
                     to={'/admin/payment'}>
                     Thanh toán
                 </Link>
                 <Link
-                    className='px-1.5 py-0.5 border-b hover:no-underline'
+                    className='px-1.5 py-0.5 hover:no-underline'
                     to={'/admin/blog'}>
                     Blog
                 </Link>
@@ -69,7 +70,7 @@ export default function DashBoard() {
                     listShoe.map((shoes, index) => (
                         <div key={index} className='flex justify-center'>
                             <div className='w-1/12 flex items-center border-b-[1px] justify-center'>
-                                <div>{shoes.id}</div>
+                                <div>ID: {shoes.id}</div>
                             </div>
                             <div className='w-1/12 py-2 flex items-center border-b-[1px]'>
                                 <img className='w-14 h-14' src={shoes.urlImg} alt={shoes.name} />
@@ -84,15 +85,16 @@ export default function DashBoard() {
                                 <div>{shoes.brand.Name}</div>
                             </div>
                             <div className='w-1/12 flex items-center border-b-[1px] justify-center'>
-                                <Link to={`/admin/product/${shoes.id}`} className='px-3 py-1 rounded bg-green-500'>Edit</Link>
+                                <Link to={`/admin/product/${shoes.id}`} className='px-3 py-1 rounded bg-green-500 text-white'>Edit</Link>
                             </div>
                             <div className='w-1/12 flex items-center border-b-[1px] justify-center'>
-                                <button onClick={() => handleDelete(shoes.id)} className='px-3 py-1 rounded bg-red-500'>Delete</button>
+                                <button onClick={() => handleDelete(shoes.id)} className='px-3 py-1 rounded bg-red-500 text-white'>Delete</button>
                             </div>
                         </div>
                     ))
                 }
             </div>
         </div>
+
     )
 }
