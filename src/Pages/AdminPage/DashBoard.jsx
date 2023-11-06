@@ -1,22 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
+import AdminProduct from './AdminProduct'
 import products from '../Shop/ProductList'
 import API from '../../config/api'
 import Swal from 'sweetalert2';
-import { useSelector } from 'react-redux';
-
 export default function DashBoard() {
     const [listShoe, setListShoe] = useState([])
     const [render, setRender] = useState(true)
-    const currentUser = useSelector((state) => state.user.currentUser)
-    const naviagte = useNavigate()
-
-    useEffect(() => {
-        if (!currentUser.isAdmin) {
-            naviagte("/")
-        }
-    }, [])
-
     useEffect(() => {
         const getListShoes = async () => {
             try {
@@ -72,13 +62,6 @@ export default function DashBoard() {
                     to={'/admin/blog'}>
                     Blog
                 </Link>
-                <div className='ps-6 border-b'>
-                    <Link
-                        className='text-lg hover:no-underline'
-                        to={'/admin/add-blog'}>
-                        {`+Thêm mới`}
-                    </Link>
-                </div>
             </div>
             <div className='flex-1'>
                 {
