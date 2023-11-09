@@ -30,8 +30,8 @@ export default function () {
   return (
     <div className="Navbar">
       <div className="Navbarheader">
-        <Link to="/">
-          <img src="/Img/logo6.png" />
+        <Link className="logo-img" to="/">
+          <img  src="/Img/logo6.png" />
         </Link>
         <div className="Navbarbottom">
           <ul className="menu">
@@ -39,7 +39,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/"
-                style={{ textDecoration: "none", color: "#dbdbdb" }}
               >
                 Home
               </Link>
@@ -52,7 +51,6 @@ export default function () {
                   <Link
                     className="link-nav"
                     to="/shop"
-                    style={{ textDecoration: "none", color: "#dbdbdb" }}
                   >
                     Shop
                   </Link>
@@ -65,7 +63,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/createyourown"
-                style={{ textDecoration: "none", color: "#dbdbdb" }}
               >
                 Create Your Own
               </Link>
@@ -74,7 +71,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/about"
-                style={{ textDecoration: "none", color: "#dbdbdb" }}
               >
                 About Us
               </Link>
@@ -83,7 +79,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/contact"
-                style={{ textDecoration: "none", color: "#dbdbdb" }}
               >
                 Contact
               </Link>
@@ -92,7 +87,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/sizeguide"
-                style={{ textDecoration: "none", color: "#dbdbdb" }}
               >
                 Size Guide
               </Link>
@@ -101,7 +95,6 @@ export default function () {
               <Link
                 className="link-nav"
                 to="/blogs"
-                style={{ textDecoration: "none", color: '#dbdbdb' }}
               >
                 Blog
               </Link>
@@ -111,7 +104,6 @@ export default function () {
                 <Link
                   className="link-nav"
                   to="/admin"
-                  style={{ textDecoration: "none", color: '#dbdbdb' }}
                 >
                   Admin
                 </Link>

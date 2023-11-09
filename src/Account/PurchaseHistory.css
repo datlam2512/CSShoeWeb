@@ -1,0 +1,49 @@
+.purchase-history {
+    margin: 60px auto;
+    width: 100%;
+    max-width: 1400px;
+    margin-left: 142px;
+    
+}
+
+.justify-center {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.history-infor-title {
+    font-family: Karla, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.history-infor-detail {
+    font-family: Karla, sans-serif;
+    font-size: 15px;
+    padding: 10px 0;
+    
+}
+
+.history-status {
+    border-radius: 5px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    width: 80px;
+    height: 27px;
+}
+
+.red-status {
+    background-color: rgb(255 46 46);
+}
+
+.green-status {
+    background-color: #08df08;
+}
+
+.view-btn {
+    padding-left: 55px;
+}

@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import API from '../config/api';
+
 export default function PurchaseHistoryDetail() {
     const { id } = useParams();
     const [productsHistory, setProductsHistory] = useState([])

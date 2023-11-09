@@ -50,7 +50,7 @@ export default function Body({ id, imgUrl, name, price }) {
                 </div>
             </div>
             <div className="home-content">
-                <div className="content-shoe">
+                <div className="content-shoe" style={{marginTop: "60px"}}>
                     <img src="/Img/img-content.png" />
                     <div className="information-home">
                         <h2>Welcome to Shoe Palette!</h2>
@@ -93,7 +93,7 @@ export default function Body({ id, imgUrl, name, price }) {
                     </div>
                 </div>
             </div>
-            <div className="featured-product">
+            <div className="featured-product" style={{marginTop: "60px"}}>
                 <h1>Featured Product</h1>
             </div>
             <div className="product-bottom-main">
@@ -110,7 +110,7 @@ export default function Body({ id, imgUrl, name, price }) {
                                     </div>
                                     <div className="product-price">
                                         <span className="price">
-                                            {product.price}
+                                            {product.price.toLocaleString() + "VNĐ"}
                                         </span>
                                     </div>
                                 </div>

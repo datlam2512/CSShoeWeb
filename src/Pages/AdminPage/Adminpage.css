@@ -1,4 +1,124 @@
-.dasboard{
+.dasboard {
    width: 100%;
    margin-top: 15px;
+}
+
+.product-admin-container {
+   margin-top: 60px;
+}
+
+.product-content {
+   align-items: center;
+   width: 100%;
+   justify-content: space-between;
+}
+
+.product-infor-admin {
+   flex: 8;
+   display: flex;
+   align-items: center;
+
+}
+
+.product-id-admin {
+   flex: 1;
+   text-align: center;
+   margin-left: 30px;
+   padding: 0 40px;
+}
+
+.product-img-admin {
+   flex: 1;
+   padding: 0 20px;
+   height: 100px;
+   width: 110px;
+}
+
+.product-img-admin img {
+   width: 100%;
+   height: auto;
+}
+
+.product-name-admin {
+   flex: 4;
+   padding: 0 20px;
+   padding-right: 60px;
+   font-family: Karla, sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+}
+
+.product-price-admin {
+   flex: 2;
+   font-family: Karla, sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   padding: 0 20px;
+}
+
+.product-brand-admin {
+   flex: 2;
+   font-family: Karla, sans-serif;
+   font-size: 18px;
+   font-weight: 400;
+   padding: 0 60px;
+}
+
+.action-btn-admin {
+   padding: 0 60px;
+   display: flex;
+}
+
+.edit-btn-admin,
+.delete-btn-admin {
+   margin-right: 12px;
+   padding: 5px;
+   border-radius: 5px;
+   height: 35px;
+}
+
+.edit-btn-admin {
+   color: aliceblue;
+}
+
+.edit-btn {
+   color: rgb(12, 217, 12);
+   font-size: 22px;
+   transition: 0;
+}
+
+.edit-btn:hover {
+   color: rgb(0, 152, 0);
+
+}
+
+.delete-btn-admin {
+   color: aliceblue;
+}
+
+.delete-btn {
+   font-size: 22px;
+   color: rgb(255, 24, 24);
+
+}
+
+.delete-btn:hover {
+   color: rgb(193, 0, 0);
+
+}
+
+.order-management {
+   margin: 60px auto;
+   width: 100%;
+   max-width: 1400px;
+}
+
+.check-status {
+   background-color: rgb(103, 103, 103);
+   font-size: 22px;
+}
+
+.checked-status {
+   background-color: rgb(0, 219, 40);
+   font-size: 22px;
 }

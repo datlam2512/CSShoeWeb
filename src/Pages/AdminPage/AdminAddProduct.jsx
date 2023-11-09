@@ -97,11 +97,11 @@ const AdminAddProduct = () => {
 
     const handelSubmit = async () => {
         if (!file) {
-            showMessageError("Vui lòng tải ảnh lên")
+            showMessageError("Upload Image")
             return
         }
         if (!name || !price) {
-            showMessageError("Vui lòng điền đầy đủ thông tin")
+            showMessageError("Required")
             return
         }
         setLoading(true)
@@ -137,13 +137,13 @@ const AdminAddProduct = () => {
                     <Link
                         className='text-lg text-blue-500 hover:no-underline'
                         to={'/admin/add-product'}>
-                        {`+Thêm mới`}
+                        {`+ Add Product`}
                     </Link>
                 </div>
                 <Link
                     className='px-1.5 py-0.5 border-b hover:no-underline'
                     to={'/admin/payment'}>
-                    Thanh toán
+                    Order
                 </Link>
                 <Link
                     className='px-1.5 py-0.5 border-b hover:no-underline'
@@ -154,7 +154,7 @@ const AdminAddProduct = () => {
                     <Link
                         className='text-lg hover:no-underline'
                         to={'/admin/add-blog'}>
-                        {`+Thêm mới`}
+                        {`+ Add Blog`}
                     </Link>
                 </div>
             </div>

@@ -25,7 +25,7 @@
 
 .payment-item-img {
     position: relative;
-    flex: 2;
+    flex: 1.5;
 
 }
 
@@ -47,6 +47,7 @@
     height: 100%;
     border: 0.5px solid #ababab;
     border-radius: 3px;
+    object-fit: contain;
 }
 
 .item-amount {
@@ -79,18 +80,27 @@
     flex: 3;
 }
 
-.item-infor,
+.item-infor {
+    padding: 0;
+}
+
 .item-price {
     display: flex;
     height: 100%;
     padding-left: 14px;
     align-items: center;
+    color: #6e6e6e;
+
 }
 
 .item-name p,
 .item-price p {
+    margin: -4px;
+}
 
-    margin: 0;
+.item-name p {
+    font-weight: 500;
+
 }
 
 .payment-cost {
@@ -99,11 +109,16 @@
     margin-top: 30px;
 }
 
+.sub-cost {
+    padding-bottom: 30px;
+}
+
 .subtotal-payment,
 .shipping-payment,
 .total {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 5px;
 }
 
 

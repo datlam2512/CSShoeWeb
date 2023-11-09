@@ -50,18 +50,18 @@ const AdminBlog = () => {
                 </Link>
                 <div className='ps-6 border-b'>
                     <Link
-                        className='text-lg hover:no-underline'
+                        className='text-lg text-blue-500 hover:no-underline'
                         to={'/admin/add-product'}>
-                        {`+Thêm mới`}
+                        {`+ Add Product`}
                     </Link>
                 </div>
                 <Link
                     className='px-1.5 py-0.5 border-b hover:no-underline'
                     to={'/admin/payment'}>
-                    Thanh toán
+                    Order
                 </Link>
                 <Link
-                    className='px-1.5 py-0.5 border-b text-blue-500 hover:no-underline'
+                    className='px-1.5 py-0.5 border-b hover:no-underline'
                     to={'/admin/blog'}>
                     Blog
                 </Link>
@@ -69,7 +69,7 @@ const AdminBlog = () => {
                     <Link
                         className='text-lg hover:no-underline'
                         to={'/admin/add-blog'}>
-                        {`+Thêm mới`}
+                        {`+ Add Blog`}
                     </Link>
                 </div>
             </div>
@@ -105,5 +105,5 @@ const AdminBlog = () => {
         </div>
     )
 }
- 
+
 export default AdminBlog;

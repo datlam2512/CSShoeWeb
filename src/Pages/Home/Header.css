@@ -72,7 +72,7 @@
 .banner img{
     opacity: 1;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: top;
     width: 100%;
 }

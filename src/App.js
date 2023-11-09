@@ -82,13 +82,14 @@ function App() {
               <Route path='/create' element={<CreateAccountpage />} />
               <Route path='/createyourown' element={<CreateYourOwnPage />} />
               <Route path='/blogs' element={<Blogs />} />
-              {currentUser.token ? ( 
+
+              {currentUser.token ? (
                 <>
                   {currentUser.isAdmin ? (
-                    <Route path="/admin" element={<AdminDashBoard />} />
+                    <Route path="/admin/*" element={<AdminDashBoard />} />
                   ) : (
                     <Route
-                      path="/admin"
+                      path="/admin/*"
                       element={<Navigate to="/Account" replace />}
                       onClick={showAlertAndNavigate}
                     />
@@ -97,7 +98,7 @@ function App() {
                 </>
               ) : (
                 <>
-                  <Route path="/admin" element={<Navigate to="/Login" />} /> {/* Redirect to Login if not logged in */}
+                  <Route path="/admin/*" element={<Navigate to="/Login" />} /> {/* Redirect to Login if not logged in */}
                   <Route path="/Account" element={<Navigate to="/Login" />} /> {/* Redirect to Login if not logged in */}
                 </>
               )}

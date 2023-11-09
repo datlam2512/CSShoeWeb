@@ -169,13 +169,13 @@
 .cart-item-img img {
     width: 120px;
     height: 120px;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .countHandler {
     flex: 1.5;
     display: flex;
-    height: 100%;
+    height: 65%;
     padding: 20px;
 
 }

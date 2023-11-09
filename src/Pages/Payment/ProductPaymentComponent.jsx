@@ -30,7 +30,7 @@ export default function ProductPaymentComponent() {
     }, [])
 
     return (
-        <div className='product-infor'>
+        <div className='product-infor' >
             {products.map((product) => {
                 if (cartItems[product.id] !== 0) {
                     return <PaymentItem data={product} />

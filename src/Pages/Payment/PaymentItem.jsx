@@ -28,7 +28,7 @@ export default function PaymentItem(props) {
                 </div>
                 <div className='item-price'>
                     <p>
-                        {priceOfItem}
+                        {priceOfItem} VNĐ
                     </p>
                 </div>
             </div>

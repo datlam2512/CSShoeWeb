@@ -14,7 +14,7 @@ const AdminAddBlog = () => {
     const [content, setContent] = useState("")
     const [loading, setLoading] = useState(false)
 
-    const currentUser = useSelector((state)=> state.user.currentUser)
+    const currentUser = useSelector((state) => state.user.currentUser)
 
     const handleFileChange = (e) => {
         if (e.target.files[0]) {
@@ -122,15 +122,15 @@ const AdminAddBlog = () => {
                 </Link>
                 <div className='ps-6 border-b'>
                     <Link
-                        className='text-lg hover:no-underline'
+                        className='text-lg text-blue-500 hover:no-underline'
                         to={'/admin/add-product'}>
-                        {`+Thêm mới`}
+                        {`+ Add Product`}
                     </Link>
                 </div>
                 <Link
                     className='px-1.5 py-0.5 border-b hover:no-underline'
                     to={'/admin/payment'}>
-                    Thanh toán
+                    Order
                 </Link>
                 <Link
                     className='px-1.5 py-0.5 border-b hover:no-underline'
@@ -139,9 +139,9 @@ const AdminAddBlog = () => {
                 </Link>
                 <div className='ps-6 border-b'>
                     <Link
-                        className='text-lg text-blue-500 hover:no-underline'
+                        className='text-lg hover:no-underline'
                         to={'/admin/add-blog'}>
-                        {`+Thêm mới`}
+                        {`+ Add Blog`}
                     </Link>
                 </div>
             </div>
@@ -173,7 +173,7 @@ const AdminAddBlog = () => {
                                         Nội dung:
                                     </label>
                                     <br />
-                                    <textarea value={content} onChange={(e)=> setContent(e.target.value)} className='outline outline-offset-2 outline-1' rows={10}/>
+                                    <textarea value={content} onChange={(e) => setContent(e.target.value)} className='outline outline-offset-2 outline-1' rows={10} />
                                 </div>
                                 <div className='purchase-action'>
                                     <div className='addCartBtn'>

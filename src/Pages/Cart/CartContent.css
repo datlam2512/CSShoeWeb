@@ -73,8 +73,9 @@
     display: flex;
     justify-content: end;
 }
+
 .check-out-btn {
-   
+    margin-top: 30px;
     width: 284px;
 }
 
@@ -92,6 +93,7 @@
     font-weight: 700;
     font-style: normal;
     letter-spacing: 2px;
+    transition: 0.3s;
 
 }
 
@@ -149,8 +151,13 @@
     height: 100%;
     border: 0;
     text-align: center;
-    background-color: #fff;
+    background-color: #eaeaea;
+    transition: 0.2s;
 
+}
+
+.countHandler button:hover {
+    background-color: #e2e2e2;
 
 }
 
@@ -160,10 +167,10 @@
     padding: 20px;
     display: flex;
     align-items: center;
- 
+
 }
 
-.cart-item-price p{
+.cart-item-price p {
     margin: 0;
 }
 
@@ -196,6 +203,7 @@
     font-family: Karla, sans-serif;
     font-weight: 700;
     font-style: normal;
+    transition: 0.3s;
 }
 
 .item-name a:hover {
@@ -208,4 +216,15 @@
 
 .size-value {
     padding-left: 7px;
+}
+
+.item-remove {
+    color: #1b7dfd;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.item-remove:hover {
+    color: #004cb0;
+
 }

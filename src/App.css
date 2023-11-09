@@ -1,18 +1,30 @@
-html::-webkit-scrollbar {
-    display: none; /* cho Chrome, Safari, and Opera */
+* {
+    transition: 0.1s;
 }
-.App{
+
+
+
+html::-webkit-scrollbar {
+    display: none;
+    /* cho Chrome, Safari, and Opera */
+}
+
+.App {
     background-color: #fcf7f7;
 }
-.header{
+
+.header {
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
     background-color: #000;
     width: 100%;
+    height: 78px;
 }
-.Body-main{
+
+.Body-main {
     margin-top: 75px;
     padding-top: 3px;
+    min-height: 434px;
 }

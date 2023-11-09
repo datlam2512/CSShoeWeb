@@ -47,7 +47,7 @@ export default function ProductDetailComponent() {
         <div className='container'>
             {shoe ? (
                 <div className='product-detail'>
-                    <div className='product-image'>
+                    <div className='product-image' style={{paddingTop: "56px"}}>
                         <Image width={468} src={shoe.urlImg} />
                     </div>
 
